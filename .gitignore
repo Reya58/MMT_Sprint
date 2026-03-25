@@ -1,1 +1,10 @@
-/.metadata/
+# Eclipse files
+.metadata/
+*.log
+
+# TestNG / Selenium output
+test-output/
+
+# OS files
+.DS_Store
+Thumbs.db
