@@ -124,6 +124,7 @@ public class FlightSearchPage {
 	}
 
 //	-------------- RETURNING SELECTED DATE-------------
+
 	public String getSelectedDate() {
 		return driver.findElement(By.xpath("//p[@data-cy='departureDate']")).getText();
 	}
