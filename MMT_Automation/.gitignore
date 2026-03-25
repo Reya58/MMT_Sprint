@@ -1,1 +1,3 @@
 /target/
+/src/test/java/runner
+/src/test/java/pages/Test.java
