@@ -40,7 +40,7 @@ public class FlightSearchPage {
 	WebDriver driver;
 
 	private YearMonth getMonth(By locator, DateTimeFormatter formatter) {
-		String text = driver.findElement(locator).getText(); // "April 2026"
+		String text = driver.findElement(locator).getText();
 		return YearMonth.parse(text, formatter);
 	}
 
@@ -123,7 +123,7 @@ public class FlightSearchPage {
 		return true;
 	}
 
-//	-------------- RETURNING SELECTED PAGE-------------
+//	-------------- RETURNING SELECTED DATE-------------
 	public String getSelectedDate() {
 		return driver.findElement(By.xpath("//p[@data-cy='departureDate']")).getText();
 	}
