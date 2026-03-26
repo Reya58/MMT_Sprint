@@ -124,7 +124,10 @@ public class FlightSearchPage {
 	}
 
 //	-------------- RETURNING SELECTED DATE-------------
+<<<<<<< HEAD
 
+=======
+>>>>>>> d30e239 (resolved conflict once more dded runner folder for structure)
 	public String getSelectedDate() {
 		return driver.findElement(By.xpath("//p[@data-cy='departureDate']")).getText();
 	}
