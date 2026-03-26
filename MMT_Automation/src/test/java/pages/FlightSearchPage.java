@@ -5,12 +5,15 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FlightSearchPage {
@@ -37,7 +40,17 @@ public class FlightSearchPage {
 //	@FindBy(xpath = "//a[@data-cy='submit']")
 	private WebElement btn_search;
 
+	@FindBy(xpath = "//input[@id='fromCity']")
+	private WebElement selected_fromCity;
+
+	@FindBy(xpath = "//input[@id='toCity'")
+	private WebElement selected_toCity;
+
+	@FindBy(xpath = "//div[@id='errorMessage']//span[@data-cy='sameCityError']")
+	private WebElement errorMessage;
+
 	WebDriver driver;
+	WebDriverWait wait;
 
 	private YearMonth getMonth(By locator, DateTimeFormatter formatter) {
 		String text = driver.findElement(locator).getText();
@@ -51,20 +64,61 @@ public class FlightSearchPage {
 		});
 	}
 
+	private void dismissCoachmarkIfPresent() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+
+			WebElement coachmark = wait
+					.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(@class,'coachmark')]")));
+			coachmark.click();
+
+		} catch (Exception ignored) {
+			// intentionally ignored
+		}
+	}
+
+	private void closeLoginPopup() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+			WebElement closeBtn = wait
+					.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@data-cy='closeModal']")));
+
+			closeBtn.click();
+
+		} catch (Exception e) {
+			System.out.println("Login popup not present");
+		}
+	}
+
+	private void minimizeBanner() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+			WebElement minimizeBtn = wait
+					.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='minimize']")));
+
+			minimizeBtn.click();
+
+		} catch (Exception e) {
+			System.out.println("Banner minimize not present");
+		}
+	}
+
 //	################# PUBLIC FUNCTIONS ##############################
 
 //	----------CONSTRUCTOR----------
 	public FlightSearchPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 
 //	--------------- SLECTING SPECIFIED DATE----------
 
 	public boolean selectDate(String inputDate) throws InterruptedException {
 		Thread.sleep(1000);
-//		btn_departure_date.click();
-		Thread.sleep(3000);
+
 		// ---------- FORMATTERS ----------
 		DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("EEE MMM dd yyyy");
 		DateTimeFormatter monthFormatter = DateTimeFormatter.ofPattern("MMMM yyyy");
@@ -124,48 +178,76 @@ public class FlightSearchPage {
 	}
 
 //	-------------- RETURNING SELECTED DATE-------------
-<<<<<<< HEAD
 
-=======
->>>>>>> d30e239 (resolved conflict once more dded runner folder for structure)
-	public String getSelectedDate() {
-		return driver.findElement(By.xpath("//p[@data-cy='departureDate']")).getText();
+	public String getSelectedDate() throws InterruptedException {
+		btn_departure_date.click();
+		Thread.sleep(2000);
+		return driver.findElement(By.xpath("//div[@class='DayPicker-Day DayPicker-Day--selected']"))
+				.getAttribute("aria-label");
 	}
 
 	public void setFromCity(String fromCity) throws InterruptedException {
 		btn_frmCity.click();
-		Thread.sleep(15000);
+		Thread.sleep(1000);
 		txt_fromCity.sendKeys(fromCity);
 	}
 
 	public void setToCity(String toCity) throws InterruptedException {
 		btn_toCity.click();
-		Thread.sleep(15000);
+		Thread.sleep(1000);
 		txt_toCity.sendKeys(toCity);
 	}
 
 	public Boolean isSuggestionDisplayed() {
-		return driver.findElement(By.className("react-autosuggest__suggestions-list")).isEnabled();
+
+	    try {
+	        // wait briefly for any suggestion item to appear
+	        wait.until(ExpectedConditions.presenceOfElementLocated(
+	                By.cssSelector(".react-autosuggest__suggestion")
+	        ));
+
+	        // now verify actual visible suggestions
+	        List<WebElement> suggestions = driver.findElements(
+	                By.cssSelector(".react-autosuggest__suggestion")
+	        );
+
+	        return suggestions.size() > 0 && suggestions.get(0).isDisplayed();
+
+	    } catch (Exception e) {
+	        return false;
+	    }
 	}
 
-	public void selectCity(String city) throws InterruptedException {
-		By optionsLocator = By.cssSelector("li[role='option']");
+	public void selectCity(String city) {
+		By option = By.xpath("//span[contains(@class,'revampedCityName') and contains(text(),'" + city + "')]");
 
-		List<WebElement> options = driver.findElements(optionsLocator);
-		Thread.sleep(1500);
-		for (WebElement option : options) {
-			String text = option.getText().trim();
-//			System.out.println(text);
-			if (text.contains(city)) {
-				option.click();
-				return;
-			}
-		}
-
+		wait.until(ExpectedConditions.elementToBeClickable(option)).click();
 	}
 
 	public void search() {
 		btn_search.click();
+	}
+
+	public String getSelectedFromCity() {
+		return selected_fromCity.getAttribute("value");
+	}
+
+	public String getSelectedToCity() {
+		return selected_toCity.getAttribute("value");
+	}
+
+	public Boolean isErrorMessegeDisplayed() {
+		return wait.until(ExpectedConditions.visibilityOf(errorMessage)).isDisplayed();
+	}
+
+	public void clickDate() {
+		btn_departure_date.click();
+	}
+
+	public void handleInterruptions() {
+		closeLoginPopup();
+		minimizeBanner();
+		dismissCoachmarkIfPresent();
 	}
 
 }
