@@ -1,6 +1,7 @@
 /target/
 
 /src/test/java/runner/testing.java
+
 # Eclipse / IDE files
 .project
 .classpath
@@ -25,3 +26,5 @@ bin/
 src/test/java/runner/testing.java
 
 src/test/java/test_pages/
+
+src/test/resources/features/Automated_TestCases_MMT_Villas.xlsx
