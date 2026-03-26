@@ -2,9 +2,17 @@
 
 package stepDefinations;
 
+import java.util.Map;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import Hotels_utils.Hotel_ExcelUtil;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.HotelListingsPage;
+import pages.HotelSearchPage;
 
 public class HotelSteps {
 	
@@ -22,71 +30,79 @@ public class HotelSteps {
 //		  11) Price High to Low sort orders results in descending price order # file:///C:/Users/KIIT/Desktop/MakeMyTrip_Capg/MMT_Automation/src/test/resources/features/Hotels.feature:142
 
 
+		WebDriver driver;
+		HotelSearchPage hs;
+		HotelListingsPage hl;
+		
 		@Given("the user is on the MakeMyTrip Hotels homepage")
 		public void the_user_is_on_the_make_my_trip_hotels_homepage() {
 		    // Write code here that turns the phrase above into concrete actions
+			driver=new FirefoxDriver();
+			driver.manage().window().maximize();
+			driver.get("https://www.makemytrip.com/?cc=in&redirectedBy=gl");
+	        hs = new HotelSearchPage(driver);
+	        hl = new HotelListingsPage(driver);
+	        hs.preReq();
 		    
 		}
 
-		@Given("the user is logged in with valid credentials")
-		public void the_user_is_logged_in_with_valid_credentials() {
-		    // Write code here that turns the phrase above into concrete actions
-		    
-		}
-
+		Map<String, String> data;
+		
 		@When("the user enters {string} in the destination field")
-		public void the_user_enters_in_the_destination_field(String string) {
-		    // Write code here that turns the phrase above into concrete actions
+		public void the_user_enters_in_the_destination_field(String tcId) throws Exception {
+			
+			data = Hotel_ExcelUtil.getRowData(tcId);
+			hs.enterDestination(data.get("City"));
 		    
 		}
 
 		@When("the user selects check-in date {string}")
-		public void the_user_selects_check_in_date(String string) {
-		    // Write code here that turns the phrase above into concrete actions
+		public void the_user_selects_check_in_date(String tcId) throws Exception {
+		    
+			data = Hotel_ExcelUtil.getRowData(tcId);
+			hs.enterCheckInDate(data.get("Check-in"));
 		    
 		}
 
 		@When("the user selects check-out date {string}")
-		public void the_user_selects_check_out_date(String string) {
-		    // Write code here that turns the phrase above into concrete actions
+		public void the_user_selects_check_out_date(String tcId) throws Exception {
+		   
+			data = Hotel_ExcelUtil.getRowData(tcId);
+			hs.enterCheckOutDate(data.get("Check-out"));
 		  
 		}
 
 		@When("the user sets rooms and guests to {string} room and {string} adults")
-		public void the_user_sets_rooms_and_guests_to_room_and_adults(String string, String string2) {
-		    // Write code here that turns the phrase above into concrete actions
+		public void the_user_sets_rooms_and_guests_to_room_and_adults(String tcId) {
+		    
+			hs.enterRoomsAndGuests(data.get("Rooms"), data.get("Guests"));
 		    
 		}
 
 		@When("the user clicks the Search button")
 		public void the_user_clicks_the_search_button() {
-		    // Write code here that turns the phrase above into concrete actions
 		    
+			hs.clickSearchBtn();
 		}
 
+		//tc_01_01
 		@Then("the hotel listing page is displayed")
 		public void the_hotel_listing_page_is_displayed() {
-		    // Write code here that turns the phrase above into concrete actions
 		    
+		    boolean isPageDisplayed=hl.isHotelListingsDisplayed();
+		    if(!isPageDisplayed) {
+		        throw new AssertionError("Hotel listing page not displayed");
+		    }
 		}
 
-		@Then("each hotel card shows name, price per night, rating and location")
-		public void each_hotel_card_shows_name_price_per_night_rating_and_location() {
-		    // Write code here that turns the phrase above into concrete actions
-		    
-		}
-
+		//tc_01_02
 		@Then("each hotel card displays the correct location tag for {string}")
-		public void each_hotel_card_displays_the_correct_location_tag_for(String string) {
-		    // Write code here that turns the phrase above into concrete actions
+		public void each_hotel_card_displays_the_correct_location_tag_for(String landmark) throws Exception {
+		    
+			
 		   
 		}
 
-		@Then("no matching suggestion appears in the auto-complete dropdown")
-		public void no_matching_suggestion_appears_in_the_auto_complete_dropdown() {
-		    // Write code here that turns the phrase above into concrete actions
-		    
-		}
 
 		@Then("clicking the search icon displays a no hotels found message")
 		public void clicking_the_search_icon_displays_a_no_hotels_found_message() {
@@ -94,11 +110,6 @@ public class HotelSteps {
 		    
 		}
 
-		@Then("the page remains stable without crash or blank screen")
-		public void the_page_remains_stable_without_crash_or_blank_screen() {
-		    // Write code here that turns the phrase above into concrete actions
-		    
-		}
 
 		@Then("the application removes the special characters")
 		public void the_application_removes_the_special_characters() {

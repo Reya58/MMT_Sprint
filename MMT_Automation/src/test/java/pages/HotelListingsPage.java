@@ -34,6 +34,17 @@ public class HotelListingsPage {
 	
 	@FindBy(xpath ="//span[text()='Price (Low to High)']")
 	   private WebElement priceLToH;
+	
+	@FindBy(xpath="//p[@class='font24 clampLine1Container']")
+		private WebElement listingsPageVal;
+	
+	
+	public WebElement getListingsPageVal()
+	{
+		return listingsPageVal;
+	}
+	
+	
 	public WebDriver getDriver() {
 		return driver;
 	}
@@ -100,7 +111,12 @@ public class HotelListingsPage {
 	
 	//---------------------------------------------------------------------------------
 	//Actions
-	
+	public boolean isHotelListingsDisplayed()
+	{
+		if(getListingsPageVal().isDisplayed())
+			return true;
+		return false;
+	}
 	//TS:3
 	public void filterBy5Stars()
 	{

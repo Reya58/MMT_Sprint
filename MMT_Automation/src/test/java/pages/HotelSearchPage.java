@@ -157,6 +157,37 @@ public class HotelSearchPage {
 			getChatbotCloseBtn().click();
 			getHotelsSection().click();
 		}
+		
+		public void enterDestination(String dest) throws InterruptedException
+		{
+			getDestinationField().click();
+			getDestination().sendKeys(dest);
+			Thread.sleep(3000);
+			getDestination().sendKeys(Keys.ARROW_DOWN);
+			Thread.sleep(3000);
+			getDestination().sendKeys(Keys.ENTER);
+			Thread.sleep(2000);
+		}
+		
+		public void enterCheckInDate(String date)
+		{
+			getCheckInDate().click();
+		}
+		
+		public void enterCheckOutDate(String date)
+		{
+			getCheckOutDate().click();
+		}
+		
+		public void enterRoomsAndGuests(String room, String adults)
+		{
+			getRoomsAndGuests().click();
+		}
+		
+		public void clickSearchBtn()
+		{
+			getSearchBtn().click();
+		}
 		//TS: 1
 		public void basicHotelSearch(String dest) throws InterruptedException
 		{

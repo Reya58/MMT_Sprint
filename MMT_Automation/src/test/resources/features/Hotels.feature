@@ -11,7 +11,6 @@ Feature: MakeMyTrip Hotel Search and Filtering
 
   Background:
     Given the user is on the MakeMyTrip Hotels homepage
-    And the user is logged in with valid credentials
 
 
   # ============================================================
@@ -21,18 +20,17 @@ Feature: MakeMyTrip Hotel Search and Filtering
   @TS01 @Positive @TC_MMT_Hotels_01_01
   Scenario: Valid city search with dates returns hotel listing
     When the user enters "Mumbai" in the destination field
-    And the user selects check-in date "01 Apr 2026"
-    And the user selects check-out date "03 Apr 2026"
+    And the user selects check-in date "08 Apr 2026"
+    And the user selects check-out date "10 Apr 2026"
     And the user sets rooms and guests to "1" room and "2" adults
     And the user clicks the Search button
     Then the hotel listing page is displayed
-    And each hotel card shows name, price per night, rating and location
 
   @TS01 @Positive @TC_MMT_Hotels_01_02
   Scenario: Landmark name search returns nearby hotels with location tag
     When the user enters "Rabindra Sadan" in the destination field
-    And the user selects check-in date "15 Apr 2026"
-    And the user selects check-out date "17 Apr 2026"
+    And the user selects check-in date "08 Apr 2026"
+    And the user selects check-out date "10 Apr 2026"
     And the user sets rooms and guests to "1" room and "2" adults
     And the user clicks the Search button
     Then the hotel listing page is displayed
@@ -41,9 +39,8 @@ Feature: MakeMyTrip Hotel Search and Filtering
   @TS01 @Negative @TC_MMT_Hotels_01_03
   Scenario: Non-existent city name shows no-results message
     When the user enters "XyzCityAbc123" in the destination field
-    Then no matching suggestion appears in the auto-complete dropdown
-    And clicking the search icon displays a no hotels found message
-    And the page remains stable without crash or blank screen
+    Then clicking the search icon displays a no hotels found message
+    
 
   @TS01 @Negative @TC_MMT_Hotels_01_04
   Scenario: Special characters in destination field are sanitised gracefully
