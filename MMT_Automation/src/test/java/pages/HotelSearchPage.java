@@ -25,7 +25,7 @@ public class HotelSearchPage {
 		@FindBy(xpath ="//span[@class='commonModal__close']")
 		   private WebElement loginCloseBtn;
 		
-		@FindBy(xpath ="//img[@src=\\\"https://jsak.mmtcdn.com/pwa/platform-myra-ui/static/sub_icons/close-icon.png\\\"]")
+		@FindBy(xpath ="(//div[@class='tp-dt-header-icon'])[2]")
 		   private WebElement chatbotCloseBtn;
 		
 		@FindBy(xpath ="(//span[text()='Hotels'])[1]")
@@ -151,9 +151,10 @@ public class HotelSearchPage {
 		//Actions
 		
 		//Pre-req
-		public void preReq()
+		public void preReq() throws InterruptedException
 		{
 			getLoginCloseBtn().click();
+			Thread.sleep(3000);
 			getChatbotCloseBtn().click();
 			getHotelsSection().click();
 		}
