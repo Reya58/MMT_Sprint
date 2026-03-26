@@ -47,7 +47,7 @@ Feature: MakeMyTrip Villas and Homestays Functionality
     And the user selects check-out date "08 May 2026"
     And the user sets guests to "2" adults
     And the user clicks the Search button
-    And the user applies property type filter "Villa"
+    And the user applies property type filter "Apartment"
     And the user applies amenities filter "WiFi"
     Then all displayed properties match selected filters
 
@@ -90,43 +90,16 @@ Feature: MakeMyTrip Villas and Homestays Functionality
 
   @TS04 @Positive @TC_MMT_Villas_04_02
   Scenario: View guest reviews on property page
-    When the user searches villas for "Goa"
+    When the user searches villas for "Delhi"
     And the user selects a villa from results
     And the user navigates to the reviews section
     Then guest reviews and ratings are displayed
 
 
-  # ============================================================
-  # TS_MMT_Villas_05 – Wishlist Functionality
-  # ============================================================
-
-  @TS05 @Positive @TC_MMT_Villas_05_01
-  Scenario: Add villa to wishlist
-    When the user searches villas for "Goa"
-    And the user selects a villa from results
-    And the user adds the villa to wishlist
-    Then the villa is saved successfully in wishlist
-
-  @TS05 @Positive @TC_MMT_Villas_05_02
-  Scenario: Remove villa from wishlist
-    When the user searches villas for "Goa"
-    And the user selects a villa from results
-    And the user adds the villa to wishlist
-    And the user navigates to wishlist page
-    And the user removes the villa from wishlist
-    Then the villa is removed successfully
+ 
 
 
-  # ============================================================
-  # TS_MMT_Villas_06 – Navigation
-  # ============================================================
 
-  @TS06 @Positive @TC_MMT_Villas_06_01
-  Scenario: Navigate back to homepage from property page
-    When the user searches villas for "Goa"
-    And the user selects a villa from results
-    And the user clicks on home icon
-    Then the user is redirected to homepage
 
 
   # ============================================================

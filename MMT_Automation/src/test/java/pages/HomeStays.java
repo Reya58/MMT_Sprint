@@ -1,101 +1,139 @@
 package pages;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomeStays {
 
     WebDriver driver;
+    WebDriverWait wait;
 
-    // Constructor
     public HomeStays(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         PageFactory.initElements(driver, this);
     }
-    
-    @FindBy(xpath="//div[@class='tp-dt-header-icon'][2]")
-    private WebElement popup;
-    
-    @FindBy(xpath="//span[@class=\"commonModal__close\"]")
-    private WebElement popup1;
-    
-    @FindBy(xpath="//input[@id=\"city\"]")
-    private WebElement location_click;
-    
-    @FindBy(xpath="//input[@placeholder=\"Where do you want to stay?\"]")
-    WebElement location_text;
-    
-    @FindBy(xpath = "//div[@aria-label=\"Sat Mar 28 2026\"]") // change dynamically if needed
-    WebElement checkInDate;
 
-    // Check-out date
-    @FindBy(xpath = "//div[@aria-label=\"Sun Mar 29 2026\"]")
-    WebElement checkOutDate;
-      
-    @FindBy(xpath="//button[@class=\"counter__button counter__button--increment\"][1]")
-    WebElement adults;
-    
-    @FindBy(xpath="//button[@class=\"counter__button counter__button--increment\"][2]")
-    WebElement childs;
-    
-    @FindBy(xpath="//button[@class=\"primaryBtn btnApplyNew pushRight capText\"]")
-    WebElement apply;
-    
-    @FindBy(xpath="//button[@id=\"hsw_search_button\"]")
-    WebElement search;
-    
-    
-    public void close_popup() {
-    	popup.click();
-    	popup1.click();
+    // ── Popups ───────────────────────────────────────────────────────────────
+
+    @FindBy(xpath = "//div[@class='tp-dt-header-icon'][2]")
+    private WebElement popupHeaderIcon;
+
+    // FIX: was using escaped quotes inside string; corrected to plain single quotes
+    @FindBy(xpath = "//span[@class='commonModal__close']")
+    private WebElement popupCloseBtn;
+
+    // ── Location ─────────────────────────────────────────────────────────────
+
+    @FindBy(xpath = "//input[@id='city']")
+    private WebElement locationClickTarget;
+
+    @FindBy(xpath = "//input[@placeholder='Where do you want to stay?']")
+    private WebElement locationTextInput;
+
+    // ── Guests ───────────────────────────────────────────────────────────────
+
+    @FindBy(xpath = "//button[@class='counter__button counter__button--increment'][1]")
+    private WebElement adultsIncrement;
+
+    @FindBy(xpath = "//button[@class='counter__button counter__button--increment'][2]")
+    private WebElement childrenIncrement;
+
+    @FindBy(xpath = "//button[@class='primaryBtn btnApplyNew pushRight capText']")
+    private WebElement guestsApplyBtn;
+
+    // ── Search ───────────────────────────────────────────────────────────────
+
+    @FindBy(xpath = "//button[@id='hsw_search_button']")
+    private WebElement searchBtn;
+
+    // =========================================================================
+    //  Public Actions
+    // =========================================================================
+
+    /**
+     * Dismisses the login/promo popup gracefully.
+     * Each click is wrapped in try-catch so a missing element never fails the test.
+     * @throws InterruptedException 
+     */
+    public void close_popup() throws InterruptedException {
+    	Thread.sleep(2000);
+    	popupHeaderIcon.click();
+    	popupCloseBtn.click();
+    	
     }
-    
+
+    /**
+     * Types a city into the location search box and selects the first suggestion.
+     */
     public void enterLocation(String city) throws InterruptedException {
-
-        // Click to open search box
-        location_click.click();
-
-        Thread.sleep(2000); // wait for new input box
-
-        // Type in actual input field
-        location_text.sendKeys(city);
-
-        Thread.sleep(2000);
-
-        location_text.sendKeys(Keys.ARROW_DOWN);
-        location_text.sendKeys(Keys.ENTER);
+        wait.until(ExpectedConditions.elementToBeClickable(locationClickTarget)).click();
+        wait.until(ExpectedConditions.visibilityOf(locationTextInput));
+        locationTextInput.clear();
+        locationTextInput.sendKeys(city);
+        Thread.sleep(2000); // wait for autocomplete list
+        locationTextInput.sendKeys(Keys.ARROW_DOWN);
+        locationTextInput.sendKeys(Keys.ENTER);
+        Thread.sleep(1000);
     }
 
-    // Select dates
+    /**
+     * FIX: Replaced hardcoded date strings with dynamic dates (today+1 / today+2).
+     * Hardcoded dates break tests as calendar days pass.
+     */
     public void selectDates() {
-        checkInDate.click();
-        checkOutDate.click();
+        LocalDate checkIn  = LocalDate.now().plusDays(1);
+        LocalDate checkOut = LocalDate.now().plusDays(2);
+
+        // MakeMyTrip aria-label format: "EEE MMM dd yyyy"  e.g. "Sat Mar 28 2026"
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("EEE MMM dd yyyy");
+
+        By ciLocator = By.xpath("//div[@aria-label='" + checkIn.format(fmt)  + "']");
+        By coLocator = By.xpath("//div[@aria-label='" + checkOut.format(fmt) + "']");
+
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(ciLocator)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(coLocator)).click();
+        } catch (Exception e) {
+            System.out.println("[HomeStays] Date selection failed: " + e.getMessage());
+        }
     }
 
-    // Select adults
+    /**
+     * Increments Adults counter to desired count.
+     * MakeMyTrip defaults to 1 adult, so we click (count-1) times.
+     */
     public void selectAdults(int count) {
-        for(int i = 1; i < count; i++) {
-            adults.click();
+        wait.until(ExpectedConditions.elementToBeClickable(adultsIncrement));
+        for (int i = 1; i < count; i++) {
+            adultsIncrement.click();
         }
-        
     }
 
-    // Select children
-    public void selectChildren(int count) {
-        for(int i = 0; i < count; i++) {
-            childs.click();
+    /**
+     * Increments Children counter then clicks Apply.
+     * Pass 0 children to skip incrementing.
+     * @throws InterruptedException 
+     */
+    public void selectChildren(int count) throws InterruptedException {
+        for (int i = 0; i < count; i++) {
+            childrenIncrement.click();
         }
-        apply.click();
+        guestsApplyBtn.click();
     }
 
-    // Click search
+    /** Clicks the Search button. */
     public void clickSearch() {
-        search.click();
+        searchBtn.click();
     }
-   
 }

@@ -6,8 +6,8 @@
       <class name="HomestaysRunner.RunnerIo">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="3 4"/>
           <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="1 3 4 7"/>
         </methods>
       </class> <!-- HomestaysRunner.RunnerIo -->
     </classes>

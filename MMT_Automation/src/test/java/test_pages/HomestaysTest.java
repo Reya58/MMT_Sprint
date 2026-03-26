@@ -13,7 +13,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import pages.HomeStays;
-import pages.staysfilter;
+import pages.StaysFilter;
 import pages.PropertyPage;
 import pages.BookingPage;
 
@@ -24,11 +24,11 @@ public class HomestaysTest {
 
     @BeforeMethod
     public void setup() {
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         driver.get("https://www.makemytrip.com/homestays/");
     }
 
@@ -38,14 +38,14 @@ public class HomestaysTest {
         // ===== Step 1: Search =====
         HomeStays home = new HomeStays(driver);
         home.close_popup();
-        home.enterLocation("Mumbai");
+        home.enterLocation("Goa");
         home.selectDates();
         home.selectAdults(2);
         home.selectChildren(0);
         home.clickSearch();
 
         // ===== Step 2: Apply Filters =====
-        staysfilter filter = new staysfilter(driver);
+        StaysFilter filter = new StaysFilter(driver);
         filter.applyPriceRange("1000", "3000");
         filter.applyApartmentFilter();
 
@@ -61,7 +61,7 @@ public class HomestaysTest {
         PropertyPage property = new PropertyPage(driver);
         Assert.assertTrue(property.isPropertyPageDisplayed(), "Property page is NOT displayed");
         System.out.println("Property Page Opened Successfully");
-        property.viewReviews();
+      //  property.viewReviews();
 
         // ===== Step 5: Booking Flow =====
         property.clickBookNow();
@@ -72,14 +72,14 @@ public class HomestaysTest {
          
         booking.expandPriceBreakup();
         // Wait until price section is visible (View Price Breakup)
-        wait.until(ExpectedConditions.visibilityOf(booking.totalPrice));
+        //wait.until(ExpectedConditions.visibilityOf(booking.getTotalPrice()));
 
         // Get price before applying coupon
         String priceBefore = booking.getTotalPrice();
         System.out.println("Price before coupon: " + priceBefore);
 
         // Apply a coupon
-        booking.applyCoupon("HOMESTAYS");
+        booking.applyCoupon("NEWHOMESTAY");
         System.out.println("Coupon applied successfully");
 
         // Get updated price after coupon

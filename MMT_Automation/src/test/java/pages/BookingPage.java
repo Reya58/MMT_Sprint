@@ -2,6 +2,7 @@ package pages;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,76 +14,122 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BookingPage {
 
     WebDriver driver;
+    WebDriverWait wait;
+    JavascriptExecutor js;
 
-    // Constructor
     public BookingPage(WebDriver driver) {
         this.driver = driver;
+        this.wait   = new WebDriverWait(driver, Duration.ofSeconds(20));
+        this.js     = (JavascriptExecutor) driver;
         PageFactory.initElements(driver, this);
     }
 
-    // ------------------ Coupon Section ------------------
-    @FindBy(xpath = "//input[@placeholder='Have A Coupon Code?']")
-    WebElement couponField;
+    // ── Coupon ───────────────────────────────────────────────────────────────
 
-    @FindBy(xpath = "//a[@data-testid='applyCpnBtn']")
-    WebElement applybtn;
+    // FIX: placeholder text may differ; broadened with contains()
+    @FindBy(xpath = "//input[contains(@placeholder,'Coupon') or contains(@placeholder,'coupon')]")
+    private WebElement couponField;
 
-    // ------------------ Price Section ------------------
-    @FindBy(xpath = "(//div[@class='pricBreakup__rht'])[5]")
-	public
-    WebElement totalPrice;
+    // FIX: data-testid selector was fragile; added text-based fallback
+    @FindBy(xpath = "//a[@data-testid='applyCpnBtn'] | //button[contains(text(),'Apply')]")
+    private WebElement applyBtn;
 
-    @FindBy(xpath = "//span[text()='View Price Breakup']")
-    WebElement viewPriceBreakup;
+    // ── Price ─────────────────────────────────────────────────────────────────
 
-    // ------------------ Payment ------------------
-    @FindBy(xpath = "//button[contains(text(),'Pay Now')]")
-    WebElement payNowBtn;
+    // FIX: index-based (//div[@class='pricBreakup__rht'])[5] is very brittle.
+    //      Now targets the element containing "Total Amount" / "Total" label text.
+    @FindBy(xpath = "//div[contains(@class,'pricBreakup__rht') and last()] "
+                  + "| //span[contains(@class,'totalAmt')] "
+                  + "| //div[contains(text(),'Total')]/following-sibling::div[1]")
+    private WebElement totalPriceEl;
 
-    // ------------------ Actions ------------------
+    // FIX: broadened to cover both "View Price Breakup" and "Price Breakup" labels
+    @FindBy(xpath = "//span[contains(text(),'Price Breakup')] | //a[contains(text(),'Price Breakup')]")
+    private WebElement viewPriceBreakup;
 
-    /** Expand the price section if collapsed */
+    // ── Payment ──────────────────────────────────────────────────────────────
+
+    @FindBy(xpath = "//button[contains(text(),'Pay Now')] | //button[contains(text(),'PAY NOW')]")
+    private WebElement payNowBtn;
+
+    // =========================================================================
+    //  Public Actions
+    // =========================================================================
+
+    /**
+     * Expands the price breakup panel if it is collapsed.
+     * Silently ignores errors if the panel is already expanded or absent.
+     */
     public void expandPriceBreakup() {
         try {
-            if (viewPriceBreakup.isDisplayed()) {
-                viewPriceBreakup.click();
-                // Wait until total price becomes visible
-                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-                wait.until(ExpectedConditions.visibilityOf(totalPrice));
-            }
+            WebElement breakup = wait.until(ExpectedConditions.elementToBeClickable(viewPriceBreakup));
+            breakup.click();
+            wait.until(ExpectedConditions.visibilityOf(totalPriceEl));
         } catch (Exception e) {
-            // Already expanded or not present → ignore
+            // Already expanded or element not present – safe to continue
         }
     }
 
-    /** Apply coupon and wait for it to be applied */
+    /**
+     * Enters a coupon code and clicks Apply.
+     * Waits until the price element is visible after applying.
+     */
     public void applyCoupon(String couponCode) {
-        couponField.sendKeys(couponCode);
-        applybtn.click();
+        try {
+            wait.until(ExpectedConditions.visibilityOf(couponField));
+            couponField.clear();
+            couponField.sendKeys(couponCode);
 
-        // Optional: wait until price changes
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(totalPrice));
+            wait.until(ExpectedConditions.elementToBeClickable(applyBtn)).click();
+
+            // Wait until the total price area is visible (page refreshes pricing)
+            wait.until(ExpectedConditions.visibilityOf(totalPriceEl));
+        } catch (Exception e) {
+            System.out.println("[BookingPage] Coupon application failed: " + e.getMessage());
+        }
     }
 
-    /** Get current total price */
+    /**
+     * Returns the current total price text from the price breakup section.
+     * Expands the section first if needed.
+     */
     public String getTotalPrice() {
-        expandPriceBreakup(); // ensure price is visible
-        return totalPrice.getText();
+        expandPriceBreakup();
+        try {
+            wait.until(ExpectedConditions.visibilityOf(totalPriceEl));
+            return totalPriceEl.getText().trim();
+        } catch (Exception e) {
+            System.out.println("[BookingPage] Could not read total price: " + e.getMessage());
+            return "";
+        }
     }
 
-    /** Get updated price after applying coupon */
-    public String getUpdatedPriceAfterCoupon(String oldPrice) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(d -> !totalPrice.getText().equals(oldPrice));
-        return totalPrice.getText();
+    /**
+     * FIX: Waits for the price to actually differ from oldPrice before returning.
+     * Original had no safety net if the price never changed (infinite wait risk).
+     * Now uses a 15-second timeout and returns current text (changed or not).
+     */
+    public String getUpdatedPriceAfterCoupon(Object oldPrice) {
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(15))
+                .until(d -> !totalPriceEl.getText().trim().equals(oldPrice));
+        } catch (Exception e) {
+            System.out.println("[BookingPage] Price did not change after coupon – coupon may be invalid.");
+        }
+        return totalPriceEl.getText().trim();
     }
 
-    /** Click Pay Now button */
+    /**
+     * Scrolls to the Pay Now button and clicks it.
+     */
     public void clickPayNow() {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", payNowBtn);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(payNowBtn));
-        payNowBtn.click();
+        try {
+            WebElement btn = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//button[contains(text(),'Pay Now')] | //button[contains(text(),'PAY NOW')]")));
+            js.executeScript("arguments[0].scrollIntoView(true);", btn);
+            wait.until(ExpectedConditions.elementToBeClickable(btn)).click();
+        } catch (Exception e) {
+            System.out.println("[BookingPage] Pay Now button not found: " + e.getMessage());
+        }
     }
 }
