@@ -1,15 +1,10 @@
-
-/target/
-
-/src/test/java/runner/testing.java
-
 # Eclipse / IDE files
 .project
 .classpath
 .settings/
 .metadata/
 
-# IntelliJ (if anyone uses)
+# IntelliJ
 .idea/
 *.iml
 
@@ -23,12 +18,18 @@ target/
 .DS_Store
 Thumbs.db
 
+# Build / bin
 bin/
-src/test/java/runner/testing.java
 
+# Custom ignores
+src/test/java/runner/testing.java
 src/test/java/test_pages/
 
+# Test data (if should not be tracked)
 src/test/resources/features/Automated_TestCases_MMT_Villas.xlsx
+
+# Reports
 test-output/
 
-/testng.xml
+# TestNG
+testng.xml
