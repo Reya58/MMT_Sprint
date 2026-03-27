@@ -1,4 +1,4 @@
-package homestay_utils;
+package utils.homestay_utils;
 
 import org.testng.annotations.DataProvider;
 

@@ -1,4 +1,4 @@
-package HomestaysRunner;
+package runner;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -10,7 +10,7 @@ import stepDefinations.Hooks;
     features = "src/test/resources/features/homestays.feature",
     glue = "stepDefinations"
 )
-public class RunnerIo extends AbstractTestNGCucumberTests {
+public class HomestaysRunnerIo extends AbstractTestNGCucumberTests {
 
     @BeforeClass
     @Parameters("browser")
