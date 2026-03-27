@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -35,7 +36,7 @@ public class PropertyPage {
     private WebElement wishlistBtn;
 
     // FIX: "BOOK" text-match is case-sensitive and may vary; using contains + case variants
-    @FindBy(xpath = "//button[@class=\"appBtn filled large bkngOption__cta  \"]")
+    @FindBy(xpath ="//button[@class=\"appBtn filled large bkngOption__cta fullWidth \"]")
     private WebElement bookNowBtn;
 
     // ── Review locator (used dynamically) ────────────────────────────────────
@@ -92,30 +93,18 @@ public class PropertyPage {
      * FIX: Replaced doubleClick (which opened two tabs) with a single JS click on
      * the Book Now button. Also waits for a new tab to open and switches to it.
      */
-    public void clickBookNow() throws InterruptedException {
+    public void clickBookNow() {
         try {
             WebElement btn = wait.until(ExpectedConditions.elementToBeClickable(bookNowBtn));
+
             js.executeScript("arguments[0].scrollIntoView({block:'center'});", btn);
-            String parentWindow = driver.getWindowHandle();
 
-            // Single JS click – double-click previously caused two booking tabs to open
-            js.executeScript("arguments[0].click();", btn);
-            System.out.println("[PropertyPage] Clicked Book Now");
+            btn.click();
 
-            // Switch to newly opened booking tab if one appears
-            try {
-                wait.until(d -> d.getWindowHandles().size() > 1);
-                for (String window : driver.getWindowHandles()) {
-                    if (!window.equals(parentWindow)) {
-                        driver.switchTo().window(window);
-                        break;
-                    }
-                }
-            } catch (Exception e) {
-                System.out.println("[PropertyPage] No new tab opened – staying on current window.");
-            }
+            System.out.println("[PropertyPage] Book Now clicked");
+
         } catch (Exception e) {
-            System.out.println("[PropertyPage] Book Now button not found: " + e.getMessage());
+            System.out.println("[PropertyPage] Click failed: " + e.getMessage());
         }
     }
 }

@@ -77,7 +77,8 @@ public class HomeStays {
      * Types a city into the location search box and selects the first suggestion.
      */
     public void enterLocation(String city) throws InterruptedException {
-        wait.until(ExpectedConditions.elementToBeClickable(locationClickTarget)).click();
+    	System.out.println("Hitingg");
+       wait.until(ExpectedConditions.elementToBeClickable(locationClickTarget)).click();
         wait.until(ExpectedConditions.visibilityOf(locationTextInput));
         locationTextInput.clear();
         locationTextInput.sendKeys(city);
@@ -114,6 +115,7 @@ public class HomeStays {
      * MakeMyTrip defaults to 1 adult, so we click (count-1) times.
      */
     public void selectAdults(int count) {
+    	count-=2;
         wait.until(ExpectedConditions.elementToBeClickable(adultsIncrement));
         for (int i = 1; i < count; i++) {
             adultsIncrement.click();
@@ -126,6 +128,7 @@ public class HomeStays {
      * @throws InterruptedException 
      */
     public void selectChildren(int count) throws InterruptedException {
+    	
         for (int i = 0; i < count; i++) {
             childrenIncrement.click();
         }

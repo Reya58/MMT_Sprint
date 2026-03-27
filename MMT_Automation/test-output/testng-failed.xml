@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="3" parallel="tests" name="Failed suite [MMT_Parallel_Suite]">
-  <test thread-count="3" parallel="tests" name="ChromeTest(failed)">
+<suite thread-count="2" parallel="tests" name="Failed suite [MMT_Parallel_Suite]">
+  <test thread-count="2" parallel="tests" name="FirefoxTest(failed)">
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="HomestaysRunner.RunnerIo">
+      <class name="runner.HomestaysRunnerIo">
         <methods>
-          <include name="setUp"/>
           <include name="setUpClass"/>
+          <include name="setBrowserPerfernce"/>
+          <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="1 2 3 4 5 6 7"/>
         </methods>
-      </class> <!-- HomestaysRunner.RunnerIo -->
+      </class> <!-- runner.HomestaysRunnerIo -->
     </classes>
-  </test> <!-- ChromeTest(failed) -->
+  </test> <!-- FirefoxTest(failed) -->
 </suite> <!-- Failed suite [MMT_Parallel_Suite] -->

@@ -26,7 +26,7 @@ public class StaysFilter {
     );
 
     private static final By HOTEL_PRICE_LOCATOR = By.xpath(
-        "//div[contains(@class,'price')] | //span[contains(@class,'actualPrice')]"
+        "//p[@id=\"hlistpg_hotel_shown_price\"]"
     );
 
     public StaysFilter(WebDriver driver) {
@@ -129,6 +129,7 @@ public class StaysFilter {
      */
     public boolean isSortedLowToHigh() {
         List<Integer> prices = getHotelPrices();
+        System.out.println(prices);
         for (int i = 0; i < prices.size() - 1; i++) {
             if (prices.get(i) > prices.get(i+1)) return false;
         }

@@ -2,32 +2,46 @@ package utils.homestay_utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+//import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import java.time.Duration;
 
 public class DriverFactory {
 
-    public static WebDriver getDriver(String browser) {
-        WebDriver driver = null;
+    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    private static ThreadLocal<String> browserName = new ThreadLocal<>();
+    
+    public static void initDriver() {
+    	
+    	String browser = browserName.get();
 
-        switch (browser.toLowerCase()) {
-            case "chrome":
-                driver = new ChromeDriver();
-                break;
-            case "firefox":
-                driver = new FirefoxDriver();
-                break;
-            // You can add Edge, Safari, etc. later
-            default:
-                System.out.println("Browser not recognized, defaulting to Chrome.");
-                driver = new FirefoxDriver();
+        if (browser.equalsIgnoreCase("chrome")) {
+            driver.set(new ChromeDriver());
+
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            driver.set(new FirefoxDriver());
+
+        } else if (browser.equalsIgnoreCase("edge")) {
+            driver.set(new EdgeDriver());
+
+        } else {
+            throw new RuntimeException("Invalid browser: " + browser);
         }
 
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+//        driver.get().manage().window().maximize();
+    }
+    public static void setBrowser(String browser) {
+        browserName.set(browser);
+    }
 
-        return driver;
+    public static WebDriver getDriver() {
+        return driver.get();
+    }
+
+    public static void quitDriver() {
+        if (driver.get() != null) {
+            driver.get().quit();
+            driver.remove();
+        }
     }
 }

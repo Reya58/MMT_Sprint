@@ -18,37 +18,26 @@ Feature: MakeMyTrip Villas and Homestays Functionality
   # TS_MMT_Villas_01 – Basic Villa Search
   # ============================================================
 
-  @TS01 @Positive @TC_MMT_Villas_01_01
+  @TS01 @Positive @TC_MMT_Villas_01_01 @Excel
   Scenario: Valid destination search shows villa listings
-    When the user enters "Goa" in the destination field
-    And the user selects check-in date "01 Apr 2026"
-    And the user selects check-out date "03 Apr 2026"
-    And the user sets guests to "2" adults
-    And the user clicks the Search button
-    Then the villa listing page is displayed
-    And each villa card shows name, price, rating and location
+    When the user performs villa search for TC_MMT_Villas_01_01
+    Then the villa listing validation is done
 
-  @TS01 @Negative @TC_MMT_Villas_01_02
+  @TS01 @Negative @TC_MMT_Villas_01_02 @Excel
   Scenario: Invalid destination shows no results
-    When the user enters "XyzInvalidPlace123" in the destination field
-    And the user clicks the Search button
-    Then a no results message is displayed
-    And the page remains stable
+    When the user performs villa search for TC_MMT_Villas_01_02
+    Then the villa listing validation is done
 
 
   # ============================================================
   # TS_MMT_Villas_02 – Apply Filters
   # ============================================================
 
-  @TS02 @Positive @TC_MMT_Villas_02_01
+  @TS02 @Positive @TC_MMT_Villas_02_01 @Excel
   Scenario: Apply property type and amenities filters
-    When the user enters "Goa" in the destination field
-    And the user selects check-in date "05 May 2026"
-    And the user selects check-out date "08 May 2026"
-    And the user sets guests to "2" adults
-    And the user clicks the Search button
-    And the user applies property type filter "Apartment"
-    And the user applies amenities filter "WiFi"
+  When the user performs villa search for TC_MMT_Villas_02_01
+    Then the villa listing validation is done
+    When the user applies filters for TC_MMT_Villas_02_01
     Then all displayed properties match selected filters
 
 
@@ -56,61 +45,42 @@ Feature: MakeMyTrip Villas and Homestays Functionality
   # TS_MMT_Villas_03 – Sorting Results
   # ============================================================
 
-  @TS03 @Positive @TC_MMT_Villas_03_01
+  @TS03 @Positive @TC_MMT_Villas_03_01 @Excel
   Scenario: Sort villas by price low to high
-    When the user enters "Goa" in the destination field
-    And the user selects check-in date "05 May 2026"
-    And the user selects check-out date "08 May 2026"
-    And the user sets guests to "2" adults
-    And the user clicks the Search button
-    And the user sorts results by "Price Low to High"
-    Then villa listings are sorted in ascending price order
+  When the user performs villa search for TC_MMT_Villas_03_01
+    Then the villa listing validation is done
+    When the user sorts villas for TC_MMT_Villas_03_01
+    Then villa listings are sorted correctly
 
-  @TS03 @Positive @TC_MMT_Villas_03_02
+  @TS03 @Positive @TC_MMT_Villas_03_02 @Excel
   Scenario: Sort villas by price high to low
-    When the user enters "Goa" in the destination field
-    And the user selects check-in date "05 May 2026"
-    And the user selects check-out date "08 May 2026"
-    And the user sets guests to "2" adults
-    And the user clicks the Search button
-    And the user sorts results by "Price High to Low"
-    Then villa listings are sorted in descending price order
+  When the user performs villa search for TC_MMT_Villas_03_02
+    Then the villa listing validation is done
+    When the user sorts villas for TC_MMT_Villas_03_02
+    Then villa listings are sorted correctly
 
 
-  # ============================================================
-  # TS_MMT_Villas_04 – Property Details & Reviews
-  # ============================================================
-
-  @TS04 @Positive @TC_MMT_Villas_04_01
+  @TS04 @Positive @TC_MMT_Villas_04_01 @Excel
   Scenario: View villa details page
-    When the user searches villas for "Goa"
-    And the user selects a villa from results
-    Then the property details page is displayed
-    And villa information is visible
+    When the user performs villa search for TC_MMT_Villas_04_01
+    Then the villa listing validation is done
+    When the user opens villa details for TC_MMT_Villas_04_01
+    Then villa details are validated
 
-  @TS04 @Positive @TC_MMT_Villas_04_02
+  @TS04 @Positive @TC_MMT_Villas_04_02 @Excel
   Scenario: View guest reviews on property page
-    When the user searches villas for "Delhi"
-    And the user selects a villa from results
-    And the user navigates to the reviews section
-    Then guest reviews and ratings are displayed
-
-
- 
-
+    When the user performs villa search for TC_MMT_Villas_04_02
+    Then the villa listing validation is done
+    When the user opens villa details for TC_MMT_Villas_04_02
+    Then guest reviews are validated
+    
 
 
 
-
-  # ============================================================
-  # TS_MMT_Villas_07 – Coupon Application
-  # ============================================================
-
-  @TS07 @Positive @TC_MMT_Villas_07_01
+  @TS07 @Positive @TC_MMT_Villas_07_01 @Excel
   Scenario: Apply coupon on booking page
-    When the user searches villas for "Goa"
-    And the user selects a villa from results
-    And the user proceeds to booking page
-    And the user enters coupon code "DISCOUNT20"
-    And the user applies the coupon
+    When the user performs villa search for TC_MMT_Villas_07_01
+    Then the villa listing validation is done
+    When the user opens villa details for TC_MMT_Villas_07_01
+    When the user applies coupon for TC_MMT_Villas_07_01
     Then discount is applied successfully

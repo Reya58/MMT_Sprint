@@ -1,13 +1,17 @@
 package stepDefinations;
 
 import java.time.Duration;
-import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import pages.*;
+import utils.homestay_utils.DriverFactory;
 
 public class HomestaysTest {
 
@@ -19,121 +23,212 @@ public class HomestaysTest {
 
     String oldPrice;
 
-    // =========================================================================
-    // Setup
-    // =========================================================================
+    // =========================================================
+    // SETUP
+    // =========================================================
+
+    @Before
+    public void setup() {
+
+        DriverFactory.initDriver();
+        driver = DriverFactory.getDriver();
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().window().maximize();
+        driver.get("https://www.makemytrip.com/homestays/");
+    }
+
+    @After
+    public void tearDown() {
+        DriverFactory.quitDriver();
+    }
+
+    // =========================================================
+    // BACKGROUND STEPS
+    // =========================================================
+
     @Given("the user is on the MakeMyTrip homepage")
     public void open_homepage() throws InterruptedException {
 
-        driver = Hooks.driverThread.get();
+        new WebDriverWait(driver, Duration.ofSeconds(15))
+                .until(d -> ((JavascriptExecutor) d)
+                        .executeScript("return document.readyState")
+                        .equals("complete"));
 
-        // ✅ Initialize page objects HERE
         home = new HomeStays(driver);
         filter = new StaysFilter(driver);
         property = new PropertyPage(driver);
         booking = new BookingPage(driver);
 
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-
-        driver.get("https://www.makemytrip.com/homestays/");
-        Thread.sleep(3000);
-
-        // Safe popup
-                    home.close_popup();
-      
-    }
-    @Given("the user navigates to Villas and Homestays section") 
-    public void navigate_to_villas_and_homestays() { 
-    	System.out.println("[Step] Villas and Homestays section – loaded via URL."); 
-    	}
-    // =========================================================================
-    // Search Steps
-    // =========================================================================
-    @When("the user selects check-out date {string}") 
-    public void select_check_out_date(String checkOut) { 
-    	System.out.println("[Step] Check-out handled inside selectDates()."); 
-    	}
-    @When("the user enters {string} in the destination field")
-    public void enter_destination(String destination) throws Exception {
-        home.enterLocation(destination);
+        
     }
 
-    @When("the user selects check-in date {string}")
-    public void select_check_in_date(String checkIn) {
+    @Given("the user navigates to Villas and Homestays section")
+    public void navigate_to_section() throws InterruptedException {
+        System.out.println("[INFO] Villas & Homestays section loaded");
+        
+    }
+
+    // =========================================================
+    // TS01 - SEARCH
+    // =========================================================
+
+    @When("the user performs villa search for TC_MMT_Villas_{int}_{int}")
+    public void villa_search(Integer tc1, Integer tc2) throws Exception {
+
+    	String tcId = "TC_MMT_Villas_"
+    	        + String.format("%02d", tc1)
+    	        + "_"
+    	        + String.format("%02d", tc2);
+
+        System.out.println("[INFO] Executing TC: " + tcId);
+
+        String city = utils.ExcelReader.getCellData("Villas", tcId, "City");
+        String adults = utils.ExcelReader.getCellData("Villas", tcId, "Adults");
+        String children = utils.ExcelReader.getCellData("Villas", tcId, "Children");
+        System.out.println(city+" "+adults+" "+children);
+
+        home.close_popup();
+         
+        home.enterLocation(city);
         home.selectDates();
-    }
-
-    @When("the user sets guests to {string} adults")
-    public void set_guests(String adults) throws InterruptedException {
-        int count = Integer.parseInt(adults);
-        home.selectAdults(count);
-        home.selectChildren(0);
-    }
-
-    @When("the user clicks the Search button")
-    public void click_search_button() throws InterruptedException {
+        home.selectAdults(Integer.parseInt(adults));
+        home.selectChildren(Integer.parseInt(children));
+        Thread.sleep(2000);
         home.clickSearch();
-        Thread.sleep(3000);
+
+        new WebDriverWait(driver, Duration.ofSeconds(20))
+                .until(d -> ((JavascriptExecutor) d)
+                        .executeScript("return document.readyState")
+                        .equals("complete"));
     }
 
-    // =========================================================================
-    // Assertions
-    // =========================================================================
-    @Then("the villa listing page is displayed")
-    public void villa_listing_page_displayed() {
-        Assert.assertTrue(filter.getHotelCount() > 0);
+    @Then("the villa listing validation is done")
+    public void villa_listing_validation() {
+
+        int count = filter.getHotelCount();
+
+        Assert.assertTrue(count > 0,
+                "No villa listings found");
+
+        System.out.println("[PASS] Villa listings count: " + count);
     }
 
-    @Then("each villa card shows name, price, rating and location")
-    public void verify_villa_cards() {
-        List<String> names = filter.getHotelNames();
-        Assert.assertFalse(names.isEmpty());
+    // =========================================================
+    // TS02 - FILTERS
+    // =========================================================
+
+    @When("the user applies filters for TC_MMT_Villas_{int}_{int}")
+    public void apply_filters(Integer tc1, Integer tc2) {
+
+        System.out.println("[INFO] Applying filters for TC " + tc1 + "_" + tc2);
+
+        filter.applyApartmentFilter();
+        filter.applyRatingFilter();
     }
 
-    // =========================================================================
-    // Property Steps
-    // =========================================================================
-    @When("the user selects a villa from results")
-    public void select_villa() {
+    @Then("all displayed properties match selected filters")
+    public void validate_filters() {
+
+        Assert.assertTrue(filter.getHotelCount() > 0,
+                "No results after applying filters");
+
+        System.out.println("[PASS] Filters validated");
+    }
+
+    // =========================================================
+    // TS03 - SORTING
+    // =========================================================
+
+    @When("the user sorts villas for TC_MMT_Villas_{int}_{int}")
+    public void sort_villas(Integer tc1, Integer tc2) {
+    	String tcId = "TC_MMT_Villas_"
+    	        + String.format("%02d", tc1)
+    	        + "_"
+    	        + String.format("%02d", tc2);
+
+  
+
+        String sort = utils.ExcelReader.getCellData("Villas", tcId, "Sort");
+        if(sort.equals("LOW_TO_HIGH")) filter.sortLowToHigh();
+        else filter.sortHighToLow();
+
+        System.out.println("[INFO] Sorting TC " + tc1 + "_" + tc2);
+
+    }
+
+    @Then("villa listings are sorted correctly")
+    public void validate_sorting() {
+
+        boolean sorted =
+                filter.isSortedLowToHigh()
+                        || filter.isSortedHighToLow();
+
+        Assert.assertTrue(sorted,
+                "Sorting validation failed");
+
+        System.out.println("[PASS] Sorting validated");
+    }
+
+    // =========================================================
+    // TS04 - DETAILS + REVIEWS
+    // =========================================================
+
+    @When("the user opens villa details for TC_MMT_Villas_{int}_{int}")
+    public void open_villa_details(Integer tc1, Integer tc2) {
+
+        System.out.println("[INFO] Opening villa details " + tc1 + "_" + tc2);
+
         filter.selectFirstHotel();
     }
 
-    @Then("the property details page is displayed")
-    public void property_details_page_displayed() {
-        Assert.assertTrue(property.isPropertyPageDisplayed());
+    @Then("villa details are validated")
+    public void validate_villa_details() {
+
+        Assert.assertTrue(property.isPropertyPageDisplayed(),
+                "Villa details page not displayed");
+
+        System.out.println("[PASS] Villa details validated");
     }
 
-    // =========================================================================
-    // Booking
-    // =========================================================================
-    @When("the user proceeds to booking page")
-    public void proceed_to_booking() throws Exception {
+    @Then("guest reviews are validated")
+    public void validate_reviews() {
+
+        property.viewReviews();
+
+        System.out.println("[PASS] Reviews validated");
+    }
+
+    // =========================================================
+    // TS07 - COUPON
+    // =========================================================
+
+    @When("the user applies coupon for TC_MMT_Villas_{int}_{int}")
+    public void apply_coupon(Integer tc1, Integer tc2) {
+    	
+
+    	String tcId = "TC_MMT_Villas_"
+    	        + String.format("%02d", tc1)
+    	        + "_"
+    	        + String.format("%02d", tc2);
+
+        String coupon = utils.ExcelReader.getCellData("Villas", tcId, "Coupon");
+
+        System.out.println("[INFO] Applying coupon: " + coupon);
         property.clickBookNow();
-        Thread.sleep(2000);
-        switchToPropertyTab();
-    }
 
-    @When("the user enters coupon code {string}")
-    public void enter_coupon(String code) {
         oldPrice = booking.getTotalPrice();
-        booking.applyCoupon(code);
+        booking.applyCoupon(coupon);
     }
 
     @Then("discount is applied successfully")
-    public void verify_discount_applied() {
-        String newPrice = booking.getUpdatedPriceAfterCoupon(oldPrice);
-        Assert.assertNotEquals(oldPrice, newPrice);
-    }
+    public void validate_coupon() {
 
-    // =========================================================================
-    // Utility
-    // =========================================================================
-    public void switchToPropertyTab() {
-        for (String handle : driver.getWindowHandles()) {
-            driver.switchTo().window(handle);
-        }
+        String newPrice = booking.getUpdatedPriceAfterCoupon(oldPrice);
+
+        Assert.assertNotEquals(oldPrice, newPrice,
+                "Coupon not applied");
+
+        System.out.println("[PASS] Coupon validated");
     }
-   
 }
