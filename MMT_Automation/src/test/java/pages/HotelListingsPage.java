@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,8 +16,6 @@ public class HotelListingsPage {
 	@FindBy(xpath ="(//input[@aria-label='5 Star']/parent::span/child::label)[2]")
 	   private WebElement fiveStarCheckbox;
 	
-	@FindBy(xpath ="(//input[@aria-label='4 Star']/parent::span/child::label)[2]")
-	   private WebElement fourStarCheckbox;
 	
 	@FindBy(name ="min")
 	   private WebElement minPriceField; //send keys
@@ -29,11 +26,11 @@ public class HotelListingsPage {
 	@FindBy(xpath ="//button[@aria-label='Select Range button']")
 	   private WebElement minMaxRangeBtn; 
 	
-	@FindBy(xpath ="//span[text()='Price (High to Low)']")
-	   private WebElement priceHToL;
-	
-	@FindBy(xpath ="//span[text()='Price (Low to High)']")
-	   private WebElement priceLToH;
+//	@FindBy(xpath ="//span[text()='Price (High to Low)']")
+//	   private WebElement priceHToL;
+//	
+//	@FindBy(xpath ="//span[text()='Price (Low to High)']")
+//	   private WebElement priceLToH;
 	
 	@FindBy(xpath="//p[@class='font24 clampLine1Container']")
 		private WebElement listingsPageVal;
@@ -61,14 +58,6 @@ public class HotelListingsPage {
 		this.fiveStarCheckbox = fiveStarCheckbox;
 	}
 
-	public WebElement getFourStarCheckbox() {
-		return fourStarCheckbox;
-	}
-
-	public void setFourStarCheckbox(WebElement fourStarCheckbox) {
-		this.fourStarCheckbox = fourStarCheckbox;
-	}
-
 	public WebElement getMinPriceField() {
 		return minPriceField;
 	}
@@ -93,21 +82,21 @@ public class HotelListingsPage {
 		this.minMaxRangeBtn = minMaxRangeBtn;
 	}
 
-	public WebElement getPriceHToL() {
-		return priceHToL;
-	}
-
-	public void setPriceHToL(WebElement priceHToL) {
-		this.priceHToL = priceHToL;
-	}
-
-	public WebElement getPriceLToH() {
-		return priceLToH;
-	}
-
-	public void setPriceLToH(WebElement priceLToH) {
-		this.priceLToH = priceLToH;
-	}
+//	public WebElement getPriceHToL() {
+//		return priceHToL;
+//	}
+//
+//	public void setPriceHToL(WebElement priceHToL) {
+//		this.priceHToL = priceHToL;
+//	}
+//
+//	public WebElement getPriceLToH() {
+//		return priceLToH;
+//	}
+//
+//	public void setPriceLToH(WebElement priceLToH) {
+//		this.priceLToH = priceLToH;
+//	}
 	
 	//---------------------------------------------------------------------------------
 	//Actions
@@ -118,16 +107,10 @@ public class HotelListingsPage {
 		return false;
 	}
 	//TS:3
-	public void filterBy5Stars()
+	public void filterBy5Stars() throws InterruptedException
 	{
 		getFiveStarCheckbox().click();
-	}
-	public void filterBy4And5Stars()
-	{
-		getFiveStarCheckbox().click();
-		WebElement element = getFourStarCheckbox();
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
-		element.click();
+		Thread.sleep(3000);
 	}
 	
 	//TS:4
@@ -138,15 +121,7 @@ public class HotelListingsPage {
 		getMinMaxRangeBtn().click();
 	}
 	
-	//TS:5
-	public void sortHighToLow()
-	{
-		priceHToL.click();
-	}
-	public void sortLowToHigh()
-	{
-		priceLToH.click();
-	}
+	
 	
 	
 

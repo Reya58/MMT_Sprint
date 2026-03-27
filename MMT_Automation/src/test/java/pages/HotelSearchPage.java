@@ -28,8 +28,11 @@ public class HotelSearchPage {
 		@FindBy(xpath ="(//div[@class='tp-dt-header-icon'])[2]")
 		   private WebElement chatbotCloseBtn;
 		
-		@FindBy(xpath ="(//span[text()='Hotels'])[1]")
-		   private WebElement hotelsSection;
+//		@FindBy(xpath ="(//span[text()='Hotels'])[1]")
+//		   private WebElement hotelsSection;
+		
+		@FindBy(linkText="Hotels")
+		private WebElement hotelsSection;
 		
 		@FindBy(id ="city")
 		   private WebElement destinationField; 
@@ -37,17 +40,19 @@ public class HotelSearchPage {
 		@FindBy(xpath ="//input[@title='Where do you want to stay?']")
 		   private WebElement destination; //send keys, arrow down, key enter
 		
-		@FindBy(xpath ="//div[@aria-label='Wed Apr 01 2026']/child::span")
+		@FindBy(xpath ="//div[@aria-label='Wed Apr 08 2026']/child::span")
 		   private WebElement checkInDate; 
 
-		@FindBy(xpath ="//div[@aria-label='Fri Apr 03 2026']/child::span")
+		@FindBy(xpath ="//div[@aria-label='Fri Apr 10 2026']/child::span")
 		   private WebElement checkOutDate; 
 		
 		@FindBy(xpath ="//button[@data-cy='RoomsGuestsNew_327']")
 		   private WebElement roomsAndGuests; 
 		
+		
 		@FindBy(id="hsw_search_button")
 			private WebElement searchBtn;
+		
 		
 		@FindBy(xpath="//p[@class='hw__searchResultNotFoundText']")
 			private WebElement nonExistentCityMsg;
@@ -170,6 +175,20 @@ public class HotelSearchPage {
 			Thread.sleep(2000);
 		}
 		
+		public void enterNonExistentDestination(String dest) throws InterruptedException
+		{
+			getDestinationField().click();
+			getDestination().sendKeys(dest);
+			Thread.sleep(3000);
+		}
+		
+		public void enterSpecialCharDestination(String dest)
+		{
+			getDestinationField().click();
+			getDestination().sendKeys(dest);
+			getDestSearch().click();		
+		}
+		
 		public void enterCheckInDate(String date)
 		{
 			getCheckInDate().click();
@@ -227,13 +246,13 @@ public class HotelSearchPage {
 			Thread.sleep(3000);	
 			return getNonExistentCityMsg().getText(); //No Results Found
 		}
-		public String specialCharacterDestination(String city) throws InterruptedException
+		public void specialCharacterDestination(String city) throws InterruptedException
 		{
 			getDestinationField().click();
 			getDestination().sendKeys(city);
 			Thread.sleep(3000);
 			getDestSearch().click();
-			return getDestinationField().getAttribute("value").trim();
+			Thread.sleep(3000);
 			
 		}
 		public void validDate(String dest) throws InterruptedException
