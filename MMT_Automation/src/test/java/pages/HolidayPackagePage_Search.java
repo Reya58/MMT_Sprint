@@ -10,19 +10,19 @@ import org.openqa.selenium.support.PageFactory;
 public class HolidayPackagePage_Search {
 	
 	@FindBy (xpath = "//span[@class=\"close closeIcon\"]")
-	WebElement btn_PopUp;
+	private WebElement btn_PopUp;
 
 	@FindBy (xpath = "//div[@class=\"packageCardWrapper similarPackage\"]")
-	WebElement btn_FirstResult;
+	private WebElement btn_FirstResult;
 	
 	@FindBy (xpath = "//div[text() = \"With Flight\"]/ancestor::div[@class=\"variant-card-container  pointer\"]")
-	WebElement btn_FirstResult_Flights;
+	private WebElement btn_FirstResult_Flights;
 	
 	@FindBy (className = "priceStyle")
-	List<WebElement> txt_Prices;
+	private List<WebElement> txt_Prices;
 	
 	@FindBy (xpath = "//ul[@class=\"tripListWrapper\"]/li")
-	List<WebElement> txt_TripDetails;
+	private List<WebElement> txt_TripDetails;
 	
 	WebDriver driver;
 	
@@ -31,7 +31,7 @@ public class HolidayPackagePage_Search {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public boolean validateSearchDetails(String fromCity, String toCity) {
+	public void clickSearchDetails() {
 		closePopupIfPresent();
 		
 		btn_FirstResult.click();
@@ -43,7 +43,9 @@ public class HolidayPackagePage_Search {
 		        break;
 		    }
 		}
+	}
 		
+	public boolean validateSearchDetails(String fromCity, String toCity) {
 		HolidayPackagePage_Package hpp_p = new HolidayPackagePage_Package(driver);
 		return hpp_p.validateLocations(fromCity, toCity);
 	}
@@ -72,7 +74,7 @@ public class HolidayPackagePage_Search {
 		return true;
 	}
 	
-	public static double parseCurrency(String value) {
+	private static double parseCurrency(String value) {
 	    if (value == null || value.isEmpty()) {
 	        return 0.0;
 	    }
@@ -82,7 +84,7 @@ public class HolidayPackagePage_Search {
 	    return Double.parseDouble(cleaned);
 	}
 	
-	public void closePopupIfPresent() {
+	private void closePopupIfPresent() {
 	    try {
 	        if (btn_PopUp.isDisplayed()) {
 	            btn_PopUp.click();

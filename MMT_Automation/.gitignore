@@ -30,3 +30,5 @@ src/test/java/test_pages/
 
 src/test/resources/features/Automated_TestCases_MMT_Villas.xlsx
 
+target/
+test-output/

@@ -1,11 +1,13 @@
 package pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HolidayPackagePage_Package {
+public class HolidayPackagePage_VFPackage {
 
 	@FindBy (className = "skipBtn")
 	private WebElement btn_PopUp1;
@@ -13,25 +15,48 @@ public class HolidayPackagePage_Package {
 	@FindBy (xpath = "//span[@class=\"close closeIcon\"]")
 	private WebElement btn_PopUp2;
 	
-	@FindBy (xpath = "//span[text()=\"Kolkata\"]")
-	private WebElement txt_FromCity;
+	@FindBy (className = "dest-guide-header")
+	private WebElement txt_Destination;
 	
 	@FindBy (className = "topHeading")
-	private WebElement txt_ToCity;
+	private WebElement txt_Heading;
+	
+	@FindBy (xpath = "//div[@class=\"imageLoaderContainer \"]/img")
+	private List<WebElement> img_UI;
 	
 	WebDriver driver;
 	
-	public HolidayPackagePage_Package(WebDriver driver) {
+	public HolidayPackagePage_VFPackage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	public boolean validateLocations(String fromCity, String toCity) {
+	public boolean validateLocation(String destination) {
 		closePopupIfPresent();
-		if(txt_FromCity.getText().contains(fromCity) && txt_ToCity.getText().contains(toCity))
+		if(txt_Destination.getText().contains(destination))
 			return true;
 		else
 			return false;
+	}
+	
+	public boolean validateUI() {
+		closePopupIfPresent();
+		if(!(txt_Heading.isDisplayed())) {
+			return false;
+		}
+		
+		if(img_UI.size() == 0) {
+	        return false;
+	    }
+
+		for(int i = 0; i < 5; i++) {
+			if(!(img_UI.get(i).isDisplayed())) {
+				System.out.println(i);
+				return false;
+			}
+		}
+		
+		return true;
 	}
 	
 	private void closePopupIfPresent() {

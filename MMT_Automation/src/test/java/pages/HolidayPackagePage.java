@@ -10,73 +10,70 @@ import org.openqa.selenium.support.PageFactory;
 public class HolidayPackagePage {
 	
 	@FindBy (xpath = "//span[@data-cy=\"closeModal\"]")
-	WebElement btn_PopUp;
+	private WebElement btn_PopUp;
 
 	@FindBy (id = "fromCity")
-	WebElement btn_FromCity;
+	private WebElement btn_FromCity;
 	
 	@FindBy (className = "citypicker_input")
-	WebElement txt_FromCity;
+	private WebElement txt_FromCity;
 	
 	@FindBy (xpath = "//div[@class=\"searchedCity\"]/descendant::p")
-	WebElement btn_SelectCity_From;
+	private WebElement btn_SelectCity_From;
 	
 	@FindBy (id = "toCity")
-	WebElement btn_ToCity;
+	private WebElement btn_ToCity;
 	
 	@FindBy (xpath = "//input[@placeholder=\"To\"]")
-	WebElement txt_ToCity;
+	private WebElement txt_ToCity;
 	
 	@FindBy (className = "dest-city-container")
-	WebElement btn_SelectCity_To;
+	private WebElement btn_SelectCity_To;
 	
 	@FindBy (xpath = "//span[@data-cy=\"departureDate\"]")
-	WebElement btn_Departure;
+	private WebElement btn_SelectDate;
 	
 	@FindBy (xpath = "//span[@class=\"DayPicker-NavButton DayPicker-NavButton--next\"]")
-	WebElement btn_NextMonth;
+	private WebElement btn_NextMonth;
 	
 	@FindBy(xpath = "//div[contains(@class,'DayPicker-Caption')]")
-	WebElement txt_CurrentMonth;
+	private WebElement txt_CurrentMonth;
 	
 	@FindBy (xpath = "//div[@aria-label=\"Tue May 12 2026\"]")
-	WebElement btn_Date;
-	
-	@FindBy (xpath = "//div[text() = \"Rooms & Guests\"]")
-	WebElement btn_Rooms;
+	private WebElement btn_Date;
 	
 	@FindBy (xpath = "//button[text() = \"APPLY\"]")
-	WebElement btn_Apply;
+	private WebElement btn_Apply;
 	
 	@FindBy (xpath = "//div[text() = \"Filters\"]")
-	WebElement btn_Filters;
+	private WebElement btn_Filters;
 	
 	@FindBy (xpath = "//label[text() = \"With Flights\"]")
-	WebElement btn_Filter1;
+	private WebElement btn_Filter1;
 	
 	@FindBy (xpath = "//p[text() = \"< ₹20,000\"]")
-	WebElement btn_Filter2;
+	private WebElement btn_Filter2;
 	
 	@FindBy (xpath = "//label[text() = \"5\"]")
-	WebElement btn_Filter3;
+	private WebElement btn_Filter3;
 	
 	@FindBy (id = "search_button")
-	WebElement btn_Search;
+	private WebElement btn_Search;
 	
-	@FindBy (className = "no-data-found")
-	List<WebElement> txt_NoData;
+	@FindBy (id = "toCity")
+	private WebElement txt_ToCityValue;
 	
 	@FindBy (xpath = "//span[text() = \"Visa Free Packages\"]")
-	WebElement btn_VisaFreePackages;
+	private WebElement btn_VisaFreePackages;
 	
-	@FindBy (linkText = "Malaysia")
-	WebElement btn_Destination;
+	@FindBy (xpath = "//li[@class=\"hdlRegion__citylist--item\"]/a")
+	private List<WebElement> btn_List;
 	
 	@FindBy (xpath = "//span[text() = \"Disney Cruise\"]")
-	WebElement btn_DisneyCruise;
+	private WebElement btn_DisneyCruise;
 	
 	@FindBy (xpath = "//p[text()=\"View All\"]")
-	WebElement btn_ViewAll;
+	private WebElement btn_ViewAll;
 	
 	WebDriver driver;
 	
@@ -93,16 +90,24 @@ public class HolidayPackagePage {
 	    btn_SelectCity_From.click();
 	}
 
-	public boolean selectToCity(String toCity) {
+	public void selectToCity(String toCity) {
 	    btn_ToCity.click();
 	    txt_ToCity.sendKeys(toCity);
+	    try {
+	        if (btn_SelectCity_To.isDisplayed()) {
+	            btn_SelectCity_To.click();
+	        }
+	    } catch (Exception e) {
+	        btn_SelectDate.click();
+	    }
+	}
 
-	    if(txt_NoData.size() > 0 && txt_NoData.get(0).isDisplayed()) {
-	        return false;   // invalid city
+	public boolean validateToCity(String string) {
+	    if(txt_ToCityValue.getAttribute("value").equals(string)) {
+	        return true;
 	    }
 
-	    btn_SelectCity_To.click();
-	    return true;        // valid city
+	    return false;
 	}
 
 	public void selectDateAndGuests() {
@@ -123,6 +128,11 @@ public class HolidayPackagePage {
 		btn_Search.click();
 	}
 	
+	public void clickSearchDetails() {
+		HolidayPackagePage_Search hpp_s = new HolidayPackagePage_Search(driver);
+		hpp_s.clickSearchDetails();
+	}
+	
 	public boolean validateSearchDetails(String fromCity, String toCity) {
 		HolidayPackagePage_Search hpp_s = new HolidayPackagePage_Search(driver);
 		return hpp_s.validateSearchDetails(fromCity, toCity);
@@ -137,7 +147,23 @@ public class HolidayPackagePage {
 		closePopupIfPresent();
 		
 		btn_VisaFreePackages.click();
-		btn_Destination.click();
+	}
+	
+	public boolean validateList() {
+		if(btn_List.size() == 0) {
+	        return false;
+	    }
+		
+		for(int i = 0; i < btn_List.size(); i++) {
+			if(!(btn_List.get(i).isDisplayed())) 
+				return false;
+		}
+		
+		return true;
+	}
+	
+	public void visaFreeDestination() {
+		btn_List.get(0).click();
 		
 		for (String handle : driver.getWindowHandles()) {
 		    driver.switchTo().window(handle);
@@ -147,10 +173,28 @@ public class HolidayPackagePage {
 		}
 	}
 	
+	public void visaFreeSearch() {
+		HolidayPackagePage_VFSearch hpp_vfs = new HolidayPackagePage_VFSearch(driver);
+		hpp_vfs.clickSearchDetails();
+	}
+	
+	public boolean validateVisaFreeDetails() {
+		HolidayPackagePage_VFSearch hpp_vfs = new HolidayPackagePage_VFSearch(driver);
+		return hpp_vfs.validateSearchDetails();
+	}
+	
+	public boolean validateVisaFreeUI() {
+		HolidayPackagePage_VFSearch hpp_vfs = new HolidayPackagePage_VFSearch(driver);
+		return hpp_vfs.validateSearchUI();
+	}
+	
 	public void disneyCruise() {
 		closePopupIfPresent();
 		
 		btn_DisneyCruise.click();
+	}
+	
+	public void disneyCruiseAll() {
 		btn_ViewAll.click();
 
 		for (String handle : driver.getWindowHandles()) {
@@ -161,7 +205,22 @@ public class HolidayPackagePage {
 		}
 	}
 	
-	public void closePopupIfPresent() {
+	public boolean validateDCAll() {
+		HolidayPackagePage_DCSearch hpp_dcs = new HolidayPackagePage_DCSearch(driver);
+		return hpp_dcs.validateSearch();
+	}
+	
+	public void disneyCruisePackage() {
+		HolidayPackagePage_DCSearch hpp_dcs = new HolidayPackagePage_DCSearch(driver);
+		hpp_dcs.clickSearchDetails();
+	}
+	
+	public boolean validateDCPackage() {
+		HolidayPackagePage_DCSearch hpp_dcs = new HolidayPackagePage_DCSearch(driver);
+		return hpp_dcs.validateSearchDetails();
+	}
+	
+	private void closePopupIfPresent() {
 	    try {
 	        if (btn_PopUp.isDisplayed()) {
 	            btn_PopUp.click();
@@ -171,7 +230,7 @@ public class HolidayPackagePage {
 	    }
 	}
 	
-	public void selectDepartureDate(String targetMonthYear) {
+	private void selectDepartureDate(String targetMonthYear) {
 	    while (true) {
 	        String currentMonth = txt_CurrentMonth.getText();
 

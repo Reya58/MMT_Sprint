@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HolidayPackagePage_Package {
+public class HolidayPackagePage_DCPackage {
 
 	@FindBy (className = "skipBtn")
 	private WebElement btn_PopUp1;
@@ -13,27 +13,24 @@ public class HolidayPackagePage_Package {
 	@FindBy (xpath = "//span[@class=\"close closeIcon\"]")
 	private WebElement btn_PopUp2;
 	
-	@FindBy (xpath = "//span[text()=\"Kolkata\"]")
-	private WebElement txt_FromCity;
-	
 	@FindBy (className = "topHeading")
-	private WebElement txt_ToCity;
-	
+	private WebElement txt_Heading;
+
 	WebDriver driver;
 	
-	public HolidayPackagePage_Package(WebDriver driver) {
+	public HolidayPackagePage_DCPackage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	public boolean validateLocations(String fromCity, String toCity) {
+	public boolean validateCruise() {
 		closePopupIfPresent();
-		if(txt_FromCity.getText().contains(fromCity) && txt_ToCity.getText().contains(toCity))
+		if(txt_Heading.getText().contains("Disney Cruise"))
 			return true;
 		else
 			return false;
 	}
-	
+
 	private void closePopupIfPresent() {
 	    try {
 	        if (btn_PopUp1.isDisplayed()) {
