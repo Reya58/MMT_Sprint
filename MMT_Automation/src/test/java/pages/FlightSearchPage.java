@@ -49,6 +49,66 @@ public class FlightSearchPage {
 	@FindBy(xpath = "//div[@id='errorMessage']//span[@data-cy='sameCityError']")
 	private WebElement errorMessage;
 
+	@FindBy(xpath = "//li[@data-cy='roundTrip']")
+	private WebElement btn_roundTrip;
+	
+	@FindBy(xpath = "//li[@data-cy='mulitiCityTrip']")
+	private WebElement btn_multiCityTrip;
+	
+	@FindBy(xpath = "//div[@data-cy='returnArea']")
+	private WebElement btn_returnDate;
+	
+	@FindBy(xpath = "//div[@data-cy='flightTraveller']")
+	private WebElement btn_travellersAndClasses;
+	
+//--------------FLIGHT TRACKER ELEMENTS--------------	
+	
+	@FindBy( xpath = "//img[@alt='Flight Tracker']")
+	private WebElement btn_flightTracker;
+	
+	@FindBy(xpath = "//li//div//font//b[text()='By Flight']")
+	private WebElement btn_flightTrackerByFlight;
+	
+	@FindBy( xpath = "//li//div//font//b[text()='By Route']")
+	private WebElement btn_flightTrackerByRoute;
+	
+	@FindBy( xpath = "//li//div//font//b[text()='By Airport']")
+	private WebElement btn_flightTrackerByAirport;
+	
+	// 	BY NUMBER ELEMENTS
+	
+	@FindBy(id = "fisAIRLINE")
+	private WebElement txt_flightTrackerByFlightNumber;
+	
+	@FindBy(xpath = "//div[@class='date-field']")
+	private WebElement btn_flightTrackedDate;
+	
+	// BY ROUTES ELEMENTS	
+	
+	@FindBy(id="fisFrom")
+	private WebElement txt_FromCityFlightTracker;
+	
+	@FindBy(id = "fisTO")
+	private WebElement txt_ToCityFlightTracker;
+
+	// BY AIRPORTS ELEMENTS
+	
+	@FindBy(id = "fisAIRPORT")
+	private WebElement txt_AirportFlightTracker;
+	
+	@FindBy(xpath = "//button[@class='fis-search-button']")
+	private WebElement btn_searchFlightTracker;
+	
+//	-------------MULTI SELECT CITY ELEMENTS-----------
+	
+	@FindBy(id = "fromAnotherCity0")
+	private WebElement txt_FromAnotherCity;
+	
+	@FindBy(xpath = "(//button[@class='btnAddCity'])[2]")
+	private WebElement btn_AddAnotherCity;
+	
+	
+	
 	WebDriver driver;
 	WebDriverWait wait;
 
@@ -87,7 +147,7 @@ public class FlightSearchPage {
 			closeBtn.click();
 
 		} catch (Exception e) {
-			System.out.println("Login popup not present");
+//			System.out.println("Login popup not present");
 		}
 	}
 
@@ -101,20 +161,30 @@ public class FlightSearchPage {
 			minimizeBtn.click();
 
 		} catch (Exception e) {
-			System.out.println("Banner minimize not present");
+//			System.out.println("Banner minimize not present");
 		}
 	}
 
 //	################# PUBLIC FUNCTIONS ##############################
-
+	
 //	----------CONSTRUCTOR----------
 	public FlightSearchPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
+	
+	
+// ---------------INTRUPTION HANDLING------------------
+	public void handleInterruptions() {
+		closeLoginPopup();
+		minimizeBanner();
+		dismissCoachmarkIfPresent();
+	}
+	
 
-//	--------------- SLECTING SPECIFIED DATE----------
+
+//	--------------- SLECTING SPECIFIED DATE ON ONE FLIGHT SEARCH PAGE-------------
 
 	public boolean selectDate(String inputDate) throws InterruptedException {
 		Thread.sleep(1000);
@@ -186,6 +256,7 @@ public class FlightSearchPage {
 				.getAttribute("aria-label");
 	}
 
+//	---------------ONEWAY AND ROUND TRIP CITY SELECTION-----------
 	public void setFromCity(String fromCity) throws InterruptedException {
 		btn_frmCity.click();
 		Thread.sleep(1000);
@@ -223,11 +294,7 @@ public class FlightSearchPage {
 
 		wait.until(ExpectedConditions.elementToBeClickable(option)).click();
 	}
-
-	public void search() {
-		btn_search.click();
-	}
-
+	
 	public String getSelectedFromCity() {
 		return selected_fromCity.getAttribute("value");
 	}
@@ -244,10 +311,173 @@ public class FlightSearchPage {
 		btn_departure_date.click();
 	}
 
-	public void handleInterruptions() {
-		closeLoginPopup();
-		minimizeBanner();
-		dismissCoachmarkIfPresent();
+		
+//-----------------FARE CARD ------------------
+	public void selectFareCard(String fare) {
+		WebElement fareCard = driver.findElement(By.xpath("//div[@class='fareOptionsWrap ']//div//div[contains(text(),"+fare+"'Regular']"));
+		
+		fareCard.click();
 	}
+	
+//	-------------------------CONFIGURING TRAVEL----------------------------
+	
+	public void setAdultsTravelers(String count) {
+		if(Integer.valueOf(count)<=9) {
+			driver.findElement(By.xpath("//li[@data-cy='adults-"+count+"']")).click();
+		}
+		else {
+			driver.findElement(By.xpath("//li[@data-cy='adults-10']")).click();
+		}
+	}
+	
+	public void setChildTraveller(String count) {
+		if(Integer.valueOf(count)<=6) {
+			driver.findElement(By.xpath("//li[@data-cy='children-"+count+"']")).click();
+		}
+		else {
+			driver.findElement(By.xpath("//li[@data-cy='children-7']")).click();
+		}
+	}
+	
+	public void setInfantTraveller(String count) {
+		if(Integer.valueOf(count)<=6) {
+			driver.findElement(By.xpath("//li[@data-cy='infants-"+count+"']")).click();
+		}
+		else {
+			driver.findElement(By.xpath("//li[@data-cy='infants-7']")).click();
+		}
+	}
+	
+	public void setTravelClass(String travelClass) {
+		driver.findElement(By.xpath("//ul[@class='guestCounter classSelect font12 darkText']//li[contains(text(),"+travelClass+")]")).click();
+	}
+	
+	public void applyTraveller() {
+		driver.findElement(By.xpath("//button[@class='primaryBtn btnApply pushRight']")).click();
+	}
+	
+	
+	public String getTravelerDetails() {
+		return driver.findElement(By.id("travellers")).getAttribute("value");
+	}
+	
+	
+//	----------------MAIN SEARCH BUTTON OF FLIGHT SEARCH PAGE------------------
+	public void search() {
+		btn_search.click();
+	}
+	
+	
+//	------------------------FLIGHT TRACKER BY NUMBER-------------
+	
+	public void setFlightStatusByNumber() {
+		btn_flightTrackerByFlight.click();
+	}
+	public Boolean selectDateFlightTracker(String date) {
+		btn_flightTrackedDate.click();
+		By dateLocator = By.xpath("//div[@aria-label='" + date + "']");
+		WebElement dateElement = driver.findElement(dateLocator);
 
+		// ---------- CHECK DISABLED ----------
+		String classes = dateElement.getAttribute("class");
+
+		if (classes.contains("DayPicker-Day--disabled")) {
+			return false;
+		}
+
+		// ---------- CLICK + VERIFY ----------
+		dateElement.click();
+		return true;
+	}
+	
+	public void setFlightNumber(String flightNumber) { 
+		txt_flightTrackerByFlightNumber.sendKeys(flightNumber);
+	}
+	
+	public String getFlightNumberFieldValue() {
+		return txt_flightTrackerByFlightNumber.getAttribute("value");
+	}
+	
+	public String getDateFieldValue() {
+		btn_flightTrackedDate.click();
+		return driver.findElement(By.xpath("//div[@class='DayPicker-Day DayPicker-Day--selected']")).getAttribute("aria-label");
+	}
+	
+//	------------------FLIGHT SEARCH BY ROUTE-----------
+	public void setFlightStatusByRoute() {
+		btn_flightTrackerByRoute.click();
+	}
+	
+	public void setFromCityFlightStatusByRoute(String fromCity) {
+		txt_FromCityFlightTracker.sendKeys(fromCity);
+		selectCity(fromCity);
+	}
+	
+	public String getFromCityFlightStatusByRoute() {
+		return txt_FromCityFlightTracker.getAttribute("value");
+	}
+	
+	public void setToCityFlightStatusByRoute(String toCity) {
+		txt_ToCityFlightTracker.sendKeys(toCity);
+		selectCity(toCity);
+	}
+	
+	public String getToCityFlightStatusByRoute() {
+		return txt_ToCityFlightTracker.getAttribute("value");
+	}
+	
+	public void setDateFlightStatusByRoute(String date) throws InterruptedException {
+		selectDate(date);
+	}
+	
+	public String getDateSelected() {
+		btn_flightTrackedDate.click();
+		return driver.findElement(By.xpath("//div[@class='DayPicker-Day DayPicker-Day--selected']"))
+				.getAttribute("aria-label");
+	}
+	
+	
+	
+//	------------BY AIRPORT ------------
+	
+	public void setFlightStatusByAirport() {
+		btn_flightTrackerByAirport.click();
+	}
+	
+	public void setAirportFlightStatusByAirport(String airport) {
+		txt_AirportFlightTracker.sendKeys(airport);
+		selectCity(airport);
+	}
+	
+	public String getAirportFlightStatusByAirport() {
+		return txt_AirportFlightTracker.getAttribute("value");
+	}
+	
+	public void setDateFlightStatusByAirport(String date) throws InterruptedException {
+		btn_flightTrackedDate.click();
+		selectDate(date);
+	}
+	public String getSelectedDateFlightStatusByAirport() {
+		btn_flightTrackedDate.click();
+		return driver.findElement(By.xpath("//div[@class='DayPicker-Day DayPicker-Day--selected']"))
+				.getAttribute("aria-label");
+	}
+	
+	// COMMON TO FLIGHT STATUS	
+	public void trackFlight() {
+		btn_searchFlightTracker.click();
+	}
+	
+	public Boolean flightStatusFetched() {
+		return wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@class='pageStickyHder flight-status-search']")))).isDisplayed();
+	}
+	
+	public String getFetchedHeaderFlightStatusByAirport() {
+		return wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@class='fontSize24 latoBlack appendBottom12']")))).getText();
+	}
+	
+	public String getFlightStatusBy() {
+		return driver.findElement(By.xpath("//div[@class='flight-status-search fsw searchWidgetContainer']//li[@class='selected']")).getText();
+	}
+	
 }

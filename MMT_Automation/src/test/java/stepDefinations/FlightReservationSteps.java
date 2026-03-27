@@ -18,13 +18,14 @@ public class FlightReservationSteps extends BaseClass {
 
 	@Before
 	public void setUp() {
-		DriverFactory.initDriver();
+//		DriverFactory.initDriver();
 		pageManager = new PageManager(getDriver());
+		getDriver().get("https://www.makemytrip.com/flights/");
 	}
 
 	@Given("the user is on the flight search page")
 	public void the_user_is_on_the_flight_search_page() {
-		getDriver().get("https://www.makemytrip.com/flights/");
+		
 		pageManager.getFlightSearchPage().handleInterruptions();
 	}
 
@@ -214,7 +215,7 @@ public class FlightReservationSteps extends BaseClass {
 
 	@After
 	public void tearDown() {
-		DriverFactory.quitDriver();
+//		DriverFactory.quitDriver();
 	}
 
 }
