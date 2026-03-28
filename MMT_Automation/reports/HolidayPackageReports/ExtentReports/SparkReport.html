@@ -1,0 +1,2807 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Mar 28, 2026 03:11:26 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@TC_MakeMyTrip_08</a><a class="dropdown-item" href="#">@Positive</a><a class="dropdown-item" href="#">@TC_MakeMyTrip_04</a><a class="dropdown-item" href="#">@TC_MakeMyTrip_06</a><a class="dropdown-item" href="#">@TC_MakeMyTrip_07</a><a class="dropdown-item" href="#">@Negative</a><a class="dropdown-item" href="#">@TS02</a><a class="dropdown-item" href="#">@TS03</a><a class="dropdown-item" href="#">@TC_MakeMyTrip_09</a><a class="dropdown-item" href="#">@TS01</a><a class="dropdown-item" href="#">@HolidayPackage</a><a class="dropdown-item" href="#">@TC_MakeMyTrip_05</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MakeMyTrip Holiday Packages Functionality</p>
+            <p class="text-sm">
+              <span>3:11:27 pm</span> / <span>00:04:54:399</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">MakeMyTrip Holiday Packages Functionality</h5>
+<span class='badge badge-success'>03.28.2026 3:11:27 pm</span>
+<span class='badge badge-danger'>03.28.2026 3:16:21 pm</span>
+<span class='badge badge-default'>00:04:54:399</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="4"><span class="badge log pass-bg mr-2">Pass</span>Valid search with different cities</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="8"><span class="badge log pass-bg mr-2">Pass</span>Valid search with different cities</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects from city "Kolkata", to city "Kerala", valid departure date and room and guest details</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user clicks the Search button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user clicks the First result from Search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the holiday package result locations should match "Kolkata" to "Kerala"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="28"><span class="badge log pass-bg mr-2">Pass</span>Invalid destination validation</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="29"><span class="badge log pass-bg mr-2">Pass</span>Invalid destination validation</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects valid from city "Kolkata", invalid to city "iaooxoias"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the data "iaooxoias" is not accepted</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="48"><span class="badge log fail-bg mr-2">Fail</span>Search with filters</div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="49"><span class="badge log fail-bg mr-2">Fail</span>Search with filters</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects from city "Kolkata", to city "Kerala", valid departure date and room and guest details</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And flight, price and star rating filters are added</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user clicks the Search button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then filtered holiday packages should be displayed</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at stepDefinations.HolidayPackageSteps.filtered_holiday_packages_should_be_displayed(HolidayPackageSteps.java:93)
+	at ✽.filtered holiday packages should be displayed(file:///C:/Users/biswa/Downloads/Capg/Sprint/MMT_Automation/src/test/resources/features/HolidayPackage.feature:47)
+</textarea>
+      
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="76"><span class="badge log pass-bg mr-2">Pass</span>Navigating Visa Free Packages opens correct page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_visa_free_packages()">
+                <span>When the user clicks on Visa Free Packages</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_visa_free_packages_section_should_be_displayed()">
+                <span>Then the Visa Free Packages section should be displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="93"><span class="badge log pass-bg mr-2">Pass</span>Selecting a visa free destination opens details</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_visa_free_packages()">
+                <span>When the user clicks on Visa Free Packages</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_selects_a_destination()">
+                <span>And the user selects a destination</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_chooses_a_package()">
+                <span>And the user chooses a package</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_correct_holiday_packages_page_should_open()">
+                <span>Then the correct holiday packages page should open</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="124"><span class="badge log pass-bg mr-2">Pass</span>Visa free packages section loads with proper UI</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_visa_free_packages()">
+                <span>When the user clicks on Visa Free Packages</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_selects_a_destination()">
+                <span>And the user selects a destination</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_chooses_a_package()">
+                <span>And the user chooses a package</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_holiday_packages_page_should_open_with_correct_ui()">
+                <span>Then the holiday packages page should open with correct UI</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="144"><span class="badge log pass-bg mr-2">Pass</span>Navigating Disney Cruise section works correctly</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_disney_cruise()">
+                <span>When the user clicks on Disney Cruise</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_disney_cruise_section_should_be_displayed()">
+                <span>Then the Disney Cruise section should be displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="157"><span class="badge log pass-bg mr-2">Pass</span>View All in Disney Cruise opens full listing</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_disney_cruise()">
+                <span>When the user clicks on Disney Cruise</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_view_all()">
+                <span>And the user clicks View All</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_holiday_packages_page_should_open_in_a_new_tab()">
+                <span>Then the holiday packages page should open in a new tab</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="175"><span class="badge log pass-bg mr-2">Pass</span>Disney cruise package opens correctly</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_disney_cruise()">
+                <span>When the user clicks on Disney Cruise</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_view_all()">
+                <span>And the user clicks View All</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_chooses_a_cruise_package()">
+                <span>And the user chooses a cruise package</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_correct_cruise_packages_page_should_open()">
+                <span>Then the correct cruise packages page should open</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MakeMyTrip Holiday Packages Functionality</p>
+            <p class="text-sm">
+              <span>3:11:27 pm</span> / <span>00:04:55:704</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">MakeMyTrip Holiday Packages Functionality</h5>
+<span class='badge badge-success'>03.28.2026 3:11:27 pm</span>
+<span class='badge badge-danger'>03.28.2026 3:16:22 pm</span>
+<span class='badge badge-default'>00:04:55:704</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="6"><span class="badge log pass-bg mr-2">Pass</span>Valid search with different cities</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="9"><span class="badge log pass-bg mr-2">Pass</span>Valid search with different cities</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects from city "Kolkata", to city "Kerala", valid departure date and room and guest details</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user clicks the Search button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user clicks the First result from Search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the holiday package result locations should match "Kolkata" to "Kerala"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="32"><span class="badge log pass-bg mr-2">Pass</span>Invalid destination validation</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="33"><span class="badge log pass-bg mr-2">Pass</span>Invalid destination validation</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects valid from city "Kolkata", invalid to city "iaooxoias"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the data "iaooxoias" is not accepted</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="54"><span class="badge log fail-bg mr-2">Fail</span>Search with filters</div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="55"><span class="badge log fail-bg mr-2">Fail</span>Search with filters</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects from city "Kolkata", to city "Kerala", valid departure date and room and guest details</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And flight, price and star rating filters are added</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user clicks the Search button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then filtered holiday packages should be displayed</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at stepDefinations.HolidayPackageSteps.filtered_holiday_packages_should_be_displayed(HolidayPackageSteps.java:93)
+	at ✽.filtered holiday packages should be displayed(file:///C:/Users/biswa/Downloads/Capg/Sprint/MMT_Automation/src/test/resources/features/HolidayPackage.feature:47)
+</textarea>
+      
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="79"><span class="badge log pass-bg mr-2">Pass</span>Navigating Visa Free Packages opens correct page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_visa_free_packages()">
+                <span>When the user clicks on Visa Free Packages</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_visa_free_packages_section_should_be_displayed()">
+                <span>Then the Visa Free Packages section should be displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="98"><span class="badge log pass-bg mr-2">Pass</span>Selecting a visa free destination opens details</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_visa_free_packages()">
+                <span>When the user clicks on Visa Free Packages</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_selects_a_destination()">
+                <span>And the user selects a destination</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_chooses_a_package()">
+                <span>And the user chooses a package</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_correct_holiday_packages_page_should_open()">
+                <span>Then the correct holiday packages page should open</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="118"><span class="badge log pass-bg mr-2">Pass</span>Visa free packages section loads with proper UI</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_visa_free_packages()">
+                <span>When the user clicks on Visa Free Packages</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_selects_a_destination()">
+                <span>And the user selects a destination</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_chooses_a_package()">
+                <span>And the user chooses a package</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_holiday_packages_page_should_open_with_correct_ui()">
+                <span>Then the holiday packages page should open with correct UI</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="140"><span class="badge log pass-bg mr-2">Pass</span>Navigating Disney Cruise section works correctly</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_disney_cruise()">
+                <span>When the user clicks on Disney Cruise</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_disney_cruise_section_should_be_displayed()">
+                <span>Then the Disney Cruise section should be displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="153"><span class="badge log pass-bg mr-2">Pass</span>View All in Disney Cruise opens full listing</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_disney_cruise()">
+                <span>When the user clicks on Disney Cruise</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_view_all()">
+                <span>And the user clicks View All</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_holiday_packages_page_should_open_in_a_new_tab()">
+                <span>Then the holiday packages page should open in a new tab</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="170"><span class="badge log pass-bg mr-2">Pass</span>Disney cruise package opens correctly</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_disney_cruise()">
+                <span>When the user clicks on Disney Cruise</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_view_all()">
+                <span>And the user clicks View All</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_chooses_a_cruise_package()">
+                <span>And the user chooses a cruise package</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_correct_cruise_packages_page_should_open()">
+                <span>Then the correct cruise packages page should open</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MakeMyTrip Holiday Packages Functionality</p>
+            <p class="text-sm">
+              <span>3:11:27 pm</span> / <span>00:05:36:323</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">MakeMyTrip Holiday Packages Functionality</h5>
+<span class='badge badge-success'>03.28.2026 3:11:27 pm</span>
+<span class='badge badge-danger'>03.28.2026 3:17:03 pm</span>
+<span class='badge badge-default'>00:05:36:323</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="5"><span class="badge log pass-bg mr-2">Pass</span>Valid search with different cities</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="7"><span class="badge log pass-bg mr-2">Pass</span>Valid search with different cities</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects from city "Kolkata", to city "Kerala", valid departure date and room and guest details</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user clicks the Search button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user clicks the First result from Search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the holiday package result locations should match "Kolkata" to "Kerala"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="41"><span class="badge log pass-bg mr-2">Pass</span>Invalid destination validation</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="42"><span class="badge log pass-bg mr-2">Pass</span>Invalid destination validation</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects valid from city "Kolkata", invalid to city "iaooxoias"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the data "iaooxoias" is not accepted</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="62"><span class="badge log fail-bg mr-2">Fail</span>Search with filters</div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="63"><span class="badge log fail-bg mr-2">Fail</span>Search with filters</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects from city "Kolkata", to city "Kerala", valid departure date and room and guest details</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And flight, price and star rating filters are added</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user clicks the Search button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then filtered holiday packages should be displayed</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at stepDefinations.HolidayPackageSteps.filtered_holiday_packages_should_be_displayed(HolidayPackageSteps.java:93)
+	at ✽.filtered holiday packages should be displayed(file:///C:/Users/biswa/Downloads/Capg/Sprint/MMT_Automation/src/test/resources/features/HolidayPackage.feature:47)
+</textarea>
+      
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="87"><span class="badge log pass-bg mr-2">Pass</span>Navigating Visa Free Packages opens correct page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_visa_free_packages()">
+                <span>When the user clicks on Visa Free Packages</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_visa_free_packages_section_should_be_displayed()">
+                <span>Then the Visa Free Packages section should be displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="105"><span class="badge log fail-bg mr-2">Fail</span>Selecting a visa free destination opens details</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_visa_free_packages()">
+                <span>When the user clicks on Visa Free Packages</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_selects_a_destination()">
+                <span>And the user selects a destination</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_chooses_a_package()">
+                <span>And the user chooses a package</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepDefinations.HolidayPackageSteps.the_correct_holiday_packages_page_should_open()">
+                <span>Then the correct holiday packages page should open</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at stepDefinations.HolidayPackageSteps.the_correct_holiday_packages_page_should_open(HolidayPackageSteps.java:118)
+	at ✽.the correct holiday packages page should open(file:///C:/Users/biswa/Downloads/Capg/Sprint/MMT_Automation/src/test/resources/features/HolidayPackage.feature:68)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="133"><span class="badge log pass-bg mr-2">Pass</span>Visa free packages section loads with proper UI</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_visa_free_packages()">
+                <span>When the user clicks on Visa Free Packages</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_selects_a_destination()">
+                <span>And the user selects a destination</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_chooses_a_package()">
+                <span>And the user chooses a package</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_holiday_packages_page_should_open_with_correct_ui()">
+                <span>Then the holiday packages page should open with correct UI</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="172"><span class="badge log pass-bg mr-2">Pass</span>Navigating Disney Cruise section works correctly</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_disney_cruise()">
+                <span>When the user clicks on Disney Cruise</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_disney_cruise_section_should_be_displayed()">
+                <span>Then the Disney Cruise section should be displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="187"><span class="badge log pass-bg mr-2">Pass</span>View All in Disney Cruise opens full listing</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_disney_cruise()">
+                <span>When the user clicks on Disney Cruise</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_view_all()">
+                <span>And the user clicks View All</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_holiday_packages_page_should_open_in_a_new_tab()">
+                <span>Then the holiday packages page should open in a new tab</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="200"><span class="badge log pass-bg mr-2">Pass</span>Disney cruise package opens correctly</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_is_on_the_make_my_trip_holiday_packges_homepage()">
+                <span>Given the user is on the MakeMyTrip Holiday Packges homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_on_disney_cruise()">
+                <span>When the user clicks on Disney Cruise</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_clicks_view_all()">
+                <span>And the user clicks View All</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_user_chooses_a_cruise_package()">
+                <span>And the user chooses a cruise package</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HolidayPackageSteps.the_correct_cruise_packages_page_should_open()">
+                <span>Then the correct cruise packages page should open</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>4</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:47 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='71'>Then filtered holiday packages should be displayed</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Search with filters.Then filtered holiday packages should be displayed</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='72'>Then filtered holiday packages should be displayed</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Search with filters.Then filtered holiday packages should be displayed</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:55 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='81'>Then filtered holiday packages should be displayed</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Search with filters.Then filtered holiday packages should be displayed</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:14:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='120'>Then the correct holiday packages page should open</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details.Then the correct holiday packages page should open</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">12</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@TC_MakeMyTrip_08</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MakeMyTrip_08</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='153'>View All in Disney Cruise opens full listing</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.View All in Disney Cruise opens full listing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:28 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='157'>View All in Disney Cruise opens full listing</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.View All in Disney Cruise opens full listing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:16:07 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='187'>View All in Disney Cruise opens full listing</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.View All in Disney Cruise opens full listing</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>20</span>
+<span class='badge log badge-danger'>4</span>
+</span>
+<p class="name">@Positive</p>
+<p class="duration text-sm">24 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Positive</h4>
+<span status="pass" class='badge log pass-bg'>20 passed</span>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:11:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='8'>Valid search with different cities</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Valid search with different cities</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:11:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='9'>Valid search with different cities</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Valid search with different cities</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:11:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='7'>Valid search with different cities</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Valid search with different cities</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:07 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='49'>Search with filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Search with filters</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:09 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='55'>Search with filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Search with filters</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='63'>Search with filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Search with filters</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='76'>Navigating Visa Free Packages opens correct page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Visa Free Packages opens correct page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:55 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='79'>Navigating Visa Free Packages opens correct page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Visa Free Packages opens correct page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='87'>Navigating Visa Free Packages opens correct page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Visa Free Packages opens correct page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='93'>Selecting a visa free destination opens details</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='98'>Selecting a visa free destination opens details</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:14:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='105'>Selecting a visa free destination opens details</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='118'>Visa free packages section loads with proper UI</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Visa free packages section loads with proper UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:45 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='124'>Visa free packages section loads with proper UI</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Visa free packages section loads with proper UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='133'>Visa free packages section loads with proper UI</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Visa free packages section loads with proper UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:12 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='140'>Navigating Disney Cruise section works correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Disney Cruise section works correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='144'>Navigating Disney Cruise section works correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Disney Cruise section works correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='153'>View All in Disney Cruise opens full listing</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.View All in Disney Cruise opens full listing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:28 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='157'>View All in Disney Cruise opens full listing</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.View All in Disney Cruise opens full listing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='170'>Disney cruise package opens correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Disney cruise package opens correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='172'>Navigating Disney Cruise section works correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Disney Cruise section works correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='175'>Disney cruise package opens correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Disney cruise package opens correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:16:07 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='187'>View All in Disney Cruise opens full listing</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.View All in Disney Cruise opens full listing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:16:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='200'>Disney cruise package opens correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Disney cruise package opens correctly</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@TC_MakeMyTrip_04</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MakeMyTrip_04</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='76'>Navigating Visa Free Packages opens correct page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Visa Free Packages opens correct page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:55 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='79'>Navigating Visa Free Packages opens correct page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Visa Free Packages opens correct page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='87'>Navigating Visa Free Packages opens correct page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Visa Free Packages opens correct page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@TC_MakeMyTrip_06</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MakeMyTrip_06</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='118'>Visa free packages section loads with proper UI</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Visa free packages section loads with proper UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:45 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='124'>Visa free packages section loads with proper UI</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Visa free packages section loads with proper UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='133'>Visa free packages section loads with proper UI</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Visa free packages section loads with proper UI</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@TC_MakeMyTrip_07</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MakeMyTrip_07</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:12 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='140'>Navigating Disney Cruise section works correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Disney Cruise section works correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='144'>Navigating Disney Cruise section works correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Disney Cruise section works correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='172'>Navigating Disney Cruise section works correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Disney Cruise section works correctly</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@Negative</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Negative</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:12:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='29'>Invalid destination validation</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Invalid destination validation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:12:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='33'>Invalid destination validation</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Invalid destination validation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:12:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='42'>Invalid destination validation</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Invalid destination validation</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>8</span>
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@TS02</p>
+<p class="duration text-sm">9 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TS02</h4>
+<span status="pass" class='badge log pass-bg'>8 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='76'>Navigating Visa Free Packages opens correct page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Visa Free Packages opens correct page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:55 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='79'>Navigating Visa Free Packages opens correct page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Visa Free Packages opens correct page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='87'>Navigating Visa Free Packages opens correct page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Visa Free Packages opens correct page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='93'>Selecting a visa free destination opens details</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='98'>Selecting a visa free destination opens details</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:14:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='105'>Selecting a visa free destination opens details</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='118'>Visa free packages section loads with proper UI</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Visa free packages section loads with proper UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:45 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='124'>Visa free packages section loads with proper UI</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Visa free packages section loads with proper UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='133'>Visa free packages section loads with proper UI</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Visa free packages section loads with proper UI</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>9</span>
+</span>
+<p class="name">@TS03</p>
+<p class="duration text-sm">9 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TS03</h4>
+<span status="pass" class='badge log pass-bg'>9 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:12 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='140'>Navigating Disney Cruise section works correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Disney Cruise section works correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='144'>Navigating Disney Cruise section works correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Disney Cruise section works correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='153'>View All in Disney Cruise opens full listing</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.View All in Disney Cruise opens full listing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:28 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='157'>View All in Disney Cruise opens full listing</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.View All in Disney Cruise opens full listing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='170'>Disney cruise package opens correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Disney cruise package opens correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='172'>Navigating Disney Cruise section works correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Disney Cruise section works correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='175'>Disney cruise package opens correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Disney cruise package opens correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:16:07 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='187'>View All in Disney Cruise opens full listing</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.View All in Disney Cruise opens full listing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:16:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='200'>Disney cruise package opens correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Disney cruise package opens correctly</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@TC_MakeMyTrip_09</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MakeMyTrip_09</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='170'>Disney cruise package opens correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Disney cruise package opens correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='175'>Disney cruise package opens correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Disney cruise package opens correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:16:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='200'>Disney cruise package opens correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Disney cruise package opens correctly</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>6</span>
+<span class='badge log badge-danger'>3</span>
+</span>
+<p class="name">@TS01</p>
+<p class="duration text-sm">9 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TS01</h4>
+<span status="pass" class='badge log pass-bg'>6 passed</span>
+<span status="fail" class='badge log badge-danger'>3 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:11:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='8'>Valid search with different cities</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Valid search with different cities</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:11:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='9'>Valid search with different cities</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Valid search with different cities</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:11:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='7'>Valid search with different cities</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Valid search with different cities</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:12:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='29'>Invalid destination validation</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Invalid destination validation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:12:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='33'>Invalid destination validation</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Invalid destination validation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:12:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='42'>Invalid destination validation</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Invalid destination validation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:07 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='49'>Search with filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Search with filters</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:09 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='55'>Search with filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Search with filters</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='63'>Search with filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Search with filters</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>23</span>
+<span class='badge log badge-danger'>4</span>
+</span>
+<p class="name">@HolidayPackage</p>
+<p class="duration text-sm">27 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@HolidayPackage</h4>
+<span status="pass" class='badge log pass-bg'>23 passed</span>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:11:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='7'>Valid search with different cities</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Valid search with different cities</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:11:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='9'>Valid search with different cities</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Valid search with different cities</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:11:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='8'>Valid search with different cities</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Valid search with different cities</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:12:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='29'>Invalid destination validation</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Invalid destination validation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:12:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='33'>Invalid destination validation</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Invalid destination validation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:12:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='42'>Invalid destination validation</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Invalid destination validation</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:07 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='49'>Search with filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Search with filters</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:09 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='55'>Search with filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Search with filters</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='63'>Search with filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Search with filters</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='76'>Navigating Visa Free Packages opens correct page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Visa Free Packages opens correct page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:55 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='79'>Navigating Visa Free Packages opens correct page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Visa Free Packages opens correct page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='87'>Navigating Visa Free Packages opens correct page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Visa Free Packages opens correct page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='93'>Selecting a visa free destination opens details</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='98'>Selecting a visa free destination opens details</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:14:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='105'>Selecting a visa free destination opens details</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='118'>Visa free packages section loads with proper UI</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Visa free packages section loads with proper UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:45 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='124'>Visa free packages section loads with proper UI</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Visa free packages section loads with proper UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='133'>Visa free packages section loads with proper UI</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Visa free packages section loads with proper UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:12 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='140'>Navigating Disney Cruise section works correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Disney Cruise section works correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='144'>Navigating Disney Cruise section works correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Disney Cruise section works correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='153'>View All in Disney Cruise opens full listing</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.View All in Disney Cruise opens full listing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:28 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='157'>View All in Disney Cruise opens full listing</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.View All in Disney Cruise opens full listing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='170'>Disney cruise package opens correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Disney cruise package opens correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='172'>Navigating Disney Cruise section works correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Navigating Disney Cruise section works correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:15:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='175'>Disney cruise package opens correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Disney cruise package opens correctly</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:16:07 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='187'>View All in Disney Cruise opens full listing</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.View All in Disney Cruise opens full listing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:16:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='200'>Disney cruise package opens correctly</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Disney cruise package opens correctly</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@TC_MakeMyTrip_05</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MakeMyTrip_05</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='93'>Selecting a visa free destination opens details</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:14:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='98'>Selecting a visa free destination opens details</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:14:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='105'>Selecting a visa free destination opens details</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Holiday Packages Functionality.Selecting a visa free destination opens details</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Mar 28, 2026 03:11:26 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Mar 28, 2026 03:17:03 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>3</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>3</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='85%'><b>23</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='14%'><b>4</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='96%'><b>110</b> steps passed</small></div>
+<div>
+<small data-tooltip='3%'><b>4</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"MakeMyTrip Holiday Packages Functionality":294.399,"MakeMyTrip Holiday Packages Functionality":295.704,"MakeMyTrip Holiday Packages Functionality":336.323
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@TC_MakeMyTrip_08</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Positive</td>
+<td>20</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>83.333%</td>
+</tr>
+<tr>
+<td>@TC_MakeMyTrip_04</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_MakeMyTrip_06</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_MakeMyTrip_07</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Negative</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TS02</td>
+<td>8</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>88.889%</td>
+</tr>
+<tr>
+<td>@TS03</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_MakeMyTrip_09</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TS01</td>
+<td>6</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>66.667%</td>
+</tr>
+<tr>
+<td>@HolidayPackage</td>
+<td>23</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>85.185%</td>
+</tr>
+<tr>
+<td>@TC_MakeMyTrip_05</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>66.667%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 3,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 23,
+failChild: 4,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 110,
+failGrandChild: 4,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
