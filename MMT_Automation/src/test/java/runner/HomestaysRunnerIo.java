@@ -6,13 +6,14 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-
-import utils.homestay_utils.DriverFactory;
+import utils.DriverFactory;
 
 @CucumberOptions(
     features = "src/test/resources/features/homestays.feature",
     glue = "stepDefinations",
-    dryRun=false
+    dryRun=false,
+    		plugin = {"pretty", "html:target/cucumber-reports.html",
+    "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class HomestaysRunnerIo extends AbstractTestNGCucumberTests {
 	

@@ -15,7 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class StaysFilter {
+public class HomeStaysFilter {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -29,7 +29,7 @@ public class StaysFilter {
         "//p[@id=\"hlistpg_hotel_shown_price\"]"
     );
 
-    public StaysFilter(WebDriver driver) {
+    public HomeStaysFilter(WebDriver driver) {
         this.driver = driver;
         this.wait   = new WebDriverWait(driver, Duration.ofSeconds(20));
         this.js     = (JavascriptExecutor) driver;

@@ -8,7 +8,7 @@ public class ExcelDataProvider {
     public static Object[][] getData() {
 
         ExcelUtils excel = new ExcelUtils(
-            "src/test/resources/testdata.xlsx",
+            "src/test/resources/data/testdata.xlsx",
             "Sheet1"
         );
 

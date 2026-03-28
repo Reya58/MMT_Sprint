@@ -12,13 +12,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PropertyPage {
+public class HomeStaysPropertyPage {
 
     WebDriver driver;
     WebDriverWait wait;
     JavascriptExecutor js;
 
-    public PropertyPage(WebDriver driver) {
+    public HomeStaysPropertyPage(WebDriver driver) {
         this.driver = driver;
         this.wait   = new WebDriverWait(driver, Duration.ofSeconds(20));
         this.js     = (JavascriptExecutor) driver;

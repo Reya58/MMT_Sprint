@@ -26,7 +26,7 @@ Feature: MakeMyTrip Villas and Homestays Functionality
   @TS01 @Negative @TC_MMT_Villas_01_02 @Excel
   Scenario: Invalid destination shows no results
     When the user performs villa search for TC_MMT_Villas_01_02
-    Then the villa listing validation is done
+    Then no location suggestions should be displayed
 
 
   # ============================================================

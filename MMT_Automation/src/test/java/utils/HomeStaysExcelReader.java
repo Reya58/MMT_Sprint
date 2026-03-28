@@ -4,14 +4,14 @@ import java.io.FileInputStream;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExcelReader {
+public class HomeStaysExcelReader {
 
     private static Workbook workbook;
 
     static {
         try {
             FileInputStream fis =
-                    new FileInputStream("src/test/resources/Villas_TestData.xlsx");
+                    new FileInputStream("src/test/resources/data/Villas_TestData.xlsx");
 
             workbook = new XSSFWorkbook(fis);
 

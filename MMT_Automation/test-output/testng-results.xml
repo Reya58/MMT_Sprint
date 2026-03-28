@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="8" passed="2" failed="6" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-27T22:08:51 IST" name="MMT_Parallel_Suite" finished-at="2026-03-27T22:14:45 IST" duration-ms="353803">
+  <suite started-at="2026-03-28T15:05:09 IST" name="MMT_Parallel_Suite" finished-at="2026-03-28T19:46:17 IST" duration-ms="16868307">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.HomestaysRunnerIo@5b94b04d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.HomestaysRunnerIo@68267da0]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-03-27T22:08:51 IST" name="FirefoxTest" finished-at="2026-03-27T22:14:45 IST" duration-ms="353803">
+    <test started-at="2026-03-28T15:05:09 IST" name="FirefoxTest" finished-at="2026-03-28T19:46:17 IST" duration-ms="16868307">
       <class name="runner.HomestaysRunnerIo">
-        <test-method is-config="true" signature="setBrowserPerfernce(java.lang.String)[pri:0, instance:runner.HomestaysRunnerIo@5b94b04d]" started-at="2026-03-27T22:08:51 IST" name="setBrowserPerfernce" finished-at="2026-03-27T22:08:51 IST" duration-ms="178" status="PASS">
+        <test-method is-config="true" signature="setBrowserPerfernce(java.lang.String)[pri:0, instance:runner.HomestaysRunnerIo@68267da0]" started-at="2026-03-28T15:05:09 IST" name="setBrowserPerfernce" finished-at="2026-03-28T15:05:09 IST" duration-ms="37" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,18 +21,319 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowserPerfernce -->
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.HomestaysRunnerIo@5b94b04d]" started-at="2026-03-27T22:08:51 IST" name="setUpClass" finished-at="2026-03-27T22:08:54 IST" duration-ms="2425" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.HomestaysRunnerIo@68267da0]" started-at="2026-03-28T15:05:09 IST" name="setUpClass" finished-at="2026-03-28T15:05:10 IST" duration-ms="1211" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@20f5239f]]>
+                <![CDATA[org.testng.TestRunner@2a54a73f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.HomestaysRunnerIo@5b94b04d]" started-at="2026-03-27T22:08:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-27T22:14:45 IST" duration-ms="350641" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.HomestaysRunnerIo@68267da0]" started-at="2026-03-28T15:05:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-28T15:07:47 IST" duration-ms="156841" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Valid destination search shows villa listings"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["MakeMyTrip Villas and Homestays Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.HomestaysRunnerIo@68267da0]" started-at="2026-03-28T15:07:47 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-28T15:11:35 IST" duration-ms="228292" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid destination shows no results"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["MakeMyTrip Villas and Homestays Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.HomestaysRunnerIo@68267da0]" started-at="2026-03-28T15:11:35 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-28T17:15:46 IST" duration-ms="7450966" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Apply property type and amenities filters"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["MakeMyTrip Villas and Homestays Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[java.net.http.HttpTimeoutException: request timed out
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [a5a417d6-be50-40dc-8557-2d6f6de77cd2, findElement {using=xpath, value=//div[@class='tp-dt-header-icon'][2]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 21428, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: a5a417d6-be50-40dc-8557-2d6f6de77cd2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: java.net.http.HttpTimeoutException: request timed out
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [a5a417d6-be50-40dc-8557-2d6f6de77cd2, findElement {using=xpath, value=//div[@class='tp-dt-header-icon'][2]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 21428, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: a5a417d6-be50-40dc-8557-2d6f6de77cd2
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:393)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:359)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+at pages.HomeStays.close_popup(HomeStays.java:76)
+at stepDefinations.HomestaysSteps.villa_search(HomestaysSteps.java:91)
+at ✽.the user performs villa search for TC_MMT_Villas_02_01(file:///D:/Sprint/MMT_Automation/src/test/resources/features/homestays.feature:38)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+at java.net.http/jdk.internal.net.http.ResponseTimerEvent.handle(ResponseTimerEvent.java:63)
+at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1689)
+at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1258)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.HomestaysRunnerIo@68267da0]" started-at="2026-03-28T17:15:46 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-28T19:43:50 IST" duration-ms="8883324" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Sort villas by price low to high"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["MakeMyTrip Villas and Homestays Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Reached error page: about:neterror?e=dnsNotFound&u=https%3A//www.makemytrip.com/homestays/&c=UTF-8&d=We%20can%E2%80%99t%20connect%20to%20the%20server%20at%20www.makemytrip.com.&a=
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [aac27a2e-3a12-4e2f-ad6d-28eeee38f3e9, get {url=https://www.makemytrip.com/homestays/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 9928, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: aac27a2e-3a12-4e2f-ad6d-28eeee38f3e9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Reached error page: about:neterror?e=dnsNotFound&u=https%3A//www.makemytrip.com/homestays/&c=UTF-8&d=We%20can%E2%80%99t%20connect%20to%20the%20server%20at%20www.makemytrip.com.&a=
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [aac27a2e-3a12-4e2f-ad6d-28eeee38f3e9, get {url=https://www.makemytrip.com/homestays/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 9928, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: aac27a2e-3a12-4e2f-ad6d-28eeee38f3e9
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+at stepDefinations.HomestaysSteps.setup(HomestaysSteps.java:38)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.HomestaysRunnerIo@68267da0]" started-at="2026-03-28T19:43:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-28T19:44:19 IST" duration-ms="29243" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Sort villas by price high to low"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["MakeMyTrip Villas and Homestays Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Failed to decode response from marionette
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [9f0373ac-66fc-4821-8498-99ffad4883a6, executeScript {script=return document.readyState, args=[]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 3412, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 9f0373ac-66fc-4821-8498-99ffad4883a6]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [9f0373ac-66fc-4821-8498-99ffad4883a6, executeScript {script=return document.readyState, args=[]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 3412, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 9f0373ac-66fc-4821-8498-99ffad4883a6
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:464)
+at stepDefinations.HomestaysSteps.lambda$0(HomestaysSteps.java:55)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+at stepDefinations.HomestaysSteps.open_homepage(HomestaysSteps.java:54)
+at ✽.the user is on the MakeMyTrip homepage(file:///D:/Sprint/MMT_Automation/src/test/resources/features/homestays.feature:13)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.HomestaysRunnerIo@68267da0]" started-at="2026-03-28T19:44:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-28T19:44:36 IST" duration-ms="16830" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["View villa details page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["MakeMyTrip Villas and Homestays Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[WebDriver session does not exist, or is not active
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [d6b7c91c-8f24-4c24-bf46-6ad68f7c724e, executeScript {script=return document.readyState, args=[]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 2364, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: d6b7c91c-8f24-4c24-bf46-6ad68f7c724e]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: WebDriver session does not exist, or is not active
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [d6b7c91c-8f24-4c24-bf46-6ad68f7c724e, executeScript {script=return document.readyState, args=[]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 2364, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: d6b7c91c-8f24-4c24-bf46-6ad68f7c724e
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:464)
+at stepDefinations.HomestaysSteps.lambda$0(HomestaysSteps.java:55)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+at stepDefinations.HomestaysSteps.open_homepage(HomestaysSteps.java:54)
+at ✽.the user is on the MakeMyTrip homepage(file:///D:/Sprint/MMT_Automation/src/test/resources/features/homestays.feature:13)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.HomestaysRunnerIo@68267da0]" started-at="2026-03-28T19:44:36 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-28T19:45:10 IST" duration-ms="33914" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["View guest reviews on property page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["MakeMyTrip Villas and Homestays Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Failed to decode response from marionette
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [187a3d64-4a23-4ddd-9409-8c256005f5ee, findElement {using=xpath, value=//input[@placeholder='Where do you want to stay?']}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 21284, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 187a3d64-4a23-4ddd-9409-8c256005f5ee]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [187a3d64-4a23-4ddd-9409-8c256005f5ee, findElement {using=xpath, value=//input[@placeholder='Where do you want to stay?']}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 21284, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 187a3d64-4a23-4ddd-9409-8c256005f5ee
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy28.sendKeys(Unknown Source)
+at pages.HomeStays.enterLocation(HomeStays.java:91)
+at stepDefinations.HomestaysSteps.villa_search(HomestaysSteps.java:93)
+at ✽.the user performs villa search for TC_MMT_Villas_04_02(file:///D:/Sprint/MMT_Automation/src/test/resources/features/homestays.feature:72)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.HomestaysRunnerIo@68267da0]" started-at="2026-03-28T19:45:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-03-28T19:46:12 IST" duration-ms="62295" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -51,18 +352,18 @@
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [96870420-1478-4fa6-99d3-7939834f34bd, findElement {using=xpath, value=//div[contains(@class,'pricBreakup__rht') and last()] | //span[contains(@class,'totalAmt')] | //div[contains(text(),'Total')]/following-sibling::div[1]}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 8672, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 96870420-1478-4fa6-99d3-7939834f34bd]]>
+Command: [70204b09-b298-487e-8bb5-b8341bfe1220, findElement {using=xpath, value=//div[contains(@class,'pricBreakup__rht') and last()] | //span[contains(@class,'totalAmt')] | //div[contains(text(),'Total')]/following-sibling::div[1]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 15312, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 70204b09-b298-487e-8bb5-b8341bfe1220]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [96870420-1478-4fa6-99d3-7939834f34bd, findElement {using=xpath, value=//div[contains(@class,'pricBreakup__rht') and last()] | //span[contains(@class,'totalAmt')] | //div[contains(text(),'Total')]/following-sibling::div[1]}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 8672, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 96870420-1478-4fa6-99d3-7939834f34bd
+Command: [70204b09-b298-487e-8bb5-b8341bfe1220, findElement {using=xpath, value=//div[contains(@class,'pricBreakup__rht') and last()] | //span[contains(@class,'totalAmt')] | //div[contains(text(),'Total')]/following-sibling::div[1]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 15312, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 70204b09-b298-487e-8bb5-b8341bfe1220
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
@@ -79,17 +380,17 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy25.getText(Unknown Source)
-at pages.BookingPage.getUpdatedPriceAfterCoupon(BookingPage.java:118)
-at stepDefinations.HomestaysTest.validate_coupon(HomestaysTest.java:227)
-at ✽.discount is applied successfully(file:///D:/Sprint/MMT_Automation/src/test/resources/features/homestays.feature:23)
+at jdk.proxy2/jdk.proxy2.$Proxy28.getText(Unknown Source)
+at pages.HomeStaysBookingPage.getUpdatedPriceAfterCoupon(HomeStaysBookingPage.java:120)
+at stepDefinations.HomestaysSteps.validate_coupon(HomestaysSteps.java:227)
+at ✽.discount is applied successfully(file:///D:/Sprint/MMT_Automation/src/test/resources/features/homestays.feature:86)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.HomestaysRunnerIo@5b94b04d]" started-at="2026-03-27T22:14:45 IST" name="tearDownClass" finished-at="2026-03-27T22:14:45 IST" duration-ms="35" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.HomestaysRunnerIo@68267da0]" started-at="2026-03-28T19:46:12 IST" name="tearDownClass" finished-at="2026-03-28T19:46:17 IST" duration-ms="5102" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

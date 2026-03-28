@@ -11,15 +11,15 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import pages.*;
-import utils.homestay_utils.DriverFactory;
+import utils.DriverFactory;
 
-public class HomestaysTest {
+public class HomestaysSteps {
 
     WebDriver driver;
     HomeStays home;
-    StaysFilter filter;
-    PropertyPage property;
-    BookingPage booking;
+    HomeStaysFilter filter;
+    HomeStaysPropertyPage property;
+    HomeStaysBookingPage booking;
 
     String oldPrice;
 
@@ -56,9 +56,9 @@ public class HomestaysTest {
                         .equals("complete"));
 
         home = new HomeStays(driver);
-        filter = new StaysFilter(driver);
-        property = new PropertyPage(driver);
-        booking = new BookingPage(driver);
+        filter = new HomeStaysFilter(driver);
+        property = new HomeStaysPropertyPage(driver);
+        booking = new HomeStaysBookingPage(driver);
 
         
     }
@@ -83,9 +83,9 @@ public class HomestaysTest {
 
         System.out.println("[INFO] Executing TC: " + tcId);
 
-        String city = utils.ExcelReader.getCellData("Villas", tcId, "City");
-        String adults = utils.ExcelReader.getCellData("Villas", tcId, "Adults");
-        String children = utils.ExcelReader.getCellData("Villas", tcId, "Children");
+        String city = utils.HomeStaysExcelReader.getCellData("Villas", tcId, "City");
+        String adults = utils.HomeStaysExcelReader.getCellData("Villas", tcId, "Adults");
+        String children = utils.HomeStaysExcelReader.getCellData("Villas", tcId, "Children");
         System.out.println(city+" "+adults+" "+children);
 
         home.close_popup();
@@ -149,7 +149,7 @@ public class HomestaysTest {
 
   
 
-        String sort = utils.ExcelReader.getCellData("Villas", tcId, "Sort");
+        String sort = utils.HomeStaysExcelReader.getCellData("Villas", tcId, "Sort");
         if(sort.equals("LOW_TO_HIGH")) filter.sortLowToHigh();
         else filter.sortHighToLow();
 
@@ -212,7 +212,7 @@ public class HomestaysTest {
     	        + "_"
     	        + String.format("%02d", tc2);
 
-        String coupon = utils.ExcelReader.getCellData("Villas", tcId, "Coupon");
+        String coupon = utils.HomeStaysExcelReader.getCellData("Villas", tcId, "Coupon");
 
         System.out.println("[INFO] Applying coupon: " + coupon);
         property.clickBookNow();
@@ -230,5 +230,10 @@ public class HomestaysTest {
                 "Coupon not applied");
 
         System.out.println("[PASS] Coupon validated");
+    }
+    @Then("no location suggestions should be displayed")
+    public void no_location_suggestions_should_be_displayed() {
+    	boolean result=home.isCityPresent();
+    	Assert.assertFalse(result);
     }
 }

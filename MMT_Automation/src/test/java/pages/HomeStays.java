@@ -3,6 +3,7 @@ package pages;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -56,6 +57,10 @@ public class HomeStays {
 
     @FindBy(xpath = "//button[@id='hsw_search_button']")
     private WebElement searchBtn;
+    
+    private static final By CITY = By.xpath("//p[@class='sr_city']");
+    
+   
 
     // =========================================================================
     //  Public Actions
@@ -138,5 +143,9 @@ public class HomeStays {
     /** Clicks the Search button. */
     public void clickSearch() {
         searchBtn.click();
+    }
+    public boolean isCityPresent() {
+        List<WebElement> cities = driver.findElements(CITY);
+        return cities.size() > 0;
     }
 }

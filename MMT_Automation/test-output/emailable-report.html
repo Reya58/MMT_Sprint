@@ -9,17 +9,54 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">MMT_Parallel_Suite</th></tr>
-<tr><td><a href="#t0">FirefoxTest</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">353,803</td><td></td><td></td></tr>
+<tr><td><a href="#t0">FirefoxTest</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">6</td><td class="num">16,868,307</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">MMT_Parallel_Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">FirefoxTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">runner.HomestaysRunnerIo</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1774629534530</td><td rowspan="1">350641</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">MMT_Parallel_Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">FirefoxTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="6">runner.HomestaysRunnerIo</td><td><a href="#m0">runScenario</a></td><td rowspan="6">1774698346806</td><td rowspan="6">8883324</td></tr><tr class="failedeven"><td><a href="#m1">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m2">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m3">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m4">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m5">runScenario</a></td></tr><tr><th colspan="4">FirefoxTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">runner.HomestaysRunnerIo</td><td><a href="#m6">runScenario</a></td><td rowspan="2">1774690510552</td><td rowspan="2">156841</td></tr><tr class="passedeven"><td><a href="#m7">runScenario</a></td></tr></tbody>
 </table>
-<h2>FirefoxTest</h2><h3 id="m0">runner.HomestaysRunnerIo#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Apply coupon on booking page&quot;</td><td>&quot;MakeMyTrip Villas and Homestays Functionality&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
+<h2>FirefoxTest</h2><h3 id="m0">runner.HomestaysRunnerIo#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Sort villas by price low to high&quot;</td><td>&quot;MakeMyTrip Villas and Homestays Functionality&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.WebDriverException: Reached error page: about:neterror?e=dnsNotFound&amp;u=https%3A//www.makemytrip.com/homestays/&amp;c=UTF-8&amp;d=We%20can%E2%80%99t%20connect%20to%20the%20server%20at%20www.makemytrip.com.&amp;a=
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20.0.2&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [96870420-1478-4fa6-99d3-7939834f34bd, findElement {using=xpath, value=//div[contains(@class,&apos;pricBreakup__rht&apos;) and last()] | //span[contains(@class,&apos;totalAmt&apos;)] | //div[contains(text(),&apos;Total&apos;)]/following-sibling::div[1]}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 8672, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 96870420-1478-4fa6-99d3-7939834f34bd
+Command: [aac27a2e-3a12-4e2f-ad6d-28eeee38f3e9, get {url=https://www.makemytrip.com/homestays/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 9928, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: aac27a2e-3a12-4e2f-ad6d-28eeee38f3e9
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at stepDefinations.HomestaysSteps.setup(HomestaysSteps.java:38)
+... Removed 3 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">runner.HomestaysRunnerIo#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;View villa details page&quot;</td><td>&quot;MakeMyTrip Villas and Homestays Functionality&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: WebDriver session does not exist, or is not active
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20.0.2&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [d6b7c91c-8f24-4c24-bf46-6ad68f7c724e, executeScript {script=return document.readyState, args=[]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 2364, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: d6b7c91c-8f24-4c24-bf46-6ad68f7c724e
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:464)
+	at stepDefinations.HomestaysSteps.lambda$0(HomestaysSteps.java:55)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at stepDefinations.HomestaysSteps.open_homepage(HomestaysSteps.java:54)
+	at ✽.the user is on the MakeMyTrip homepage(file:///D:/Sprint/MMT_Automation/src/test/resources/features/homestays.feature:13)
+... Removed 3 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">runner.HomestaysRunnerIo#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;View guest reviews on property page&quot;</td><td>&quot;MakeMyTrip Villas and Homestays Functionality&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20.0.2&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [187a3d64-4a23-4ddd-9409-8c256005f5ee, findElement {using=xpath, value=//input[@placeholder=&apos;Where do you want to stay?&apos;]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 21284, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 187a3d64-4a23-4ddd-9409-8c256005f5ee
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -33,10 +70,87 @@ Session ID: 96870420-1478-4fa6-99d3-7939834f34bd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy25.getText(Unknown Source)
-	at pages.BookingPage.getUpdatedPriceAfterCoupon(BookingPage.java:118)
-	at stepDefinations.HomestaysTest.validate_coupon(HomestaysTest.java:227)
-	at ✽.discount is applied successfully(file:///D:/Sprint/MMT_Automation/src/test/resources/features/homestays.feature:23)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.sendKeys(Unknown Source)
+	at pages.HomeStays.enterLocation(HomeStays.java:91)
+	at stepDefinations.HomestaysSteps.villa_search(HomestaysSteps.java:93)
+	at ✽.the user performs villa search for TC_MMT_Villas_04_02(file:///D:/Sprint/MMT_Automation/src/test/resources/features/homestays.feature:72)
 ... Removed 3 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">runner.HomestaysRunnerIo#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Apply property type and amenities filters&quot;</td><td>&quot;MakeMyTrip Villas and Homestays Functionality&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: java.net.http.HttpTimeoutException: request timed out
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20.0.2&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [a5a417d6-be50-40dc-8557-2d6f6de77cd2, findElement {using=xpath, value=//div[@class=&apos;tp-dt-header-icon&apos;][2]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 21428, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: a5a417d6-be50-40dc-8557-2d6f6de77cd2
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:393)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:359)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+	at pages.HomeStays.close_popup(HomeStays.java:76)
+	at stepDefinations.HomestaysSteps.villa_search(HomestaysSteps.java:91)
+	at ✽.the user performs villa search for TC_MMT_Villas_02_01(file:///D:/Sprint/MMT_Automation/src/test/resources/features/homestays.feature:38)
+Caused by: java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.ResponseTimerEvent.handle(ResponseTimerEvent.java:63)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.purgeTimeoutsAndReturnNextDeadline(HttpClientImpl.java:1689)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1258)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">runner.HomestaysRunnerIo#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Sort villas by price high to low&quot;</td><td>&quot;MakeMyTrip Villas and Homestays Functionality&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20.0.2&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [9f0373ac-66fc-4821-8498-99ffad4883a6, executeScript {script=return document.readyState, args=[]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 3412, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 9f0373ac-66fc-4821-8498-99ffad4883a6
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:464)
+	at stepDefinations.HomestaysSteps.lambda$0(HomestaysSteps.java:55)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at stepDefinations.HomestaysSteps.open_homepage(HomestaysSteps.java:54)
+	at ✽.the user is on the MakeMyTrip homepage(file:///D:/Sprint/MMT_Automation/src/test/resources/features/homestays.feature:13)
+... Removed 3 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">runner.HomestaysRunnerIo#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Apply coupon on booking page&quot;</td><td>&quot;MakeMyTrip Villas and Homestays Functionality&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20.0.2&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [70204b09-b298-487e-8bb5-b8341bfe1220, findElement {using=xpath, value=//div[contains(@class,&apos;pricBreakup__rht&apos;) and last()] | //span[contains(@class,&apos;totalAmt&apos;)] | //div[contains(text(),&apos;Total&apos;)]/following-sibling::div[1]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 149.0, moz:accessibilityChecks: false, moz:buildID: 20260318190823, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 15312, moz:profile: C:\Users\SHREYA~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 70204b09-b298-487e-8bb5-b8341bfe1220
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.getText(Unknown Source)
+	at pages.HomeStaysBookingPage.getUpdatedPriceAfterCoupon(HomeStaysBookingPage.java:120)
+	at stepDefinations.HomestaysSteps.validate_coupon(HomestaysSteps.java:227)
+	at ✽.discount is applied successfully(file:///D:/Sprint/MMT_Automation/src/test/resources/features/homestays.feature:86)
+... Removed 3 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">runner.HomestaysRunnerIo#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Valid destination search shows villa listings&quot;</td><td>&quot;MakeMyTrip Villas and Homestays Functionality&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">runner.HomestaysRunnerIo#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Invalid destination shows no results&quot;</td><td>&quot;MakeMyTrip Villas and Homestays Functionality&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
