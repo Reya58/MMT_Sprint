@@ -6,7 +6,7 @@
 # Ref      : REQ_MakeMyTrip_01 to REQ_MakeMyTrip_03
 # ============================================================
 
-@Hotels
+@HolidayPackage
 Feature: MakeMyTrip Holiday Packages Functionality
 
   Background:
@@ -17,24 +17,38 @@ Feature: MakeMyTrip Holiday Packages Functionality
   # TS_MakeMyTrip_HolidayPackages_01 – Search Functionality
   # ============================================================
 
-  @TS01 @Positive @TC_MakeMyTrip_01
-  Scenario: Valid search with correct cities returns results
-    When the user selects from city "Kolkata", to city "Kerala", valid departure date and room and guest details
+  @TS01 @Positive
+  Scenario Outline: Valid search with different cities
+    When the user selects from city "<fromCity>", to city "<toCity>", valid departure date and room and guest details
     And the user clicks the Search button
     And the user clicks the First result from Search
-    Then the holiday package result locations should match "Kolkata" to "Kerala"
+    Then the holiday package result locations should match "<fromCity>" to "<toCity>"
 
-  @TS01 @Negative @TC_MakeMyTrip_02
-  Scenario: Invalid destination shows no results
-    When the user selects from city "Kolkata", to city "iaooxoias", valid departure date and room and guest details
-    Then the data "iaooxoias" is not accepted
+    Examples:
+      | fromCity | toCity  |
+      | Kolkata  | Kerala  |
 
-  @TS01 @Positive @TC_MakeMyTrip_03
-  Scenario: Search with filters returns filtered results
-    When the user selects from city "Kolkata", to city "Kerala", valid departure date and room and guest details
+
+  @TS01 @Negative
+  Scenario Outline: Invalid destination validation
+    When the user selects valid from city "<fromCity>", invalid to city "<toCity>"
+    Then the data "<toCity>" is not accepted
+
+    Examples:
+      | fromCity | toCity     |
+      | Kolkata  | iaooxoias  |
+
+
+  @TS01 @Positive
+  Scenario Outline: Search with filters
+    When the user selects from city "<fromCity>", to city "<toCity>", valid departure date and room and guest details
     And flight, price and star rating filters are added
     And the user clicks the Search button
     Then filtered holiday packages should be displayed
+
+    Examples:
+      | fromCity | toCity |
+      | Kolkata  | Kerala |
 
 
   # ============================================================

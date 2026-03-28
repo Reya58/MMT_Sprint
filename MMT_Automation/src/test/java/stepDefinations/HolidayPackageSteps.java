@@ -1,6 +1,7 @@
 package stepDefinations;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -13,11 +14,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HolidayPackagePage;
 import utils.DriverFactory;
+import utils.HolidayPackagesUtils;
 
 public class HolidayPackageSteps {
     
     WebDriver driver;
     HolidayPackagePage hpp;
+    static List<String[]> testData = HolidayPackagesUtils.getTestData("Sheet1");
+    private static ThreadLocal<Integer> rowNumber = new ThreadLocal<>();
 
     @Before
     public void setUp() {
@@ -25,8 +29,13 @@ public class HolidayPackageSteps {
 
         driver = DriverFactory.getDriver();
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
+        
+        if (rowNumber.get() == null) {
+            int randomRow = (int)(Math.random() * (testData.size()-1));
+            rowNumber.set(randomRow);
+        }
     }
 
     @After
@@ -43,9 +52,15 @@ public class HolidayPackageSteps {
 
     @When("the user selects from city {string}, to city {string}, valid departure date and room and guest details")
     public void the_user_selects_from_city_to_city_valid_departure_date_and_room_and_guest_details(String string, String string2) {
-        hpp.selectFromCity(string);
-        hpp.selectToCity(string2);
+    	hpp.selectFromCity(testData.get(rowNumber.get())[0]);
+        hpp.selectToCity(testData.get(rowNumber.get())[1]);
         hpp.selectDateAndGuests();
+    }
+    
+    @When("the user selects valid from city {string}, invalid to city {string}")
+    public void the_user_selects_valid_from_city_invalid_to_city(String string, String string2) {
+    	hpp.selectFromCity(testData.get(testData.size()-1)[0]);
+        hpp.selectToCity(testData.get(testData.size()-1)[1]);
     }
 
     @When("the user clicks the Search button")
@@ -60,12 +75,12 @@ public class HolidayPackageSteps {
 
     @Then("the holiday package result locations should match {string} to {string}")
     public void the_holiday_package_result_locations_should_match_to(String string, String string2) {
-        Assert.assertTrue(hpp.validateSearchDetails(string, string2));
+    	Assert.assertTrue(hpp.validateSearchDetails(testData.get(rowNumber.get())[0], testData.get(rowNumber.get())[1]));
     }
 
     @Then("the data {string} is not accepted")
     public void the_data_is_not_accepted(String string) {
-        Assert.assertFalse(hpp.validateToCity(string));
+        Assert.assertFalse(hpp.validateToCity(testData.get(testData.size()-1)[1]));
     }
 
     @When("flight, price and star rating filters are added")
