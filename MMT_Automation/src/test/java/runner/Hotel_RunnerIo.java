@@ -30,12 +30,13 @@
 //}
 package runner;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import utils.DriverFactory;
+import utils.Hotels_DriverFactory;
 
 @CucumberOptions(
     features = "src/test/resources/features/Hotels.feature",
@@ -43,16 +44,29 @@ import utils.DriverFactory;
     plugin = {
         "pretty",
         "html:reports/hotels_module/cucumber-report.html",
-        "json:reports/hotels_module/cucumber.json"
+        "json:reports/hotels_module/cucumber.json",
+        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
     },
     monochrome = true
 )
 public class Hotel_RunnerIo extends AbstractTestNGCucumberTests {
 
-	@BeforeTest
+//	@BeforeTest
+//    @Parameters("browser")
+//    public void setupBrowserPreference(String browser) {
+//		DriverFactory.setBrowser(browser);
+//    }
+	public static String browser;
+
     @Parameters("browser")
-    public void setupBrowserPreference(String browser) {
-		DriverFactory.setBrowser(browser);
+    @BeforeClass
+    public void setBrowser(String browserName) {
+        browser = browserName;
     }
+    @Override
+    @org.testng.annotations.DataProvider(parallel = false)
+    public Object[][] scenarios() {
+        return super.scenarios();
     }
+}
 

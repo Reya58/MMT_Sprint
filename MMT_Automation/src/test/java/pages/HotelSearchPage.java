@@ -40,10 +40,10 @@ public class HotelSearchPage {
 		@FindBy(xpath ="//input[@title='Where do you want to stay?']")
 		   private WebElement destination; //send keys, arrow down, key enter
 		
-		@FindBy(xpath ="//div[@aria-label='Wed Apr 08 2026']/child::span")
+		@FindBy(xpath ="//div[@aria-label='Wed Apr 01 2026']/child::span")
 		   private WebElement checkInDate; 
 
-		@FindBy(xpath ="//div[@aria-label='Fri Apr 10 2026']/child::span")
+		@FindBy(xpath ="//div[@aria-label='Fri Apr 03 2026']/child::span")
 		   private WebElement checkOutDate; 
 		
 		@FindBy(xpath ="//button[@data-cy='RoomsGuestsNew_327']")

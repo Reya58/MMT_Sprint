@@ -23,7 +23,7 @@ import io.cucumber.java.en.*;
 
 import pages.HotelListingsPage;
 import pages.HotelSearchPage;
-import utils.DriverFactory;
+import utils.Hotels_DriverFactory;
 import utils.Hotel_ExcelUtil;
 
 public class HotelSteps {
@@ -58,24 +58,29 @@ public class HotelSteps {
     // ============================================================
 	@Before
     public void setUp() {
-        DriverFactory.initDriver();
-
-        driver = DriverFactory.getDriver();
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+//        DriverFactory.initDriver();
+//
+//        driver = DriverFactory.getDriver();
+//
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+//        driver.manage().window().maximize();
+		String browser = runner.Hotel_RunnerIo.browser;
+	    Hotels_DriverFactory.initDriver(browser);
+	    driver = Hotels_DriverFactory.getDriver();
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.manage().window().maximize();
     }
 
     @After
     public void tearDown(Scenario scenario) {
         System.out.println("Finished Scenario: " + scenario.getName());
-        DriverFactory.quitDriver();
+        Hotels_DriverFactory.quitDriver();
     }
 	
     @Given("the user is on the MakeMyTrip Hotels homepage")
     public void open_homepage() throws InterruptedException {
-        //driver = new EdgeDriver();
-        //driver.manage().window().maximize();
+//        driver = new FirefoxDriver();
+//        driver.manage().window().maximize();
         driver.get("https://www.makemytrip.com/?cc=in&redirectedBy=gl");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 
