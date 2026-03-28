@@ -12,11 +12,14 @@ public class HolidayPackagePage_Search {
 	@FindBy (xpath = "//span[@class=\"close closeIcon\"]")
 	private WebElement btn_PopUp;
 
-	@FindBy (xpath = "//div[@class=\"packageCardWrapper similarPackage\"]")
+	@FindBy (className = "packageTextContainer")
 	private WebElement btn_FirstResult;
 	
 	@FindBy (xpath = "//div[text() = \"With Flight\"]/ancestor::div[@class=\"variant-card-container  pointer\"]")
 	private WebElement btn_FirstResult_Flights;
+	
+	@FindBy (xpath = "//div[@class=\"titleWrapper\"]/p")
+	private WebElement txt_PackageName;
 	
 	@FindBy (className = "priceStyle")
 	private List<WebElement> txt_Prices;
@@ -34,12 +37,20 @@ public class HolidayPackagePage_Search {
 	public void clickSearchDetails() {
 		closePopupIfPresent();
 		
+		String title = txt_PackageName.getText();
+		
 		btn_FirstResult.click();
-		btn_FirstResult_Flights.click();
+		try {
+	        if (btn_FirstResult_Flights.isDisplayed()) {
+	            btn_FirstResult_Flights.click();
+	        }
+	    } catch (Exception e) {
+	        // gnore
+	    }
 		
 		for (String handle : driver.getWindowHandles()) {
 		    driver.switchTo().window(handle);
-		    if (driver.getTitle().equals("Epic Kerala - Mega Price Drop Sale")) {
+		    if (driver.getTitle().equals(title)) {
 		        break;
 		    }
 		}

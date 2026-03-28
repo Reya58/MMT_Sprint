@@ -11,6 +11,9 @@ public class HolidayPackagePage {
 	
 	@FindBy (xpath = "//span[@data-cy=\"closeModal\"]")
 	private WebElement btn_PopUp;
+	
+	@FindBy (xpath = "//p[text() = \"Cancel\"]")
+	private WebElement btn_PopUp1;
 
 	@FindBy (id = "fromCity")
 	private WebElement btn_FromCity;
@@ -27,7 +30,7 @@ public class HolidayPackagePage {
 	@FindBy (xpath = "//input[@placeholder=\"To\"]")
 	private WebElement txt_ToCity;
 	
-	@FindBy (className = "dest-city-container")
+	@FindBy (xpath = "//div[@class=\"dest-search-list\"]/div/div")
 	private WebElement btn_SelectCity_To;
 	
 	@FindBy (xpath = "//span[@data-cy=\"departureDate\"]")
@@ -51,7 +54,7 @@ public class HolidayPackagePage {
 	@FindBy (xpath = "//label[text() = \"With Flights\"]")
 	private WebElement btn_Filter1;
 	
-	@FindBy (xpath = "//p[text() = \"< ₹20,000\"]")
+	@FindBy (xpath = "//div[@class=\"filterOptions\"]/descendant::p")
 	private WebElement btn_Filter2;
 	
 	@FindBy (xpath = "//label[text() = \"5\"]")
@@ -93,6 +96,7 @@ public class HolidayPackagePage {
 	public void selectToCity(String toCity) {
 	    btn_ToCity.click();
 	    txt_ToCity.sendKeys(toCity);
+	    closePopupIfPresent();
 	    try {
 	        if (btn_SelectCity_To.isDisplayed()) {
 	            btn_SelectCity_To.click();
@@ -224,6 +228,13 @@ public class HolidayPackagePage {
 	    try {
 	        if (btn_PopUp.isDisplayed()) {
 	            btn_PopUp.click();
+	        }
+	    } catch (Exception e) {
+	        //ignore
+	    }
+	    try {
+	        if (btn_PopUp1.isDisplayed()) {
+	            btn_PopUp1.click();
 	        }
 	    } catch (Exception e) {
 	        //ignore

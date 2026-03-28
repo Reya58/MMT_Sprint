@@ -13,7 +13,7 @@ public class HolidayPackagePage_Package {
 	@FindBy (xpath = "//span[@class=\"close closeIcon\"]")
 	private WebElement btn_PopUp2;
 	
-	@FindBy (xpath = "//span[text()=\"Kolkata\"]")
+	@FindBy (id = "fromCity")
 	private WebElement txt_FromCity;
 	
 	@FindBy (className = "topHeading")
@@ -28,7 +28,7 @@ public class HolidayPackagePage_Package {
 	
 	public boolean validateLocations(String fromCity, String toCity) {
 		closePopupIfPresent();
-		if(txt_FromCity.getText().contains(fromCity) && txt_ToCity.getText().contains(toCity))
+		if(txt_FromCity.getAttribute("value").contains(fromCity) && txt_ToCity.getText().contains(toCity))
 			return true;
 		else
 			return false;
