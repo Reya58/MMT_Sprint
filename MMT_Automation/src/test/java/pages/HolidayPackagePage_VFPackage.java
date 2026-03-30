@@ -45,6 +45,7 @@ public class HolidayPackagePage_VFPackage {
 			return false;
 		}
 		
+		closePopupIfPresent();
 		if(img_UI.size() == 0) {
 	        return false;
 	    }
