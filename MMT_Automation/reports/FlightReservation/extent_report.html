@@ -1,0 +1,1507 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Mar 30, 2026 02:34:38 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@search</a><a class="dropdown-item" href="#">@results</a><a class="dropdown-item" href="#">@ui</a><a class="dropdown-item" href="#">@TC_01</a><a class="dropdown-item" href="#">@positive</a><a class="dropdown-item" href="#">@flight</a><a class="dropdown-item" href="#">@regression</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Flight Search on MakeMyTrip</p>
+            <p class="text-sm">
+              <span>2:34:39 pm</span> / <span>00:06:34:858</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Flight Search on MakeMyTrip</h5>
+<span class='badge badge-success'>03.30.2026 2:34:39 pm</span>
+<span class='badge badge-danger'>03.30.2026 2:41:14 pm</span>
+<span class='badge badge-default'>00:06:34:858</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> As a user of MakeMyTrip
+I want to search for flights between cities
+So that I can view available flights and their details</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="5"><span class="badge log fail-bg mr-2">Fail</span>User searches and books a flight with valid inputs</div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="9"><span class="badge log pass-bg mr-2">Pass</span>User searches and books a flight with valid inputs</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights from "Delhi" to "Mumbai"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects departure date "Sun May 24 2026"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user executes the flight search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then available flights are displayed</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects a flight</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters valid traveller details "Rahul", "Kumar", "Male", "9876543210", "rahul@gmail.com", "Delhi"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And completes the booking</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the booking is successful</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="67"><span class="badge log fail-bg mr-2">Fail</span>User searches and books a flight with valid inputs</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights from "Kolkata" to "Bengaluru"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects departure date "Tue May 26 2026"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user executes the flight search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then available flights are displayed</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects a flight</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters valid traveller details "Ananya", "Kumari", "Female", "9123456780", "ananya@gmail.com", "West Bengal"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And completes the booking</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then the booking is successful</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: Boking was Failed
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at stepDefinations.FlightReservationSteps.the_booking_is_successful(FlightReservationSteps.java:137)
+	at ✽.the booking is successful(file:///D:/training/sprint/MMT_Sprint/MMT_Automation/src/test/resources/features/flightResev.feature:27)
+</textarea>
+      
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Flight Search on MakeMyTrip</p>
+            <p class="text-sm">
+              <span>2:34:39 pm</span> / <span>00:01:40:373</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Flight Search on MakeMyTrip</h5>
+<span class='badge badge-success'>03.30.2026 2:34:39 pm</span>
+<span class='badge badge-danger'>03.30.2026 2:36:20 pm</span>
+<span class='badge badge-default'>00:01:40:373</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> As a user of MakeMyTrip
+I want to search for flights between cities
+So that I can view available flights and their details</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="4"><span class="badge log fail-bg mr-2">Fail</span>User searches and books a flight with valid inputs</div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="8"><span class="badge log fail-bg mr-2">Fail</span>User searches and books a flight with valid inputs</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights from "Delhi" to "Mumbai"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects departure date "Sun May 24 2026"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user executes the flight search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then available flights are displayed</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: User is not on search results page
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at stepDefinations.FlightReservationSteps.available_flights_are_displayed(FlightReservationSteps.java:52)
+	at ✽.available flights are displayed(file:///D:/training/sprint/MMT_Sprint/MMT_Automation/src/test/resources/features/flightResev.feature:23)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When the user selects a flight</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And enters valid traveller details "Rahul", "Kumar", "Male", "9876543210", "rahul@gmail.com", "Delhi"</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And completes the booking</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then the booking is successful</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="35"><span class="badge log fail-bg mr-2">Fail</span>User searches and books a flight with valid inputs</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights from "Kolkata" to "Bengaluru"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects departure date "Tue May 26 2026"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user executes the flight search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then available flights are displayed</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: User is not on search results page
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at stepDefinations.FlightReservationSteps.available_flights_are_displayed(FlightReservationSteps.java:52)
+	at ✽.available flights are displayed(file:///D:/training/sprint/MMT_Sprint/MMT_Automation/src/test/resources/features/flightResev.feature:23)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When the user selects a flight</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And enters valid traveller details "Ananya", "Kumari", "Female", "9123456780", "ananya@gmail.com", "West Bengal"</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And completes the booking</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then the booking is successful</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Flight Search on MakeMyTrip</p>
+            <p class="text-sm">
+              <span>2:34:39 pm</span> / <span>00:01:41:523</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Flight Search on MakeMyTrip</h5>
+<span class='badge badge-success'>03.30.2026 2:34:39 pm</span>
+<span class='badge badge-danger'>03.30.2026 2:36:21 pm</span>
+<span class='badge badge-default'>00:01:41:523</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> As a user of MakeMyTrip
+I want to search for flights between cities
+So that I can view available flights and their details</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="6"><span class="badge log fail-bg mr-2">Fail</span>User searches and books a flight with valid inputs</div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="7"><span class="badge log fail-bg mr-2">Fail</span>User searches and books a flight with valid inputs</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights from "Delhi" to "Mumbai"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects departure date "Sun May 24 2026"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user executes the flight search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then available flights are displayed</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: User is not on search results page
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at stepDefinations.FlightReservationSteps.available_flights_are_displayed(FlightReservationSteps.java:52)
+	at ✽.available flights are displayed(file:///D:/training/sprint/MMT_Sprint/MMT_Automation/src/test/resources/features/flightResev.feature:23)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When the user selects a flight</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And enters valid traveller details "Rahul", "Kumar", "Male", "9876543210", "rahul@gmail.com", "Delhi"</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And completes the booking</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then the booking is successful</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="42"><span class="badge log fail-bg mr-2">Fail</span>User searches and books a flight with valid inputs</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights from "Kolkata" to "Bengaluru"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects departure date "Tue May 26 2026"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user executes the flight search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then available flights are displayed</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: User is not on search results page
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at stepDefinations.FlightReservationSteps.available_flights_are_displayed(FlightReservationSteps.java:52)
+	at ✽.available flights are displayed(file:///D:/training/sprint/MMT_Sprint/MMT_Automation/src/test/resources/features/flightResev.feature:23)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When the user selects a flight</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And enters valid traveller details "Ananya", "Kumari", "Female", "9123456780", "ananya@gmail.com", "West Bengal"</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And completes the booking</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then the booking is successful</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='22'>Then available flights are displayed</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs.Then available flights are displayed</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='25'>Then available flights are displayed</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs.Then available flights are displayed</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='51'>Then available flights are displayed</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs.Then available flights are displayed</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='53'>Then available flights are displayed</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs.Then available flights are displayed</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:40:57 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='77'>Then the booking is successful</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs.Then the booking is successful</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">7</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">@search</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@search</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='7'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='8'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:33 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='35'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='42'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:37:31 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='67'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">@results</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@results</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='8'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='7'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:33 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='35'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='42'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:37:31 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='67'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">@ui</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ui</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='8'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='7'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:33 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='35'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='42'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:37:31 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='67'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">@TC_01</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_01</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='7'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='8'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:33 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='35'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='42'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:37:31 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='67'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">@positive</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@positive</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='8'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='7'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:33 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='35'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='42'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:37:31 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='67'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">@flight</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@flight</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='7'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='8'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:33 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='35'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='42'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:37:31 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='67'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">@regression</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@regression</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='8'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:34:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='7'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:33 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='35'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:35:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='42'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:37:31 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='67'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Mar 30, 2026 02:34:38 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Mar 30, 2026 02:41:14 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>3</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>3</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='16%'><b>1</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='83%'><b>5</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='61%'><b>33</b> steps passed</small></div>
+<div>
+<small data-tooltip='9%'><b>5</b> steps failed,
+<b>16</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Flight Search on MakeMyTrip":394.858,"Flight Search on MakeMyTrip":100.373,"Flight Search on MakeMyTrip":101.523
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@search</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>16.667%</td>
+</tr>
+<tr>
+<td>@results</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>16.667%</td>
+</tr>
+<tr>
+<td>@ui</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>16.667%</td>
+</tr>
+<tr>
+<td>@TC_01</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>16.667%</td>
+</tr>
+<tr>
+<td>@positive</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>16.667%</td>
+</tr>
+<tr>
+<td>@flight</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>16.667%</td>
+</tr>
+<tr>
+<td>@regression</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>16.667%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 3,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 1,
+failChild: 5,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 33,
+failGrandChild: 5,
+warningGrandChild: 0,
+skipGrandChild: 16,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

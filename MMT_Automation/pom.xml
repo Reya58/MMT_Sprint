@@ -25,7 +25,6 @@
 			<scope>compile</scope>
 		</dependency>
 
-
 		<!-- Source:
 		https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
 		<dependency>
@@ -77,20 +76,42 @@
 			<version>7.33.0</version>
 			<scope>compile</scope>
 		</dependency>
-		
+
+		<!-- Source:
+		https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>
-	        <groupId>tech.grasshopper</groupId>
-	        <artifactId>extentreports-cucumber7-adapter</artifactId>
-	        <version>1.14.0</version>
-	    </dependency>
-	    
-	    <dependency>
-	        <groupId>com.aventstack</groupId>
-	        <artifactId>extentreports</artifactId>
-	        <version>5.0.9</version>
-	    </dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.9</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>tech.grasshopper</groupId>
+			<artifactId>extentreports-cucumber7-adapter</artifactId>
+			<version>1.14.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.9</version>
+		</dependency>
 
 	</dependencies>
 
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.2.5</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
