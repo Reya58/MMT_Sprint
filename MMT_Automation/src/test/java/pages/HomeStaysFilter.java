@@ -28,6 +28,8 @@ public class HomeStaysFilter {
     private static final By HOTEL_PRICE_LOCATOR = By.xpath(
         "//p[@id=\"hlistpg_hotel_shown_price\"]"
     );
+    
+    private static final By HOTEL_RATING=By.xpath("//span[@itemprop=\"ratingValue\"]");
 
     public HomeStaysFilter(WebDriver driver) {
         this.driver = driver;
@@ -59,6 +61,7 @@ public class HomeStaysFilter {
 
     @FindBy(xpath = "(//p[@id='hlistpg_hotel_name'] | //p[contains(@class,'hotelCardComp__hotelName')])[1]")
     private WebElement firstHotel;
+    
 
     // ── Public Methods ──────────────────────────────────────────────────────
 

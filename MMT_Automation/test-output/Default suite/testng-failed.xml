@@ -3,14 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="runner.HomestaysRunnerIo">
+      <class name="Rest_Api.Rest_Api_Test">
         <methods>
-          <include name="setUpClass"/>
-          <include name="setBrowserPerfernce"/>
-          <include name="tearDownClass"/>
-          <include name="runScenario"/>
+          <include name="init"/>
+          <include name="deleteUser"/>
         </methods>
-      </class> <!-- runner.HomestaysRunnerIo -->
+      </class> <!-- Rest_Api.Rest_Api_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -98,22 +98,10 @@ public class HomeStays {
      * Hardcoded dates break tests as calendar days pass.
      */
     public void selectDates() {
-        LocalDate checkIn  = LocalDate.now().plusDays(1);
-        LocalDate checkOut = LocalDate.now().plusDays(2);
-
-        // MakeMyTrip aria-label format: "EEE MMM dd yyyy"  e.g. "Sat Mar 28 2026"
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("EEE MMM dd yyyy");
-
-        By ciLocator = By.xpath("//div[@aria-label='" + checkIn.format(fmt)  + "']");
-        By coLocator = By.xpath("//div[@aria-label='" + checkOut.format(fmt) + "']");
-
-        try {
-            wait.until(ExpectedConditions.elementToBeClickable(ciLocator)).click();
-            wait.until(ExpectedConditions.elementToBeClickable(coLocator)).click();
-        } catch (Exception e) {
-            System.out.println("[HomeStays] Date selection failed: " + e.getMessage());
-        }
-    }
+    	System.out.println("Hitting dates");
+        driver.findElement(By.xpath("//div[@aria-label=\"Wed Apr 01 2026\"]")).click();
+        driver.findElement(By.xpath("//div[@aria-label=\"Thu Apr 02 2026\"]")).click();
+}
 
     /**
      * Increments Adults counter to desired count.
