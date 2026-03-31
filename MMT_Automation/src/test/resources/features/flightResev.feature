@@ -15,105 +15,128 @@ Feature: Flight Search on MakeMyTrip
   Background:
     Given the user is on the flight search page
 
-  # ---------------------------------------------------------------------------
-  # TC-01 : Source / Destination Dropdown Suggestions
-  # ---------------------------------------------------------------------------
-  @autocomplete @from @positive
-  Scenario Outline: Show suggestions for valid inputs in From field
-    When the user enters "<input>" in the From field
-    Then matching city suggestions should be displayed
-    And the suggestions list should not be empty
+  @TC_01 @results @positive @ui @regression
+  Scenario Outline: User searches and books a flight with valid inputs
+    Given the user searches for flights from "<from>" to "<to>"
+    And the user selects departure date "<date>"
+    When the user executes the flight search
+    Then available flights are displayed
+    When the user selects a flight
+    And enters valid traveller details "<name>", "<lname>", "<gender>", "<mobile>", "<email>", "<state>"
+    And completes the booking
+    Then the booking is successful
 
     Examples:
-      | input |
-      | Del   |
-      | BOM   |
-      | Kol   |
+      | from    | to        | date            | name   |lname| gender | mobile     | email           | state       |
+      | Delhi   | Mumbai    | Sun May 24 2026 | Rahul  |Kumar| Male   | 9876543210 | rahul@gmail.com  | Delhi       |
+      | Kolkata | Bengaluru | Tue May 26 2026 | Ananya |Kumari| Female | 9123456780 | ananya@gmail.com | West Bengal |
 
-  @autocomplete @from @negative
-  Scenario Outline: Show fallback UI for invalid inputs in From field
-    When the user enters "<input>" in the From field
-    Then no city suggestions should be displayed
-    And the recent searches section should be visible
-
-    Examples:
-      | input     |
-      | xyz123abc |
-      | 123456    |
-      | @@@###    |
-
-  @autocomplete @to @positive
-  Scenario Outline: Show suggestions for valid inputs in To field
-    When the user enters "<input>" in the To field
-    Then matching city suggestions should be displayed
-    And the suggestions list should not be empty
+  @TS_02
+  Scenario Outline: User books a round-trip flight
+    Given the user searches for round-trip flights from "<from>" to "<to>"
+    And selects departure date "<dep_date>" and return date "<ret_date>"
+    When the user executes the flight search
+    Then onward and return flights are displayed
+    When the user selects flights for both journeys
+    And enters valid traveller details
+    And completes the booking
+    Then the booking is successful
 
     Examples:
-      | input |
-      | CCU   |
-      | DEL   |
-      | MUM   |
+      | from  | to  | dep_date        | ret_date        |
+      | Delhi | Goa | Sun May 24 2026 | Tue May 26 2026 |
 
-  @autocomplete @to @negative
-  Scenario Outline: Show fallback UI for invalid inputs in To field
-    When the user enters "<input>" in the To field
-    Then no city suggestions should be displayed
-    And the recent searches section should be visible
+  @TC_03
+  Scenario: User books flight with add-ons
+    Given the user searches for flights
+    When the user selects a flight
+    And adds meals and extra baggage
+    And enters valid traveller details "<name>", "<gender>", "<mobile>", "<email>", "<state>"
+    And completes the booking
+    Then the booking is successful
 
-    Examples:
-      | input     |
-      | 000000    |
-      | ab!@     |
-      | invalidxx |
+      | name   | gender | mobile     | email           | state       |
+      | Rahul  | Male   | 9876543210 | rahul@test.com  | Delhi       |
+      | Ananya | Female | 9123456780 | ananya@test.com | West Bengal |
 
-  # ---------------------------------------------------------------------------
-  # TC-02 : Same Source and Destination Validation
-  # ---------------------------------------------------------------------------
-  @validation @negative
-  Scenario Outline: Prevent search when origin and destination are identical
-    When the user selects "<city>" as the From
-    And the user selects "<city>" as the To
-    And the user attempts to search for flights
-    Then a validation error indicating identical origin and destination should be displayed
-    And the flight search should not be executed
-
-    Examples:
-      | city      |
-      | New Delhi |
-      | Mumbai    |
-      | Kolkata   |
-
-  # ---------------------------------------------------------------------------
-  # TC-03 : Departure Date Calendar — Past Dates Are Disabled
-  # ---------------------------------------------------------------------------
-  @calendar @datepicker @negative
-  Scenario: Past dates cannot be selected in departure calendar
-    When the user opens the departure date picker
-    Then the user should not be able to select a past date
-
-  @calendar @datepicker @positive
-  Scenario Outline: User can select a future departure date
-    When the user opens the departure date picker
-    And the user selects a date "<days_from_today>" days from today
-    Then the selected date should be displayed in the departure date field
+  @TC_04
+  Scenario Outline: User books the cheapest flight
+    Given the user searches for flights from "<from>" to "<to>"
+    And the user selects departure date "<date>"
+   When the user executes the flight search
+    Then available flights are displayed
+    And the user selects the cheapest available flight
+    And enters valid traveller details
+    And completes the booking
+    Then the booking is successful
 
     Examples:
-      | days_from_today |
-      | 30              |
-      | 1               |
-      | 5               |
-
-  # ---------------------------------------------------------------------------
-  # TC-04 : Flight Result Card Displays Required Information
-  # ---------------------------------------------------------------------------
-  @results @positive @ui @regression
-  Scenario Outline: Flight results displays for valid routes
-    Given the user searches flights from "<from>" to "<to>"
-    And user set flight date to be "<Date>"
-    When the flight search is executed
-    Then avaliable flights are shown to user
-
-    Examples:
-      | from    | to        | Date            |
+      | from    | to        | date            |
       | Delhi   | Mumbai    | Sun May 24 2026 |
       | Kolkata | Bengaluru | Tue May 26 2026 |
+
+  @TC_05
+  Scenario Outline: User books a flight of a specific airline
+    Given the user searches for flights from "<from>" to "<to>"
+    When the user executes the flight search
+    And available flights are displayed
+    
+    And the user filters flights by airline "<airline>"
+    And selects a flight after filter
+    And completes the booking
+    Then the airline is "<airline>"
+    Then the booking is successful
+
+    Examples:
+      | from  | to     | airline |
+      | Delhi | Mumbai | IndiGo  |
+
+  @TC_06
+  Scenario: User books flight from either of two airlines
+    Given the user searches for flights
+    When the user filters flights by airlines "<airline1>" and "<airline2>"
+    And selects a flight after filter
+    And selected flight belongs to "<airline1>","<airline2>" one of the chosen airlines
+    And enters valid traveller details
+    And completes the booking
+    Then the booking is successful
+      | airline1  | airline2   |
+      | Indigo    | Air India  |
+      | Air India | Air Alaska |
+
+  @TC_07
+  Scenario Outline: User checks flight status by flight number
+    Given the user navigates to flight status page
+    When the user enters flight number "<flight_no>"
+    And submits the request
+    Then the current flight status is displayed
+
+    Examples:
+      | flight_no |
+      | AI101     |
+      | 6E202     |
+
+  @TC_08
+  Scenario Outline: User checks flight status by route
+    Given the user navigates to flight status page
+    And is on Flight Status By Route tab
+    When the user enters source "<from>" and destination "<to>"
+    And selects travel date
+    Then all flights for "<from>","<to>" the route are displayed with status
+
+    Examples:
+      | from    | to        |
+      | Delhi   | Mumbai    |
+      | Kolkata | Bengaluru |
+
+  @TC_09
+  Scenario Outline: User checks flight status by airport
+    Given the user navigates to flight status page
+    And is on Flight Status By Airport
+    When the user selects airport "<airport>"
+    Then all arrivals and departures are displayed with status
+
+    Examples:
+      | airport |
+      | Delhi   |
+      | Kolkata |

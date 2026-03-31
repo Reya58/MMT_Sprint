@@ -1,6 +1,5 @@
 package runner;
 
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
@@ -11,10 +10,11 @@ import utils.DriverFactory;
 @CucumberOptions(
 	    features = "src/test/resources/features/flightResev.feature",
 	    glue = {"stepDefinations"},
-	    tags= "@autocomplete",
+	    tags= "@TC_01",
     	plugin = {
 		    "pretty",
 		    "html:reports/flight-module/cucumber-report.html",
+		    "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 		},
 	    monochrome = true
 	)
@@ -23,12 +23,7 @@ public class FlightRunnerIo extends AbstractTestNGCucumberTests{
 	@BeforeTest
 	@Parameters("browser")
 	public void setBrowserPerfernce(String browser) {
-		DriverFactory.initDriver(browser);
+		System.out.println(browser);
+		DriverFactory.setBrowser(browser);
 	}
-	
-	@AfterTest
-	public void quitBrowser() {
-		DriverFactory.quitDriver();
-	}
-	
 }

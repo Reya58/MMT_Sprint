@@ -5,14 +5,12 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -233,7 +231,7 @@ public class FlightSearchPage {
 
 		// ---------- SELECT DATE ----------
 		By dateLocator = By.xpath("//div[@aria-label='" + inputDate + "']");
-		WebElement dateElement = driver.findElement(dateLocator);
+		WebElement dateElement = wait.until(ExpectedConditions.visibilityOf(driver.findElement(dateLocator)));
 
 		// ---------- CHECK DISABLED ----------
 		String classes = dateElement.getAttribute("class");
@@ -241,7 +239,7 @@ public class FlightSearchPage {
 		if (classes.contains("DayPicker-Day--disabled")) {
 			return false;
 		}
-
+		
 		// ---------- CLICK + VERIFY ----------
 		dateElement.click();
 		return true;
@@ -289,10 +287,18 @@ public class FlightSearchPage {
 	    }
 	}
 
-	public void selectCity(String city) {
-		By option = By.xpath("//span[contains(@class,'revampedCityName') and contains(text(),'" + city + "')]");
+	public void selectCity(String city) throws RuntimeException {
+		if(isSuggestionDisplayed()) {
+			try {
+				By option = By.xpath("//span[contains(@class,'revampedCityName') and contains(text(),'" + city + "')]");
 
-		wait.until(ExpectedConditions.elementToBeClickable(option)).click();
+				wait.until(ExpectedConditions.elementToBeClickable(option)).click();
+	        } catch (Exception e) {
+	            throw new RuntimeException("Suggestion isn't clickable: " + city, e);
+	        }
+	    } else {
+	        throw new RuntimeException("Suggestion didn't appear");
+	    }
 	}
 	
 	public String getSelectedFromCity() {
@@ -367,6 +373,10 @@ public class FlightSearchPage {
 		btn_search.click();
 	}
 	
+//	----------ROUND TRIP------
+	public void selectRoundTrip() {
+		btn_roundTrip.click();
+	}
 	
 //	------------------------FLIGHT TRACKER BY NUMBER-------------
 	
