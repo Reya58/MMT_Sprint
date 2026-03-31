@@ -45,7 +45,7 @@ public class HolidayPackagePage_Search {
 	            btn_FirstResult_Flights.click();
 	        }
 	    } catch (Exception e) {
-	        // gnore
+	        //ignore
 	    }
 		
 		for (String handle : driver.getWindowHandles()) {
