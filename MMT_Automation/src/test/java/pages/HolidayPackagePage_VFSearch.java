@@ -10,7 +10,7 @@ public class HolidayPackagePage_VFSearch {
 	@FindBy (xpath = "//span[@class=\"close closeIcon\"]")
 	private WebElement btn_PopUp;
 
-	@FindBy (xpath = "//div[@class=\"packageCardWrapper similarPackage\"]")
+	@FindBy (className = "packageTextContainer")
 	private WebElement btn_FirstResult;
 	
 	@FindBy (xpath = "//div[@class=\"titleWrapper\"]/p")
