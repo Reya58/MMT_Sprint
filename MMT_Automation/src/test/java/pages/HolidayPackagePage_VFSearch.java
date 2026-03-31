@@ -27,7 +27,13 @@ public class HolidayPackagePage_VFSearch {
 		closePopupIfPresent();
 		
 		btn_FirstResult.click();
-		btn_FirstResult_Flights.click();
+		try {
+	        if (btn_FirstResult_Flights.isDisplayed()) {
+	            btn_FirstResult_Flights.click();
+	        }
+	    } catch (Exception e) {
+	        //ignore
+	    }
 		
 		for (String handle : driver.getWindowHandles()) {
 		    driver.switchTo().window(handle);
