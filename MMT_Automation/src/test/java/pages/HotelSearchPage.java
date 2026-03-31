@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,10 +42,13 @@ public class HotelSearchPage {
 		@FindBy(xpath ="//input[@title='Where do you want to stay?']")
 		   private WebElement destination; //send keys, arrow down, key enter
 		
-		@FindBy(xpath ="//div[@aria-label='Wed Apr 01 2026']/child::span")
+		@FindBy(xpath="//span[@aria-label='Next Month']")
+			private WebElement nextMonthBtn;
+		
+		@FindBy(xpath ="//div[@aria-label='Wed Apr 08 2026']/child::span")
 		   private WebElement checkInDate; 
 
-		@FindBy(xpath ="//div[@aria-label='Fri Apr 03 2026']/child::span")
+		@FindBy(xpath ="//div[@aria-label='Fri Apr 10 2026']/child::span")
 		   private WebElement checkOutDate; 
 		
 		@FindBy(xpath ="//button[@data-cy='RoomsGuestsNew_327']")
@@ -118,7 +123,10 @@ public class HotelSearchPage {
 		public void setDestination(WebElement destination) {
 			this.destination = destination;
 		}
-
+		public WebElement getNextMonthBtn()
+		{
+			return nextMonthBtn;
+		}
 		public WebElement getCheckInDate() {
 			return checkInDate;
 		}
@@ -189,8 +197,10 @@ public class HotelSearchPage {
 			getDestSearch().click();		
 		}
 		
-		public void enterCheckInDate(String date)
+		public void enterCheckInDate(String date) throws InterruptedException
 		{
+			getNextMonthBtn().click();
+			Thread.sleep(2000);
 			getCheckInDate().click();
 		}
 		
@@ -199,9 +209,16 @@ public class HotelSearchPage {
 			getCheckOutDate().click();
 		}
 		
-		public void enterRoomsAndGuests(String room, String adults)
+		public void enterRoomsAndGuests(String room, String adults) throws InterruptedException
 		{
+			WebElement element = driver.findElement(By.xpath("//div[@class='travellingWithPets__container']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			Thread.sleep(2000);
 			getRoomsAndGuests().click();
+			Thread.sleep(2000);
+			WebElement element2 = driver.findElement(By.xpath("//img[@alt='Make My Trip']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element2);
+			Thread.sleep(2000);
 		}
 		
 		public void clickSearchBtn()

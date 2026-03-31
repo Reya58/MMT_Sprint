@@ -36,7 +36,7 @@ import org.testng.annotations.Parameters;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import utils.Hotels_DriverFactory;
+import utils.DriverFactory;
 
 @CucumberOptions(
     features = "src/test/resources/features/Hotels.feature",
@@ -51,22 +51,22 @@ import utils.Hotels_DriverFactory;
 )
 public class Hotel_RunnerIo extends AbstractTestNGCucumberTests {
 
-//	@BeforeTest
-//    @Parameters("browser")
-//    public void setupBrowserPreference(String browser) {
-//		DriverFactory.setBrowser(browser);
-//    }
-	public static String browser;
-
+	@BeforeTest
     @Parameters("browser")
-    @BeforeClass
-    public void setBrowser(String browserName) {
-        browser = browserName;
+    public void setupBrowserPreference(String browser) {
+		DriverFactory.setBrowser(browser);
     }
-    @Override
-    @org.testng.annotations.DataProvider(parallel = false)
-    public Object[][] scenarios() {
-        return super.scenarios();
+	
+//	public static String browser;
+//
+//    @Parameters("browser")
+//    @BeforeClass
+//    public void setBrowser(String browserName) {
+//        browser = browserName;
+//    }
+//    @Override
+//    @org.testng.annotations.DataProvider(parallel = false)
+//    public Object[][] scenarios() {
+//        return super.scenarios();
     }
-}
 

@@ -1,6 +1,6 @@
+<suite name="MMT Suite" parallel="tests" thread-count="3">
 
-<suite name="MMT Suite">
-	<test name="Chrome Test">
+    <test name="Chrome Test">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="runner.Hotel_RunnerIo"/>
@@ -12,7 +12,7 @@
         <classes>
             <class name="runner.Hotel_RunnerIo"/>
         </classes>
-	</test>
+    </test>
 
     <test name="Firefox Test">
         <parameter name="browser" value="firefox"/>
