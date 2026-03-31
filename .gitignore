@@ -1,1 +1,28 @@
 /.metadata/
+# Eclipse / IDE files
+.project
+.classpath
+.settings/
+.metadata/
+
+# IntelliJ (if anyone uses)
+.idea/
+*.iml
+
+# Maven
+target/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+bin/
+src/test/java/runner/testing.java
+
+src/test/java/test_pages/
+
+src/test/resources/features/Automated_TestCases_MMT_Villas.xlsx
+test-output
