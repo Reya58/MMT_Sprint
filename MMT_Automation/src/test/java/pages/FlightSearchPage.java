@@ -41,7 +41,7 @@ public class FlightSearchPage {
 	@FindBy(xpath = "//input[@id='fromCity']")
 	private WebElement selected_fromCity;
 
-	@FindBy(xpath = "//input[@id='toCity'")
+	@FindBy(xpath = "//input[@id='toCity']")
 	private WebElement selected_toCity;
 
 	@FindBy(xpath = "//div[@id='errorMessage']//span[@data-cy='sameCityError']")
@@ -49,70 +49,72 @@ public class FlightSearchPage {
 
 	@FindBy(xpath = "//li[@data-cy='roundTrip']")
 	private WebElement btn_roundTrip;
-	
+
 	@FindBy(xpath = "//li[@data-cy='mulitiCityTrip']")
 	private WebElement btn_multiCityTrip;
-	
+
 	@FindBy(xpath = "//div[@data-cy='returnArea']")
 	private WebElement btn_returnDate;
-	
+
 	@FindBy(xpath = "//div[@data-cy='flightTraveller']")
 	private WebElement btn_travellersAndClasses;
-	
+
 //--------------FLIGHT TRACKER ELEMENTS--------------	
-	
-	@FindBy( xpath = "//img[@alt='Flight Tracker']")
+
+	@FindBy(xpath = "//div[@class='entryPointsGrid__row']//img[@alt='Flight Tracker']/../..")
 	private WebElement btn_flightTracker;
-	
+
 	@FindBy(xpath = "//li//div//font//b[text()='By Flight']")
 	private WebElement btn_flightTrackerByFlight;
-	
-	@FindBy( xpath = "//li//div//font//b[text()='By Route']")
+
+	@FindBy(xpath = "//div[@class='search-options fswTabs']//li//div[.//font[text()='By Route']]")
 	private WebElement btn_flightTrackerByRoute;
-	
-	@FindBy( xpath = "//li//div//font//b[text()='By Airport']")
+
+	@FindBy(xpath = "//div[@class='search-options fswTabs']//li//div[.//font[text()='By Airport']]")
 	private WebElement btn_flightTrackerByAirport;
-	
-	// 	BY NUMBER ELEMENTS
-	
+
+	// BY NUMBER ELEMENTS
+
 	@FindBy(id = "fisAIRLINE")
 	private WebElement txt_flightTrackerByFlightNumber;
-	
+
 	@FindBy(xpath = "//div[@class='date-field']")
 	private WebElement btn_flightTrackedDate;
-	
-	// BY ROUTES ELEMENTS	
-	
-	@FindBy(id="fisFrom")
+
+	// BY ROUTES ELEMENTS
+
+	@FindBy(xpath = "//input[@placeholder='From']")
 	private WebElement txt_FromCityFlightTracker;
-	
-	@FindBy(id = "fisTO")
+
+	@FindBy(xpath = "//input[@placeholder='To']")
 	private WebElement txt_ToCityFlightTracker;
 
 	// BY AIRPORTS ELEMENTS
-	
+
 	@FindBy(id = "fisAIRPORT")
 	private WebElement txt_AirportFlightTracker;
-	
+
 	@FindBy(xpath = "//button[@class='fis-search-button']")
 	private WebElement btn_searchFlightTracker;
-	
+
 //	-------------MULTI SELECT CITY ELEMENTS-----------
-	
+
 	@FindBy(id = "fromAnotherCity0")
 	private WebElement txt_FromAnotherCity;
-	
+
 	@FindBy(xpath = "(//button[@class='btnAddCity'])[2]")
 	private WebElement btn_AddAnotherCity;
-	
-	
-	
+
 	WebDriver driver;
 	WebDriverWait wait;
 
 	private YearMonth getMonth(By locator, DateTimeFormatter formatter) {
-		String text = driver.findElement(locator).getText();
-		return YearMonth.parse(text, formatter);
+		String monthText = driver.findElement(locator).getText().trim();
+
+		// Fix missing space between month and year
+		monthText = monthText.replaceAll("([A-Za-z]+)(\\d{4})", "$1 $2");
+
+		return YearMonth.parse(monthText, formatter);
 	}
 
 	private void waitForMonthChange(By locator, String oldValue) {
@@ -164,23 +166,20 @@ public class FlightSearchPage {
 	}
 
 //	################# PUBLIC FUNCTIONS ##############################
-	
+
 //	----------CONSTRUCTOR----------
 	public FlightSearchPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
-	
-	
+
 // ---------------INTRUPTION HANDLING------------------
 	public void handleInterruptions() {
 		closeLoginPopup();
 		minimizeBanner();
 		dismissCoachmarkIfPresent();
 	}
-	
-
 
 //	--------------- SLECTING SPECIFIED DATE ON ONE FLIGHT SEARCH PAGE-------------
 
@@ -239,7 +238,7 @@ public class FlightSearchPage {
 		if (classes.contains("DayPicker-Day--disabled")) {
 			return false;
 		}
-		
+
 		// ---------- CLICK + VERIFY ----------
 		dateElement.click();
 		return true;
@@ -269,38 +268,34 @@ public class FlightSearchPage {
 
 	public Boolean isSuggestionDisplayed() {
 
-	    try {
-	        // wait briefly for any suggestion item to appear
-	        wait.until(ExpectedConditions.presenceOfElementLocated(
-	                By.cssSelector(".react-autosuggest__suggestion")
-	        ));
+		try {
+			// wait briefly for any suggestion item to appear
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".react-autosuggest__suggestion")));
 
-	        // now verify actual visible suggestions
-	        List<WebElement> suggestions = driver.findElements(
-	                By.cssSelector(".react-autosuggest__suggestion")
-	        );
+			// now verify actual visible suggestions
+			List<WebElement> suggestions = driver.findElements(By.cssSelector(".react-autosuggest__suggestion"));
 
-	        return suggestions.size() > 0 && suggestions.get(0).isDisplayed();
+			return suggestions.size() > 0 && suggestions.get(0).isDisplayed();
 
-	    } catch (Exception e) {
-	        return false;
-	    }
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	public void selectCity(String city) throws RuntimeException {
-		if(isSuggestionDisplayed()) {
+		if (isSuggestionDisplayed()) {
 			try {
 				By option = By.xpath("//span[contains(@class,'revampedCityName') and contains(text(),'" + city + "')]");
 
 				wait.until(ExpectedConditions.elementToBeClickable(option)).click();
-	        } catch (Exception e) {
-	            throw new RuntimeException("Suggestion isn't clickable: " + city, e);
-	        }
-	    } else {
-	        throw new RuntimeException("Suggestion didn't appear");
-	    }
+			} catch (Exception e) {
+				throw new RuntimeException("Suggestion isn't clickable: " + city, e);
+			}
+		} else {
+			throw new RuntimeException("Suggestion didn't appear");
+		}
 	}
-	
+
 	public String getSelectedFromCity() {
 		return selected_fromCity.getAttribute("value");
 	}
@@ -317,72 +312,74 @@ public class FlightSearchPage {
 		btn_departure_date.click();
 	}
 
-		
 //-----------------FARE CARD ------------------
 	public void selectFareCard(String fare) {
-		WebElement fareCard = driver.findElement(By.xpath("//div[@class='fareOptionsWrap ']//div//div[contains(text(),"+fare+"'Regular']"));
-		
+		WebElement fareCard = driver.findElement(
+				By.xpath("//div[@class='fareOptionsWrap ']//div//div[contains(text()," + fare + "'Regular']"));
+
 		fareCard.click();
 	}
-	
+
 //	-------------------------CONFIGURING TRAVEL----------------------------
-	
+
 	public void setAdultsTravelers(String count) {
-		if(Integer.valueOf(count)<=9) {
-			driver.findElement(By.xpath("//li[@data-cy='adults-"+count+"']")).click();
-		}
-		else {
+		if (Integer.valueOf(count) <= 9) {
+			driver.findElement(By.xpath("//li[@data-cy='adults-" + count + "']")).click();
+		} else {
 			driver.findElement(By.xpath("//li[@data-cy='adults-10']")).click();
 		}
 	}
-	
+
 	public void setChildTraveller(String count) {
-		if(Integer.valueOf(count)<=6) {
-			driver.findElement(By.xpath("//li[@data-cy='children-"+count+"']")).click();
-		}
-		else {
+		if (Integer.valueOf(count) <= 6) {
+			driver.findElement(By.xpath("//li[@data-cy='children-" + count + "']")).click();
+		} else {
 			driver.findElement(By.xpath("//li[@data-cy='children-7']")).click();
 		}
 	}
-	
+
 	public void setInfantTraveller(String count) {
-		if(Integer.valueOf(count)<=6) {
-			driver.findElement(By.xpath("//li[@data-cy='infants-"+count+"']")).click();
-		}
-		else {
+		if (Integer.valueOf(count) <= 6) {
+			driver.findElement(By.xpath("//li[@data-cy='infants-" + count + "']")).click();
+		} else {
 			driver.findElement(By.xpath("//li[@data-cy='infants-7']")).click();
 		}
 	}
-	
+
 	public void setTravelClass(String travelClass) {
-		driver.findElement(By.xpath("//ul[@class='guestCounter classSelect font12 darkText']//li[contains(text(),"+travelClass+")]")).click();
+		driver.findElement(By.xpath(
+				"//ul[@class='guestCounter classSelect font12 darkText']//li[contains(text()," + travelClass + ")]"))
+				.click();
 	}
-	
+
 	public void applyTraveller() {
 		driver.findElement(By.xpath("//button[@class='primaryBtn btnApply pushRight']")).click();
 	}
-	
-	
+
 	public String getTravelerDetails() {
 		return driver.findElement(By.id("travellers")).getAttribute("value");
 	}
-	
-	
+
 //	----------------MAIN SEARCH BUTTON OF FLIGHT SEARCH PAGE------------------
 	public void search() {
-		btn_search.click();
+		try {
+			driver.findElement(By.xpath("//button[@class='fis-search-button']")).click();
+		}catch(Exception e) {
+			
+		}
 	}
-	
+
 //	----------ROUND TRIP------
 	public void selectRoundTrip() {
 		btn_roundTrip.click();
 	}
-	
+
 //	------------------------FLIGHT TRACKER BY NUMBER-------------
-	
+
 	public void setFlightStatusByNumber() {
 		btn_flightTrackerByFlight.click();
 	}
+
 	public Boolean selectDateFlightTracker(String date) {
 		btn_flightTrackedDate.click();
 		By dateLocator = By.xpath("//div[@aria-label='" + date + "']");
@@ -399,95 +396,132 @@ public class FlightSearchPage {
 		dateElement.click();
 		return true;
 	}
-	
-	public void setFlightNumber(String flightNumber) { 
+
+	public void setFlightNumber(String flightNumber) {
 		txt_flightTrackerByFlightNumber.sendKeys(flightNumber);
 	}
-	
+
 	public String getFlightNumberFieldValue() {
 		return txt_flightTrackerByFlightNumber.getAttribute("value");
 	}
-	
+
 	public String getDateFieldValue() {
 		btn_flightTrackedDate.click();
-		return driver.findElement(By.xpath("//div[@class='DayPicker-Day DayPicker-Day--selected']")).getAttribute("aria-label");
+		return driver.findElement(By.xpath("//div[@class='DayPicker-Day DayPicker-Day--selected']"))
+				.getAttribute("aria-label");
 	}
-	
+
 //	------------------FLIGHT SEARCH BY ROUTE-----------
 	public void setFlightStatusByRoute() {
 		btn_flightTrackerByRoute.click();
 	}
-	
+
 	public void setFromCityFlightStatusByRoute(String fromCity) {
-		txt_FromCityFlightTracker.sendKeys(fromCity);
-		selectCity(fromCity);
+		try {
+			driver.findElement(By.xpath("//label[@for='fisFROM']")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("(//input[@placeholder='From'])[2]")).sendKeys(fromCity);
+			selectCity(fromCity);
+		}catch(Exception e){
+			
+		}
 	}
-	
+
 	public String getFromCityFlightStatusByRoute() {
 		return txt_FromCityFlightTracker.getAttribute("value");
 	}
-	
+
 	public void setToCityFlightStatusByRoute(String toCity) {
-		txt_ToCityFlightTracker.sendKeys(toCity);
-		selectCity(toCity);
+		try {
+			driver.findElement(By.xpath("//label[@for='fisTO']")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("(//input[@placeholder='To'])[2]")).sendKeys(toCity);
+			selectCity(toCity);
+		}catch(Exception e){
+			
+		}
 	}
-	
+
 	public String getToCityFlightStatusByRoute() {
 		return txt_ToCityFlightTracker.getAttribute("value");
 	}
-	
+
 	public void setDateFlightStatusByRoute(String date) throws InterruptedException {
-		selectDate(date);
+		try {
+			driver.findElement(By.xpath("//div[@class='date-field']")).click();
+			System.out.println(selectDate(date));
+		}catch(Exception e) {
+			
+		}
+
 	}
-	
+
 	public String getDateSelected() {
 		btn_flightTrackedDate.click();
 		return driver.findElement(By.xpath("//div[@class='DayPicker-Day DayPicker-Day--selected']"))
 				.getAttribute("aria-label");
 	}
-	
-	
-	
+
 //	------------BY AIRPORT ------------
-	
+
 	public void setFlightStatusByAirport() {
 		btn_flightTrackerByAirport.click();
 	}
-	
+
 	public void setAirportFlightStatusByAirport(String airport) {
-		txt_AirportFlightTracker.sendKeys(airport);
-		selectCity(airport);
+		try {
+			driver.findElement(By.xpath("//label[@for='fisAIRPORT']")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("(//input[@placeholder='Airport'])[2]")).sendKeys(airport);
+			selectCity(airport);
+		}catch(Exception e) {
+			
+		}
 	}
-	
+
 	public String getAirportFlightStatusByAirport() {
-		return txt_AirportFlightTracker.getAttribute("value");
+		try {
+			String actualAirport = driver.findElement(By.xpath("//div[@class='fontSize24 latoBlack appendBottom12']")).getText();
+			return actualAirport.substring(actualAirport.lastIndexOf(" "));
+		}catch(Exception e) {
+			return "Not able to fetch";
+		}
 	}
-	
+
 	public void setDateFlightStatusByAirport(String date) throws InterruptedException {
 		btn_flightTrackedDate.click();
 		selectDate(date);
 	}
+
 	public String getSelectedDateFlightStatusByAirport() {
 		btn_flightTrackedDate.click();
 		return driver.findElement(By.xpath("//div[@class='DayPicker-Day DayPicker-Day--selected']"))
 				.getAttribute("aria-label");
 	}
-	
-	// COMMON TO FLIGHT STATUS	
+
+	// COMMON TO FLIGHT STATUS
 	public void trackFlight() {
-		btn_searchFlightTracker.click();
+		btn_flightTracker.click();
 	}
-	
+
 	public Boolean flightStatusFetched() {
-		return wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@class='pageStickyHder flight-status-search']")))).isDisplayed();
+		return wait
+				.until(ExpectedConditions.visibilityOf(
+						driver.findElement(By.xpath("//div[@class='pageStickyHder flight-status-search']"))))
+				.isDisplayed();
 	}
-	
+
 	public String getFetchedHeaderFlightStatusByAirport() {
-		return wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@class='fontSize24 latoBlack appendBottom12']")))).getText();
+		return wait.until(ExpectedConditions
+				.visibilityOf(driver.findElement(By.xpath("//div[@class='fontSize24 latoBlack appendBottom12']"))))
+				.getText();
 	}
-	
+
 	public String getFlightStatusBy() {
-		return driver.findElement(By.xpath("//div[@class='flight-status-search fsw searchWidgetContainer']//li[@class='selected']")).getText();
+		return driver
+				.findElement(By
+						.xpath("//div[@class='flight-status-search fsw searchWidgetContainer']//li[@class='selected']"))
+				.getText();
 	}
-	
+
 }

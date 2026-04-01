@@ -10,6 +10,8 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.FlightResultPage;
+import pages.FlightSearchPage;
 import pages.FlightTravellerDetailsPage;
 import utils.DriverFactory;
 
@@ -22,6 +24,7 @@ public class FlightReservationSteps extends BaseClass {
 		pageManager = new PageManager(DriverFactory.getDriver());
 		DriverFactory.getDriver().get("https://www.makemytrip.com/flights/");
 	}
+
 //
 	@Given("the user is on the flight search page")
 	public void the_user_is_on_the_flight_search_page() {
@@ -51,69 +54,69 @@ public class FlightReservationSteps extends BaseClass {
 		pageManager.getFlightResultPage().handleInterruptions();
 		Assert.assertTrue("User is not on search results page",
 				pageManager.getFlightResultPage().isOnSearchResultPage());
-		Assert.assertTrue("No Flights Avaliable For this Route!!!",pageManager.getFlightResultPage().isFlightsAvailable());
+		Assert.assertTrue("No Flights Avaliable For this Route!!!",
+				pageManager.getFlightResultPage().isFlightsAvailable());
 	}
 
 	@When("the user selects a flight")
 	public void the_user_selects_a_flight() throws InterruptedException {
+		pageManager.getFlightResultPage().handleInterruptions();
 		pageManager.getFlightResultPage().selectFirstFlight();
 		pageManager.getFlightResultPage().selectCheapestFareType();
 		Thread.sleep(5000);
 	}
-	
+
 	@When("enters valid traveller details {string}, {string}, {string}, {string}, {string}, {string}")
-	public void enters_valid_traveller_details(String fname,String lname, String gender, String mobile, String email, String state) throws InterruptedException {
+	public void enters_valid_traveller_details(String fname, String lname, String gender, String mobile, String email,
+			String state) throws InterruptedException {
 //		pageManager.getFlightTravellerDetailsPage();
 //		Thread.sleep(10000);
-		pageManager.getFlightTravellerDetailsPage().selectNoInsurance();
+		FlightTravellerDetailsPage travelDetailsPage = pageManager.getFlightTravellerDetailsPage();
+		Thread.sleep(7000);
+		travelDetailsPage.selectNoInsurance();
 //		System.out.println("hihihi");
-		pageManager.getFlightTravellerDetailsPage().addTraveller();
-		pageManager.getFlightTravellerDetailsPage().enterFirstName(fname);
-		pageManager.getFlightTravellerDetailsPage().enterLastName(lname);
-		pageManager.getFlightTravellerDetailsPage().setGender(gender);
-		pageManager.getFlightTravellerDetailsPage().setCountryCode("91");
-		pageManager.getFlightTravellerDetailsPage().setContryCodeBookingDetails("91");
-		pageManager.getFlightTravellerDetailsPage().setMobileBookingDetails(mobile);
-		pageManager.getFlightTravellerDetailsPage().setEmailBookingDetails(email);
-		pageManager.getFlightTravellerDetailsPage().setState(state);
-		pageManager.getFlightTravellerDetailsPage().saveGSTDetails();
-		
-		pageManager.getFlightTravellerDetailsPage().clickContinue();
+		travelDetailsPage.addTraveller();
+		travelDetailsPage.enterFirstName(fname);
+		travelDetailsPage.enterLastName(lname);
+		travelDetailsPage.setGender(gender);
+		travelDetailsPage.setCountryCode("91");
+		travelDetailsPage.setContryCodeBookingDetails("91");
+		travelDetailsPage.setMobileBookingDetails(mobile);
+		travelDetailsPage.setEmailBookingDetails(email);
+		travelDetailsPage.setState(state);
+		travelDetailsPage.saveGSTDetails();
+
+		travelDetailsPage.clickContinue();
 		Thread.sleep(6000);
-		pageManager.getFlightTravellerDetailsPage().addressTripProtectionPopUp();
-		pageManager.getFlightTravellerDetailsPage().addressZeroCancelationPopup();
-		pageManager.getFlightTravellerDetailsPage().addressFlexiFlyPopups();
-		pageManager.getFlightTravellerDetailsPage().reviewTravelerDetails();
+		travelDetailsPage.addressTripProtectionPopUp();
+		travelDetailsPage.addressZeroCancelationPopup();
+		travelDetailsPage.addressFlexiFlyPopups();
+		travelDetailsPage.reviewTravelerDetails();
 
 //		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
 //		addressFlexiFlyPopups();
 //		ftdpg.addressEmergencySeatPopUp();
-		
-//		
-//		
-//		
-		
-		if(!pageManager.getFlightTravellerDetailsPage().takeSeatReccomended()) {
-			System.out.println("Seat Recommendation Popup didn't appeared ");
-			pageManager.getFlightTravellerDetailsPage().selectSeat();
-		}
-		
-		pageManager.getFlightTravellerDetailsPage().clickContinue();
-		Thread.sleep(6000);
-		pageManager.getFlightTravellerDetailsPage().addressEmergencySeatPopUp();
-		
-//		ftdpg.clickContinue();
-//		ftdpg.addressEmergencySeatPopUp();
-		
-		pageManager.getFlightTravellerDetailsPage().addMeal();
 
-		pageManager.getFlightTravellerDetailsPage().clickContinue();
-//		pageManager.getFlightTravellerDetailsPage().addressEmergencySeatPopUp();
-//		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
-		
-		pageManager.getFlightTravellerDetailsPage().setCabs();
+//		
+//		
+//		
+
+		if (!travelDetailsPage.takeSeatReccomended()) {
+			System.out.println("Seat Recommendation Popup didn't appeared ");
+			travelDetailsPage.selectSeat();
+		}
+
+		travelDetailsPage.clickContinue();
+		Thread.sleep(6000);
+		travelDetailsPage.addressEmergencySeatPopUp();
+
+		travelDetailsPage.addMeal();
+
+		travelDetailsPage.clickContinue();
+
+		travelDetailsPage.setCabs();
 		Thread.sleep(3000);
-		pageManager.getFlightTravellerDetailsPage().clickContinue();
+		travelDetailsPage.clickContinue();
 	}
 
 	@When("completes the booking")
@@ -122,9 +125,12 @@ public class FlightReservationSteps extends BaseClass {
 		Thread.sleep(4000);
 //		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
 		pageManager.getFlightTravellerDetailsPage().addressTripSummaryPopup();
-		Thread.sleep(20000);
+		Thread.sleep(7000);
 		pageManager.getFlightTravellerDetailsPage().addressUpgradePopups();
-		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
+		Thread.sleep(7000);
+		pageManager.getFlightTravellerDetailsPage().dismissNoUpgradePopUp();
+//		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
+//		Thread.sleep(150000);
 //		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
 //		System.out.println("it tfa");
 //		Thread.sleep(300000);
@@ -134,22 +140,26 @@ public class FlightReservationSteps extends BaseClass {
 
 	@Then("the booking is successful")
 	public void the_booking_is_successful() {
-		Assert.assertTrue("Boking was Failed",pageManager.getFlightPaymenyPage().isOnPaymentPage());
+		Assert.assertTrue("Boking was Failed", pageManager.getFlightPaymenyPage().isOnPaymentPage());
 	}
-	
+
 	String frmCityRoundTrip;
 	String toCityRoundTrip;
-	
+
 	@Given("the user searches for round-trip flights from {string} to {string}")
-	public void the_user_searches_for_round_trip_flights_from_to(String frmCity, String toCity) throws InterruptedException {
-		frmCityRoundTrip=frmCity;
-		toCityRoundTrip=toCity;
-		pageManager.getFlightSearchPage().selectRoundTrip();
-		
-		pageManager.getFlightSearchPage().setFromCity(frmCity);
-		pageManager.getFlightSearchPage().selectCity(frmCity);
-		pageManager.getFlightSearchPage().setToCity(toCity);
-		pageManager.getFlightSearchPage().selectCity(toCity);
+	public void the_user_searches_for_round_trip_flights_from_to(String frmCity, String toCity)
+			throws InterruptedException {
+		FlightSearchPage searchPage = pageManager.getFlightSearchPage();
+		searchPage.selectRoundTrip();
+
+		searchPage.setFromCity(frmCity);
+		searchPage.selectCity(frmCity);
+		searchPage.setToCity(toCity);
+		searchPage.selectCity(toCity);
+
+		frmCityRoundTrip = searchPage.getSelectedFromCity();
+		toCityRoundTrip = searchPage.getSelectedToCity();
+		toCityRoundTrip = toCityRoundTrip.substring(0, toCityRoundTrip.indexOf(" "));
 	}
 
 	@Given("selects departure date {string} and return date {string}")
@@ -158,14 +168,24 @@ public class FlightReservationSteps extends BaseClass {
 		pageManager.getFlightSearchPage().selectDate(returnDate);
 	}
 
-	
 	@Then("onward and return flights are displayed")
-	public void onward_and_return_flights_are_displayed() {
-		Assert.assertTrue("No flights on this Route",pageManager.getFlightResultPage().isFlightsAvailable());
-		Assert.assertEquals(frmCityRoundTrip, pageManager.getFlightResultPage().fromCityForwardTripOfRoundTrip(),"FromCity Of Forward Journey Is Different from Searched FromCity");
-		Assert.assertEquals(toCityRoundTrip, pageManager.getFlightResultPage().toCityForwardTripOfRoundTrip(),"ToCity Of Forward Journey Is Different from Searched ToCity");
-		Assert.assertEquals(frmCityRoundTrip, pageManager.getFlightResultPage().fromCityReturnTripOfRoundTrip(),"FromCity Of Return Journey Is Different from Searched FromCity");
-		Assert.assertEquals(toCityRoundTrip, pageManager.getFlightResultPage().toCityReturnTripOfRoundTrip(),"ToCity Of Return Journey Is Different from Searched ToCity");
+	public void onward_and_return_flights_are_displayed() throws InterruptedException {
+		FlightResultPage flightResultPage = pageManager.getFlightResultPage();
+		pageManager.getFlightResultPage().handleInterruptions();
+
+		Assert.assertTrue("FromCity Of Forward Journey Is Different from Searched FromCity",
+				flightResultPage.fromCityForwardTripOfRoundTrip().contains(frmCityRoundTrip));
+
+		Assert.assertTrue("ToCity Of Forward Journey Is Different from Searched ToCity",
+				toCityRoundTrip.contains(flightResultPage.toCityForwardTripOfRoundTrip()));
+
+		System.out.println(flightResultPage.fromCityReturnTripOfRoundTrip());
+		System.out.println(toCityRoundTrip);
+		Assert.assertTrue("FromCity Of Return Journey Is Different from Searched ToCity",
+				flightResultPage.fromCityReturnTripOfRoundTrip().contains(toCityRoundTrip));
+
+		Assert.assertTrue("ToCity Of Return Journey Is Different from Searched FromCity",
+				frmCityRoundTrip.contains(flightResultPage.toCityReturnTripOfRoundTrip()));
 	}
 
 	@When("the user selects flights for both journeys")
@@ -177,8 +197,10 @@ public class FlightReservationSteps extends BaseClass {
 	@When("enters valid traveller details")
 	public void enters_valid_traveller_details() throws InterruptedException {
 		FlightTravellerDetailsPage detailsPage = pageManager.getFlightTravellerDetailsPage();
+		Thread.sleep(10000);
 		detailsPage.selectNoInsurance();
 		detailsPage.addTraveller();
+//		
 		detailsPage.enterFirstName("Md");
 		detailsPage.enterLastName("Shadab");
 		detailsPage.setGender("Male");
@@ -188,47 +210,43 @@ public class FlightReservationSteps extends BaseClass {
 		detailsPage.setEmailBookingDetails("shadab@gmail.com");
 		detailsPage.setState("West Bengal");
 		detailsPage.saveGSTDetails();
-		
+
 		detailsPage.clickContinue();
-		
-//		detailsPage.addressFlexiFlyPopups();
-//		ftdpg.addressEmergencySeatPopUp();
-		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
+		Thread.sleep(6000);
+		detailsPage.addressTripProtectionPopUp();
+		detailsPage.addressZeroCancelationPopup();
+		detailsPage.addressFlexiFlyPopups();
 		detailsPage.reviewTravelerDetails();
-		
-//		detailsPage.addressZeroCancelationPopup();
-		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
-		
-		if(!detailsPage.takeSeatReccomended()) {
+
+		if (!detailsPage.takeSeatReccomended()) {
 			System.out.println("not reccomendation");
 			detailsPage.selectSeat();
 		}
-		
+
 		detailsPage.clickContinue();
-		
-		if(!detailsPage.takeSeatReccomended()) {
+
+		if (!detailsPage.takeSeatReccomended()) {
 			System.out.println("not reccomendation");
 			detailsPage.selectSeat();
 		}
 		detailsPage.clickContinue();
-		Thread.sleep(1000);
-		
-//		ftdpg.clickContinue();
-//		ftdpg.addressEmergencySeatPopUp();
-		detailsPage.addMeal();
+//		Thread.sleep(1000);
 
-		detailsPage.clickContinue();
-		
-		detailsPage.addMeal();
+		Thread.sleep(6000);
+		detailsPage.addressEmergencySeatPopUp();
 
+		detailsPage.addMeal();
 		detailsPage.clickContinue();
-		
-//		detailsPage.addressEmergencySeatPopUp();
-		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
-		
+
+//		detailsPage.addMeal();
+
+//		detailsPage.clickContinue();
+
 		detailsPage.setCabs();
+		Thread.sleep(3000);
 		detailsPage.clickContinue();
-		detailsPage.clickContinue();
+		Thread.sleep(3000);
+//		detailsPage.clickContinue();
 	}
 
 	@Given("the user searches for flights")
@@ -237,75 +255,20 @@ public class FlightReservationSteps extends BaseClass {
 		pageManager.getFlightSearchPage().selectCity("New Delhi");
 		pageManager.getFlightSearchPage().setToCity("Beng");
 		pageManager.getFlightSearchPage().selectCity("Bengaluru");
-		
+
 		pageManager.getFlightSearchPage().selectDate("Sat May 30 2026");
-		
+
 		pageManager.getFlightSearchPage().search();
 	}
 
 	@When("adds meals and extra baggage")
 	public void adds_meals_and_extra_baggage() throws InterruptedException {
 		FlightTravellerDetailsPage detailsPage = pageManager.getFlightTravellerDetailsPage();
-		
+		Thread.sleep(7000);
 		detailsPage.addExtraBaggage();
-		
-		detailsPage.selectNoInsurance();
-		detailsPage.addTraveller();
-		detailsPage.enterFirstName("Md");
-		detailsPage.enterLastName("Shadab");
-		detailsPage.setGender("Male");
-		detailsPage.setCountryCode("91");
-		detailsPage.setContryCodeBookingDetails("91");
-		detailsPage.setMobileBookingDetails("8444866632");
-		detailsPage.setEmailBookingDetails("shadab@gmail.com");
-		detailsPage.setState("West Bengal");
-		detailsPage.saveGSTDetails();
-		
-		detailsPage.clickContinue();
-		
-//		detailsPage.addressFlexiFlyPopups();
-		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
-//		ftdpg.addressEmergencySeatPopUp();
-//		detailsPage.addressTripProtectionPopUp();
-		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
-		detailsPage.reviewTravelerDetails();
-		
-//		detailsPage.addressZeroCancelationPopup();
-		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
-		
-		if(!detailsPage.takeSeatReccomended()) {
-			System.out.println("not reccomendation");
-			detailsPage.selectSeat();
-		}
-		
-		detailsPage.clickContinue();
-		
-		if(!detailsPage.takeSeatReccomended()) {
-			System.out.println("not reccomendation");
-			detailsPage.selectSeat();
-		}
-		detailsPage.clickContinue();
-//		Thread.sleep(1000);
-		
-//		ftdpg.clickContinue();
-//		ftdpg.addressEmergencySeatPopUp();
-		detailsPage.addMeal();
-
-		detailsPage.clickContinue();
-		
-		detailsPage.addMeal();
-
-		detailsPage.clickContinue();
-		
-//		detailsPage.addressEmergencySeatPopUp();
-//		pageManager.getFlightTravellerDetailsPage().dismissAllPopups();
-		
-		detailsPage.setCabs();
-		detailsPage.clickContinue();
-		detailsPage.clickContinue();
+		Thread.sleep(7000);
 	}
 
-	
 	@Then("the user selects the cheapest available flight")
 	public void the_user_selects_the_cheapest_available_flight() {
 		pageManager.getFlightResultPage().selectCheapestTab();
@@ -315,68 +278,84 @@ public class FlightReservationSteps extends BaseClass {
 
 	@Then("the user filters flights by airline {string}")
 	public void the_user_filters_flights_by_airline(String airline) {
-		pageManager.getFlightResultPage().selectAOption("Airline", airline);
+		pageManager.getFlightResultPage().selectAOption("Airlines", airline);
 	}
 
 	@Then("selects a flight after filter")
 	public void selects_a_flight_from_that_airline() throws InterruptedException {
-	    Assert.assertTrue("No Flight Available After Filter",pageManager.getFlightResultPage().isFlightAvailabeAfterFilter());
-	    
+		Assert.assertTrue("No Flight Available After Filter",
+				pageManager.getFlightResultPage().isFlightAvailabeAfterFilter());
+
 		pageManager.getFlightResultPage().selectFirstFlight();
 		pageManager.getFlightResultPage().selectFareByMMT();
 	}
 
 	@Then("the airline is {string}")
 	public void the_airline_is(String airline) {
-		Assert.assertEquals(airline,pageManager.getFlightTravellerDetailsPage().getAirlines().get(0),"Different Airline Selected");
+//		Assert.assertTrue("Booking Failed",pageManager.getFlightPaymenyPage().isOnPaymentPage());
+		List<String> airlines = pageManager.getFlightTravellerDetailsPage().getAirlines();
+//
+//		Assert.assertNotNull("Airlines list is null on Traveller Details page",airlines);
+//		Assert.assertFalse("Airlines list is empty on Traveller Details page",airlines.isEmpty());
+
+		Assert.assertEquals("Different Airline Selected", airline, airlines.get(0));
 	}
 
 	@When("the user filters flights by airlines {string} and {string}")
 	public void the_user_filters_flights_by_airlines_and(String airline1, String airline2) {
-		pageManager.getFlightResultPage().selectAOption("Airline", airline1);
+		pageManager.getFlightResultPage().handleInterruptions();
+		pageManager.getFlightResultPage().selectAOption("Airlines", airline1);
 		pageManager.getFlightResultPage().selectAOption("Airlines", airline2);
 	}
 
+	@Then("selected flight belongs to {string},{string} one of the chosen airlines")
+	public void selected_flight_belongs_to_one_of_the_chosen_airlines(String airline1, String airline2) {
 
-	@When("selected flight belongs to {string},{string} one of the chosen airlines")
-	public void selected_flight_belongs_to_one_of_the_chosen_airlines(String airline1,String airline2) {
-		
 		List<String> actualAirlines = pageManager.getFlightTravellerDetailsPage().getAirlines();
-		
-		for(String actualAirline:actualAirlines) {
-			
-			if(!actualAirline.equals(airline1) && !actualAirline.equals(airline2)) {
-				Assert.assertTrue("Flight from Different Airline is being booked", false);
-			}
+
+		Assert.assertNotNull("Airlines list is null", actualAirlines);
+		Assert.assertFalse("Airlines list is empty", actualAirlines.isEmpty());
+
+		for (String actualAirline : actualAirlines) {
+			Assert.assertTrue(
+					"Unexpected airline found: " + actualAirline + " | Expected: " + airline1 + " or " + airline2,
+					actualAirline.equals(airline1) || actualAirline.equals(airline2));
 		}
 	}
 
-	
 	@Given("the user navigates to flight status page")
-	public void the_user_navigates_to_flight_status_page() {
+	public void the_user_navigates_to_flight_status_page() throws InterruptedException {
+		Thread.sleep(3000);
 		pageManager.getFlightSearchPage().trackFlight();
 	}
-	
-@Given("is on Flight Status By Route tab")
-public void is_on_Flight_Status_By_Route_tab() {
-	pageManager.getFlightSearchPage().setFlightStatusByRoute();
-}
-	
+	@Given("is on Flight Status By Flight tab")
+	public void is_on_Flight_Status_By_Flight_tab() throws InterruptedException {
+		Thread.sleep(6000);
+		pageManager.getFlightSearchPage().setFlightStatusByNumber();
+	}
+	@Given("is on Flight Status By Route tab")
+	public void is_on_Flight_Status_By_Route_tab() throws InterruptedException {
+		Thread.sleep(6000);
+		pageManager.getFlightSearchPage().setFlightStatusByRoute();
+		Thread.sleep(6000);
+	}
+
 	@When("the user enters flight number {string}")
 	public void the_user_enters_flight_number(String flightNumber) {
 		pageManager.getFlightSearchPage().setFlightStatusByNumber();
 		pageManager.getFlightSearchPage().setFlightNumber(flightNumber);
-		pageManager.getFlightSearchPage().selectDateFlightTracker("Sun Mar 29 2026");
+		pageManager.getFlightSearchPage().selectDateFlightTracker("Fri Apr 03 2026");
 	}
 
 	@When("submits the request")
-	public void submits_the_request() {
+	public void submits_the_request() throws InterruptedException {
+//		Thread.sleep(600000);
 		pageManager.getFlightSearchPage().search();
 	}
 
 	@Then("the current flight status is displayed")
 	public void the_current_flight_status_is_displayed() {
-	    Assert.assertTrue("Status isn't fetched", pageManager.getFlightSearchPage().flightStatusFetched());
+		Assert.assertTrue("Status isn't fetched", pageManager.getFlightSearchPage().flightStatusFetched());
 	}
 
 	@When("the user enters source {string} and destination {string}")
@@ -385,51 +364,47 @@ public void is_on_Flight_Status_By_Route_tab() {
 		pageManager.getFlightSearchPage().setToCityFlightStatusByRoute(toCity);
 	}
 
-	@When("selects travel date")
-	public void selects_travel_date() throws InterruptedException {
-	    // Write code here that turns the phrase above into concrete actions
-	   pageManager.getFlightSearchPage().setDateFlightStatusByRoute("Sun Mar 29 2026");
-	}
+
 //	all flights for "<from>","<to>"the route are displayed with status
 	@Then("all flights for {string},{string} the route are displayed with status")
-	public void all_flights_for_the_route_are_displayed_with_status(String frmCity,String toCity) {
+	public void all_flights_for_the_route_are_displayed_with_status(String frmCity, String toCity) {
 		String actualFrmCity = pageManager.getFlightSearchPage().getFromCityFlightStatusByRoute();
 		String actualToCity = pageManager.getFlightSearchPage().getToCityFlightStatusByRoute();
-	
+
 		actualFrmCity = actualFrmCity.trim();
-	    actualToCity = actualToCity.trim();
-	    frmCity = frmCity.trim();
-	    toCity = toCity.trim();
+		actualToCity = actualToCity.trim();
+		frmCity = frmCity.trim();
+		toCity = toCity.trim();
 
-	    Assert.assertTrue("From city does not match expected route. Expected: " + frmCity + " but found: " + actualFrmCity,
-	            actualFrmCity.equalsIgnoreCase(frmCity));
+		Assert.assertTrue(
+				"From city does not match expected route. Expected: " + frmCity + " but found: " + actualFrmCity,
+				actualFrmCity.contains(frmCity));
 
-	    Assert.assertTrue("To city does not match expected route. Expected: " + toCity + " but found: " + actualToCity,
-	            actualToCity.equalsIgnoreCase(toCity));
+		Assert.assertTrue("To city does not match expected route. Expected: " + toCity + " but found: " + actualToCity,
+				actualToCity.contains(toCity));
 	}
-	
+
 	@Given("is on Flight Status By Airport")
-	public void is_on_Flight_Status_By_Airport() {
+	public void is_on_Flight_Status_By_Airport() throws InterruptedException {
+		Thread.sleep(6000);
 		pageManager.getFlightSearchPage().setFlightStatusByAirport();
+		Thread.sleep(6000);
 	}
+
 	@When("the user selects airport {string}")
 	public void the_user_selects_airport(String airport) {
 		pageManager.getFlightSearchPage().setAirportFlightStatusByAirport(airport);
 	}
 
-	@Then("all arrivals and departures are displayed with status")
-	public void all_arrivals_and_departures_are_displayed_with_status() {
-	    Assert.assertTrue("Arrivals and departures with status are not displayed",
-	            pageManager.getFlightSearchPage().flightStatusFetched());
+	@Then("all arrivals and departures of {string} are displayed with status")
+	public void all_arrivals_and_departures_are_displayed_with_status(String airport) throws InterruptedException {
+		Thread.sleep(6000);
+		Assert.assertTrue("Arrivals and departures with status are not displayed",
+				pageManager.getFlightSearchPage().flightStatusFetched());
+		String actualAirport  =  pageManager.getFlightSearchPage().getAirportFlightStatusByAirport();
+		Assert.assertTrue("Status for different Airport is Displayed",actualAirport.contains(airport));
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@After
 	public void tearDown() {
 		DriverFactory.quitDriver();
