@@ -25,6 +25,7 @@ public class HomestaysSteps {
     HomeStaysBookingPage booking;
 
     String oldPrice;
+    int prev_count;
 
     // =========================================================
     // BACKGROUND STEPS
@@ -92,6 +93,7 @@ public class HomestaysSteps {
     public void villa_listing_validation() {
 
         int count = filter.getHotelCount();
+        prev_count=count;
 
         Assert.assertTrue(count > 0,
                 "No villa listings found");
@@ -115,7 +117,7 @@ public class HomestaysSteps {
     @Then("all displayed properties match selected filters")
     public void validate_filters() {
 
-        Assert.assertTrue(filter.getHotelCount() > 0,
+        Assert.assertTrue(filter.getHotelCount() < prev_count,
                 "No results after applying filters");
 
         System.out.println("[PASS] Filters validated");

@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Apr 1, 2026 02:48:25 pm</span></a>
+<a href="#"><span class="badge badge-primary">Apr 1, 2026 08:48:49 pm</span></a>
 </li>
 </ul>
 </div>
@@ -79,7 +79,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@search</a><a class="dropdown-item" href="#">@TC_09</a><a class="dropdown-item" href="#">@flight</a>
+<a class="dropdown-item" href="#">@Negative</a><a class="dropdown-item" href="#">@TS01</a><a class="dropdown-item" href="#">@TS03</a><a class="dropdown-item" href="#">@TC_MMT_Villas_01_02</a><a class="dropdown-item" href="#">@TC_MMT_Villas_02_01</a><a class="dropdown-item" href="#">@Excel</a><a class="dropdown-item" href="#">@TC_MMT_Villas_03_02</a><a class="dropdown-item" href="#">@TC_MMT_Villas_01_01</a><a class="dropdown-item" href="#">@Positive</a><a class="dropdown-item" href="#">@Villas</a><a class="dropdown-item" href="#">@TS04</a><a class="dropdown-item" href="#">@TC_MMT_Villas_03_01</a><a class="dropdown-item" href="#">@TS02</a><a class="dropdown-item" href="#">@TC_MMT_Villas_04_02</a><a class="dropdown-item" href="#">@TC_MMT_Villas_04_01</a>
 </ul>
 </li>
 </ul>
@@ -90,9 +90,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Flight Search on MakeMyTrip</p>
+            <p class="name">MakeMyTrip Villas and Homestays Functionality</p>
             <p class="text-sm">
-              <span>2:48:25 pm</span> / <span>00:01:19:717</span>
+              <span>8:48:50 pm</span> / <span>00:03:59:644</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -100,105 +100,283 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Flight Search on MakeMyTrip</h5>
-<span class='badge badge-success'>04.01.2026 2:48:25 pm</span>
-<span class='badge badge-danger'>04.01.2026 2:49:45 pm</span>
-<span class='badge badge-default'>00:01:19:717</span>
+<h5 class="test-status text-pass">MakeMyTrip Villas and Homestays Functionality</h5>
+<span class='badge badge-success'>04.01.2026 8:48:50 pm</span>
+<span class='badge badge-danger'>04.01.2026 8:52:49 pm</span>
+<span class='badge badge-default'>00:03:59:644</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-10 m-l-5"> As a user of MakeMyTrip
-I want to search for flights between cities
-So that I can view available flights and their details</div>
+<div class="m-t-10 m-l-5"></div>
 </div>
 </div>
 <div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by airport</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Valid destination search shows villa listings</div>
       </div>
     </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by airport</div>
-                </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.open_homepage()">
+                <span>Given the user is on the MakeMyTrip homepage</span>
+      <div>
+      </div>
               </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given the user is on the flight search page</span>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.navigate_to_section()">
+                <span>And the user navigates to Villas and Homestays section</span>
       <div>
       </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given the user navigates to flight status page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And is on Flight Status By Airport</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When the user selects airport "Delhi"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And submits the request</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then all arrivals and departures of "Delhi" are displayed with status</span>
-      <div>
-      </div>
-                  </div>
               </div>
-            </div>
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="12"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by airport</div>
-                </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_search(java.lang.Integer,java.lang.Integer)">
+                <span>When the user performs villa search for TC_MMT_Villas_01_01</span>
+      <div>
+      </div>
               </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given the user is on the flight search page</span>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_listing_validation()">
+                <span>Then the villa listing validation is done</span>
       <div>
       </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given the user navigates to flight status page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And is on Flight Status By Airport</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When the user selects airport "Kolkata"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And submits the request</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then all arrivals and departures of "Kolkata" are displayed with status</span>
-      <div>
-      </div>
-                  </div>
               </div>
-            </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="9"><span class="badge log pass-bg mr-2">Pass</span>Invalid destination shows no results</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.open_homepage()">
+                <span>Given the user is on the MakeMyTrip homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.navigate_to_section()">
+                <span>And the user navigates to Villas and Homestays section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_search(java.lang.Integer,java.lang.Integer)">
+                <span>When the user performs villa search for TC_MMT_Villas_01_02</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.no_location_suggestions_should_be_displayed()">
+                <span>Then no location suggestions should be displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="16"><span class="badge log pass-bg mr-2">Pass</span>Apply property type and amenities filters</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.open_homepage()">
+                <span>Given the user is on the MakeMyTrip homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.navigate_to_section()">
+                <span>And the user navigates to Villas and Homestays section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_search(java.lang.Integer,java.lang.Integer)">
+                <span>When the user performs villa search for TC_MMT_Villas_02_01</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_listing_validation()">
+                <span>Then the villa listing validation is done</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.apply_filters(java.lang.Integer,java.lang.Integer)">
+                <span>When the user applies filters for TC_MMT_Villas_02_01</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.validate_filters()">
+                <span>Then all displayed properties match selected filters</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="25"><span class="badge log pass-bg mr-2">Pass</span>Sort villas by price low to high</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.open_homepage()">
+                <span>Given the user is on the MakeMyTrip homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.navigate_to_section()">
+                <span>And the user navigates to Villas and Homestays section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_search(java.lang.Integer,java.lang.Integer)">
+                <span>When the user performs villa search for TC_MMT_Villas_03_01</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_listing_validation()">
+                <span>Then the villa listing validation is done</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.sort_villas(java.lang.Integer,java.lang.Integer)">
+                <span>When the user sorts villas for TC_MMT_Villas_03_01</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.validate_sorting()">
+                <span>Then villa listings are sorted correctly</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="34"><span class="badge log pass-bg mr-2">Pass</span>Sort villas by price high to low</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.open_homepage()">
+                <span>Given the user is on the MakeMyTrip homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.navigate_to_section()">
+                <span>And the user navigates to Villas and Homestays section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_search(java.lang.Integer,java.lang.Integer)">
+                <span>When the user performs villa search for TC_MMT_Villas_03_02</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_listing_validation()">
+                <span>Then the villa listing validation is done</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.sort_villas(java.lang.Integer,java.lang.Integer)">
+                <span>When the user sorts villas for TC_MMT_Villas_03_02</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.validate_sorting()">
+                <span>Then villa listings are sorted correctly</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="43"><span class="badge log pass-bg mr-2">Pass</span>View villa details page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.open_homepage()">
+                <span>Given the user is on the MakeMyTrip homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.navigate_to_section()">
+                <span>And the user navigates to Villas and Homestays section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_search(java.lang.Integer,java.lang.Integer)">
+                <span>When the user performs villa search for TC_MMT_Villas_04_01</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_listing_validation()">
+                <span>Then the villa listing validation is done</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.open_villa_details(java.lang.Integer,java.lang.Integer)">
+                <span>When the user opens villa details for TC_MMT_Villas_04_01</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.validate_villa_details()">
+                <span>Then villa details are validated</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="52"><span class="badge log pass-bg mr-2">Pass</span>View guest reviews on property page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.open_homepage()">
+                <span>Given the user is on the MakeMyTrip homepage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.navigate_to_section()">
+                <span>And the user navigates to Villas and Homestays section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_search(java.lang.Integer,java.lang.Integer)">
+                <span>When the user performs villa search for TC_MMT_Villas_04_02</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.villa_listing_validation()">
+                <span>Then the villa listing validation is done</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.open_villa_details(java.lang.Integer,java.lang.Integer)">
+                <span>When the user opens villa details for TC_MMT_Villas_04_02</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.HomestaysSteps.validate_reviews()">
+                <span>Then guest reviews are validated</span>
+      <div>
+      </div>
+              </div>
+          </div>
         </div>
   </div>
 </div>
@@ -217,22 +395,22 @@ So that I can view available flights and their details</div>
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">15</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>2</span>
+<span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@search</p>
-<p class="duration text-sm">2 tests</p>
+<p class="name">@Negative</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@search</h4>
-<span status="pass" class='badge log pass-bg'>2 passed</span>
+<h4>@Negative</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -245,21 +423,11 @@ So that I can view available flights and their details</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:48:25 pm</td>
+<td>20:49:27 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>User checks flight status by airport</a>
+<a href="#" class="linked" test-id='1' id='9'>Invalid destination shows no results</a>
 <div class="">
-<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:49:05 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='12'>User checks flight status by airport</a>
-<div class="">
-<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Invalid destination shows no results</span>
 </div>
 </td>
 </tr>
@@ -272,12 +440,12 @@ So that I can view available flights and their details</div>
 <span class="meta">
 <span class='badge log pass-bg'>2</span>
 </span>
-<p class="name">@TC_09</p>
+<p class="name">@TS01</p>
 <p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@TC_09</h4>
+<h4>@TS01</h4>
 <span status="pass" class='badge log pass-bg'>2 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -291,21 +459,21 @@ So that I can view available flights and their details</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:48:25 pm</td>
+<td>20:48:50 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>User checks flight status by airport</a>
+<a href="#" class="linked" test-id='1' id='2'>Valid destination search shows villa listings</a>
 <div class="">
-<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Valid destination search shows villa listings</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:49:05 pm</td>
+<td>20:49:27 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='12'>User checks flight status by airport</a>
+<a href="#" class="linked" test-id='1' id='9'>Invalid destination shows no results</a>
 <div class="">
-<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Invalid destination shows no results</span>
 </div>
 </td>
 </tr>
@@ -318,12 +486,12 @@ So that I can view available flights and their details</div>
 <span class="meta">
 <span class='badge log pass-bg'>2</span>
 </span>
-<p class="name">@flight</p>
+<p class="name">@TS03</p>
 <p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@flight</h4>
+<h4>@TS03</h4>
 <span status="pass" class='badge log pass-bg'>2 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -337,21 +505,633 @@ So that I can view available flights and their details</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:48:25 pm</td>
+<td>20:50:51 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>User checks flight status by airport</a>
+<a href="#" class="linked" test-id='1' id='25'>Sort villas by price low to high</a>
 <div class="">
-<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Sort villas by price low to high</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:49:05 pm</td>
+<td>20:51:19 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='12'>User checks flight status by airport</a>
+<a href="#" class="linked" test-id='1' id='34'>Sort villas by price high to low</a>
 <div class="">
-<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Sort villas by price high to low</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TC_MMT_Villas_01_02</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MMT_Villas_01_02</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:49:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>Invalid destination shows no results</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Invalid destination shows no results</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TC_MMT_Villas_02_01</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MMT_Villas_02_01</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:50:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>Apply property type and amenities filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Apply property type and amenities filters</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>7</span>
+</span>
+<p class="name">@Excel</p>
+<p class="duration text-sm">7 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Excel</h4>
+<span status="pass" class='badge log pass-bg'>7 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:48:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Valid destination search shows villa listings</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Valid destination search shows villa listings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:49:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>Invalid destination shows no results</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Invalid destination shows no results</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:50:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>Apply property type and amenities filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Apply property type and amenities filters</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:50:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='25'>Sort villas by price low to high</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Sort villas by price low to high</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:51:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='34'>Sort villas by price high to low</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Sort villas by price high to low</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:51:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='43'>View villa details page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.View villa details page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:52:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='52'>View guest reviews on property page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.View guest reviews on property page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TC_MMT_Villas_03_02</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MMT_Villas_03_02</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:51:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='34'>Sort villas by price high to low</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Sort villas by price high to low</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TC_MMT_Villas_01_01</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MMT_Villas_01_01</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:48:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Valid destination search shows villa listings</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Valid destination search shows villa listings</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>6</span>
+</span>
+<p class="name">@Positive</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Positive</h4>
+<span status="pass" class='badge log pass-bg'>6 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:48:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Valid destination search shows villa listings</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Valid destination search shows villa listings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:50:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>Apply property type and amenities filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Apply property type and amenities filters</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:50:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='25'>Sort villas by price low to high</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Sort villas by price low to high</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:51:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='34'>Sort villas by price high to low</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Sort villas by price high to low</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:51:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='43'>View villa details page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.View villa details page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:52:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='52'>View guest reviews on property page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.View guest reviews on property page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>7</span>
+</span>
+<p class="name">@Villas</p>
+<p class="duration text-sm">7 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Villas</h4>
+<span status="pass" class='badge log pass-bg'>7 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:48:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Valid destination search shows villa listings</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Valid destination search shows villa listings</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:49:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>Invalid destination shows no results</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Invalid destination shows no results</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:50:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>Apply property type and amenities filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Apply property type and amenities filters</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:50:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='25'>Sort villas by price low to high</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Sort villas by price low to high</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:51:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='34'>Sort villas by price high to low</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Sort villas by price high to low</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:51:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='43'>View villa details page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.View villa details page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:52:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='52'>View guest reviews on property page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.View guest reviews on property page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@TS04</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TS04</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:51:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='43'>View villa details page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.View villa details page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:52:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='52'>View guest reviews on property page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.View guest reviews on property page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TC_MMT_Villas_03_01</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MMT_Villas_03_01</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:50:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='25'>Sort villas by price low to high</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Sort villas by price low to high</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TS02</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TS02</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:50:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>Apply property type and amenities filters</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.Apply property type and amenities filters</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TC_MMT_Villas_04_02</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MMT_Villas_04_02</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:52:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='52'>View guest reviews on property page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.View guest reviews on property page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TC_MMT_Villas_04_01</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_MMT_Villas_04_01</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:51:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='43'>View villa details page</a>
+<div class="">
+<span class="badge badge-default">MakeMyTrip Villas and Homestays Functionality.View villa details page</span>
 </div>
 </td>
 </tr>
@@ -372,13 +1152,13 @@ So that I can view available flights and their details</div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Apr 1, 2026 02:48:25 pm</h3>
+<h3>Apr 1, 2026 08:48:49 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Apr 1, 2026 02:49:45 pm</h3>
+<h3>Apr 1, 2026 08:52:49 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -429,7 +1209,7 @@ So that I can view available flights and their details</div>
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>2</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>7</b> scenarios passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -449,7 +1229,7 @@ So that I can view available flights and their details</div>
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>12</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>38</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -468,7 +1248,7 @@ So that I can view available flights and their details</div>
 </div></div>
 <script>
 var timeline = {
-"Flight Search on MakeMyTrip":79.717
+"MakeMyTrip Villas and Homestays Functionality":239.644
 };
 </script>
 <div class="row">
@@ -478,7 +1258,15 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@search</td>
+<td>@Negative</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TS01</td>
 <td>2</td>
 <td>0</td>
 <td>0</td>
@@ -486,7 +1274,7 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
-<td>@TC_09</td>
+<td>@TS03</td>
 <td>2</td>
 <td>0</td>
 <td>0</td>
@@ -494,8 +1282,96 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
-<td>@flight</td>
+<td>@TC_MMT_Villas_01_02</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_MMT_Villas_02_01</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Excel</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_MMT_Villas_03_02</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_MMT_Villas_01_01</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Positive</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Villas</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TS04</td>
 <td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_MMT_Villas_03_01</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TS02</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_MMT_Villas_04_02</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_MMT_Villas_04_01</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -515,13 +1391,13 @@ failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 2,
+passChild: 7,
 failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 12,
+passGrandChild: 38,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,

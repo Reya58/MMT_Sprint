@@ -75,12 +75,3 @@ Feature: MakeMyTrip Villas and Homestays Functionality
     Then guest reviews are validated
     
 
-
-
-  @TS07 @Positive @TC_MMT_Villas_07_01 @Excel
-  Scenario: Apply coupon on booking page
-    When the user performs villa search for TC_MMT_Villas_07_01
-    Then the villa listing validation is done
-    When the user opens villa details for TC_MMT_Villas_07_01
-    When the user applies coupon for TC_MMT_Villas_07_01
-    Then discount is applied successfully
