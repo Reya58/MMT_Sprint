@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Apr 1, 2026 12:00:29 pm</span></a>
+<a href="#"><span class="badge badge-primary">Apr 1, 2026 03:10:36 pm</span></a>
 </li>
 </ul>
 </div>
@@ -79,7 +79,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@flight</a><a class="dropdown-item" href="#">@search</a><a class="dropdown-item" href="#">@TC_09</a>
+<a class="dropdown-item" href="#">@regression</a><a class="dropdown-item" href="#">@TC_07</a><a class="dropdown-item" href="#">@TC_01</a><a class="dropdown-item" href="#">@TC_04</a><a class="dropdown-item" href="#">@results</a><a class="dropdown-item" href="#">@search</a><a class="dropdown-item" href="#">@TC_08</a><a class="dropdown-item" href="#">@TC_02</a><a class="dropdown-item" href="#">@TC_09</a><a class="dropdown-item" href="#">@TC_03</a><a class="dropdown-item" href="#">@TC_05</a><a class="dropdown-item" href="#">@positive</a><a class="dropdown-item" href="#">@flight</a><a class="dropdown-item" href="#">@TC_06</a><a class="dropdown-item" href="#">@ui</a>
 </ul>
 </li>
 </ul>
@@ -92,7 +92,7 @@
           <div class="test-detail">
             <p class="name">Flight Search on MakeMyTrip</p>
             <p class="text-sm">
-              <span>12:00:30 pm</span> / <span>00:01:17:412</span>
+              <span>3:10:36 pm</span> / <span>00:36:14:271</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -101,9 +101,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Flight Search on MakeMyTrip</h5>
-<span class='badge badge-success'>04.01.2026 12:00:30 pm</span>
-<span class='badge badge-danger'>04.01.2026 12:01:48 pm</span>
-<span class='badge badge-default'>00:01:17:412</span>
+<span class='badge badge-success'>04.01.2026 3:10:36 pm</span>
+<span class='badge badge-danger'>04.01.2026 3:46:51 pm</span>
+<span class='badge badge-default'>00:36:14:271</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -117,14 +117,762 @@ So that I can view available flights and their details</div>
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by airport</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User searches and books a flight with valid inputs</div>
       </div>
     </div>
         <div class="scenario_outline collapse">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by airport</div>
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>User searches and books a flight with valid inputs</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights from "Delhi" to "Mumbai"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects departure date "Sun May 24 2026"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user executes the flight search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then available flights are displayed</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects a flight</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters valid traveller details "Rahul", "Kumar", "Male", "9876543210", "rahul@gmail.com", "Delhi"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And completes the booking</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the booking is successful</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="15"><span class="badge log pass-bg mr-2">Pass</span>User searches and books a flight with valid inputs</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights from "Kolkata" to "Bengaluru"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects departure date "Tue May 26 2026"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user executes the flight search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then available flights are displayed</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects a flight</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters valid traveller details "Ananya", "Kumari", "Female", "9123456780", "ananya@gmail.com", "West Bengal"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And completes the booking</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the booking is successful</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="27"><span class="badge log pass-bg mr-2">Pass</span>User books a round-trip flight</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="28"><span class="badge log pass-bg mr-2">Pass</span>User books a round-trip flight</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for round-trip flights from "Delhi" to "Goa"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And selects departure date "Sun May 24 2026" and return date "Tue May 26 2026"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user executes the flight search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then onward and return flights are displayed</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects flights for both journeys</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters valid traveller details</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And completes the booking</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the booking is successful</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="40"><span class="badge log pass-bg mr-2">Pass</span>User books flight with add-ons</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="41"><span class="badge log pass-bg mr-2">Pass</span>User books flight with add-ons</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects a flight</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And adds meals and extra baggage</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters valid traveller details "Rahul", "Kumar", "Male", "9876543210", "rahul@gmail.com", "Delhi"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And completes the booking</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the booking is successful</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="51"><span class="badge log pass-bg mr-2">Pass</span>User books flight with add-ons</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user selects a flight</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And adds meals and extra baggage</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters valid traveller details "Ananya", "Kumari", "Female", "9123456780", "ananya@gmail.com", "West Bengal"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And completes the booking</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the booking is successful</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="61"><span class="badge log pass-bg mr-2">Pass</span>User books the cheapest flight</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="62"><span class="badge log pass-bg mr-2">Pass</span>User books the cheapest flight</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights from "Delhi" to "Mumbai"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects departure date "Sun May 24 2026"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user executes the flight search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then available flights are displayed</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects the cheapest available flight</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters valid traveller details</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And completes the booking</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the booking is successful</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="74"><span class="badge log pass-bg mr-2">Pass</span>User books the cheapest flight</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights from "Kolkata" to "Bengaluru"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects departure date "Tue May 26 2026"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user executes the flight search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then available flights are displayed</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects the cheapest available flight</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters valid traveller details</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And completes the booking</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the booking is successful</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="86"><span class="badge log pass-bg mr-2">Pass</span>User books a flight of a specific airline</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="87"><span class="badge log pass-bg mr-2">Pass</span>User books a flight of a specific airline</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights from "Delhi" to "Mumbai"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user selects departure date "Sun May 24 2026"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user executes the flight search</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And available flights are displayed</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And the user filters flights by airline "IndiGo"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And selects a flight after filter</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the airline is "IndiGo"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When enters valid traveller details</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And completes the booking</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the booking is successful</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="101"><span class="badge log pass-bg mr-2">Pass</span>User books flight from either of two airlines</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="102"><span class="badge log pass-bg mr-2">Pass</span>User books flight from either of two airlines</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user filters flights by airlines "IndiGo" and "Air India"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And selects a flight after filter</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then selected flight belongs to "IndiGo","Air India" one of the chosen airlines</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters valid traveller details</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And completes the booking</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the booking is successful</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="113"><span class="badge log pass-bg mr-2">Pass</span>User books flight from either of two airlines</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user searches for flights</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user filters flights by airlines "Air India" and "Air India Express"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And selects a flight after filter</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then selected flight belongs to "Air India","Air India Express" one of the chosen airlines</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters valid traveller details</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And completes the booking</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the booking is successful</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="124"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by flight number</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="125"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by flight number</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user navigates to flight status page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And is on Flight Status By Flight tab</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user enters flight number "AI101"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And submits the request</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the current flight status is displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="134"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by flight number</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user navigates to flight status page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And is on Flight Status By Flight tab</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user enters flight number "6E202"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And submits the request</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the current flight status is displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="143"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by route</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="144"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by route</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user navigates to flight status page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And is on Flight Status By Route tab</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user enters source "Delhi" and destination "Mumbai"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And submits the request</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then all flights for "Delhi","Mumbai" the route are displayed with status</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="153"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by route</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given the user navigates to flight status page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And is on Flight Status By Route tab</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user enters source "Kolkata" and destination "Bengaluru"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And submits the request</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then all flights for "Kolkata","Bengaluru" the route are displayed with status</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="162"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by airport</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="163"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by airport</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -163,7 +911,7 @@ So that I can view available flights and their details</div>
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="12"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by airport</div>
+                  <div class="node" id="172"><span class="badge log pass-bg mr-2">Pass</span>User checks flight status by airport</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -217,7 +965,7 @@ So that I can view available flights and their details</div>
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">15</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -226,12 +974,12 @@ So that I can view available flights and their details</div>
 <span class="meta">
 <span class='badge log pass-bg'>2</span>
 </span>
-<p class="name">@flight</p>
+<p class="name">@regression</p>
 <p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@flight</h4>
+<h4>@regression</h4>
 <span status="pass" class='badge log pass-bg'>2 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -245,9 +993,379 @@ So that I can view available flights and their details</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>12:00:30 pm</td>
+<td>15:10:36 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>User checks flight status by airport</a>
+<a href="#" class="linked" test-id='1' id='3'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@TC_07</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_07</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='125'>User checks flight status by flight number</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by flight number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>User checks flight status by flight number</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by flight number</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@TC_01</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_01</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:10:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@TC_04</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_04</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:25:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>User books the cheapest flight</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books the cheapest flight</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:29:46 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>User books the cheapest flight</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books the cheapest flight</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@results</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@results</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:10:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>16</span>
+</span>
+<p class="name">@search</p>
+<p class="duration text-sm">16 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@search</h4>
+<span status="pass" class='badge log pass-bg'>16 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:10:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:16:11 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='28'>User books a round-trip flight</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books a round-trip flight</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='41'>User books flight with add-ons</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books flight with add-ons</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:22:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='51'>User books flight with add-ons</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books flight with add-ons</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:25:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>User books the cheapest flight</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books the cheapest flight</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:29:46 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>User books the cheapest flight</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books the cheapest flight</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:32:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='87'>User books a flight of a specific airline</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books a flight of a specific airline</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:36:07 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='102'>User books flight from either of two airlines</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books flight from either of two airlines</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:40:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='113'>User books flight from either of two airlines</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books flight from either of two airlines</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='125'>User checks flight status by flight number</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by flight number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>User checks flight status by flight number</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by flight number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='144'>User checks flight status by route</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by route</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='153'>User checks flight status by route</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by route</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:45:31 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='163'>User checks flight status by airport</a>
 <div class="">
 <span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
 </div>
@@ -255,9 +1373,9 @@ So that I can view available flights and their details</div>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>12:01:09 pm</td>
+<td>15:46:11 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='12'>User checks flight status by airport</a>
+<a href="#" class="linked" test-id='1' id='172'>User checks flight status by airport</a>
 <div class="">
 <span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
 </div>
@@ -272,12 +1390,12 @@ So that I can view available flights and their details</div>
 <span class="meta">
 <span class='badge log pass-bg'>2</span>
 </span>
-<p class="name">@search</p>
+<p class="name">@TC_08</p>
 <p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@search</h4>
+<h4>@TC_08</h4>
 <span status="pass" class='badge log pass-bg'>2 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -291,21 +1409,57 @@ So that I can view available flights and their details</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>12:00:30 pm</td>
+<td>15:44:15 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>User checks flight status by airport</a>
+<a href="#" class="linked" test-id='1' id='144'>User checks flight status by route</a>
 <div class="">
-<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by route</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>12:01:09 pm</td>
+<td>15:44:54 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='12'>User checks flight status by airport</a>
+<a href="#" class="linked" test-id='1' id='153'>User checks flight status by route</a>
 <div class="">
-<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by route</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TC_02</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_02</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:16:11 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='28'>User books a round-trip flight</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books a round-trip flight</span>
 </div>
 </td>
 </tr>
@@ -337,9 +1491,9 @@ So that I can view available flights and their details</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>12:00:30 pm</td>
+<td>15:45:31 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>User checks flight status by airport</a>
+<a href="#" class="linked" test-id='1' id='163'>User checks flight status by airport</a>
 <div class="">
 <span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
 </div>
@@ -347,11 +1501,417 @@ So that I can view available flights and their details</div>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>12:01:09 pm</td>
+<td>15:46:11 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='12'>User checks flight status by airport</a>
+<a href="#" class="linked" test-id='1' id='172'>User checks flight status by airport</a>
 <div class="">
 <span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@TC_03</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_03</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='41'>User books flight with add-ons</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books flight with add-ons</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:22:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='51'>User books flight with add-ons</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books flight with add-ons</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TC_05</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_05</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:32:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='87'>User books a flight of a specific airline</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books a flight of a specific airline</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@positive</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@positive</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:10:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>16</span>
+</span>
+<p class="name">@flight</p>
+<p class="duration text-sm">16 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@flight</h4>
+<span status="pass" class='badge log pass-bg'>16 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:10:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:16:11 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='28'>User books a round-trip flight</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books a round-trip flight</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='41'>User books flight with add-ons</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books flight with add-ons</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:22:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='51'>User books flight with add-ons</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books flight with add-ons</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:25:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='62'>User books the cheapest flight</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books the cheapest flight</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:29:46 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>User books the cheapest flight</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books the cheapest flight</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:32:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='87'>User books a flight of a specific airline</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books a flight of a specific airline</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:36:07 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='102'>User books flight from either of two airlines</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books flight from either of two airlines</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:40:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='113'>User books flight from either of two airlines</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books flight from either of two airlines</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='125'>User checks flight status by flight number</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by flight number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>User checks flight status by flight number</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by flight number</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='144'>User checks flight status by route</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by route</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='153'>User checks flight status by route</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by route</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:45:31 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='163'>User checks flight status by airport</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:46:11 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='172'>User checks flight status by airport</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User checks flight status by airport</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@TC_06</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TC_06</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:36:07 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='102'>User books flight from either of two airlines</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books flight from either of two airlines</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:40:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='113'>User books flight from either of two airlines</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User books flight from either of two airlines</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@ui</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ui</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:10:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>User searches and books a flight with valid inputs</a>
+<div class="">
+<span class="badge badge-default">Flight Search on MakeMyTrip.User searches and books a flight with valid inputs</span>
 </div>
 </td>
 </tr>
@@ -372,13 +1932,13 @@ So that I can view available flights and their details</div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Apr 1, 2026 12:00:29 pm</h3>
+<h3>Apr 1, 2026 03:10:36 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Apr 1, 2026 12:01:48 pm</h3>
+<h3>Apr 1, 2026 03:46:51 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -429,7 +1989,7 @@ So that I can view available flights and their details</div>
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>2</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>16</b> scenarios passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -449,7 +2009,7 @@ So that I can view available flights and their details</div>
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>12</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>122</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -468,7 +2028,7 @@ So that I can view available flights and their details</div>
 </div></div>
 <script>
 var timeline = {
-"Flight Search on MakeMyTrip":77.412
+"Flight Search on MakeMyTrip":2174.271
 };
 </script>
 <div class="row">
@@ -478,7 +2038,39 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@flight</td>
+<td>@regression</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_07</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_01</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_04</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@results</td>
 <td>2</td>
 <td>0</td>
 <td>0</td>
@@ -487,6 +2079,14 @@ var timeline = {
 </tr>
 <tr>
 <td>@search</td>
+<td>16</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_08</td>
 <td>2</td>
 <td>0</td>
 <td>0</td>
@@ -494,7 +2094,63 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
+<td>@TC_02</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
 <td>@TC_09</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_03</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_05</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@positive</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@flight</td>
+<td>16</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TC_06</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@ui</td>
 <td>2</td>
 <td>0</td>
 <td>0</td>
@@ -515,13 +2171,13 @@ failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 2,
+passChild: 16,
 failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 12,
+passGrandChild: 122,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,

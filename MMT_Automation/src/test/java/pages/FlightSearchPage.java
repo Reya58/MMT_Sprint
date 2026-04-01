@@ -9,6 +9,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -126,12 +127,15 @@ public class FlightSearchPage {
 
 	private void dismissCoachmarkIfPresent() {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-
-			WebElement coachmark = wait
-					.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(@class,'coachmark')]")));
-			coachmark.click();
-
+			
+//			WebElement coachmark = wait
+//					.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(@class,'coachmark')]")));
+//			coachmark.click();
+			Thread.sleep(3000);
+			Actions act = new Actions(driver);
+			
+			act.moveByOffset(100, 100).perform();
+			act.click().perform();
 		} catch (Exception ignored) {
 			// intentionally ignored
 		}
@@ -139,8 +143,6 @@ public class FlightSearchPage {
 
 	private void closeLoginPopup() {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
 			WebElement closeBtn = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@data-cy='closeModal']")));
 
@@ -153,8 +155,7 @@ public class FlightSearchPage {
 
 	private void minimizeBanner() {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
+			
 			WebElement minimizeBtn = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='minimize']")));
 
@@ -363,7 +364,7 @@ public class FlightSearchPage {
 //	----------------MAIN SEARCH BUTTON OF FLIGHT SEARCH PAGE------------------
 	public void search() {
 		try {
-			driver.findElement(By.xpath("//button[@class='fis-search-button']")).click();
+			driver.findElement(By.xpath("//a[text()='Search']")).click();
 		}catch(Exception e) {
 			
 		}
@@ -500,6 +501,15 @@ public class FlightSearchPage {
 	}
 
 	// COMMON TO FLIGHT STATUS
+	
+	public void statusSearch() {
+		try {
+			driver.findElement(By.xpath("//button[@class='fis-search-button']")).click();
+		}catch(Exception e) {
+			
+		}
+	}
+	
 	public void trackFlight() {
 		btn_flightTracker.click();
 	}

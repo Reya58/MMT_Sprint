@@ -350,7 +350,7 @@ public class FlightReservationSteps extends BaseClass {
 	@When("submits the request")
 	public void submits_the_request() throws InterruptedException {
 //		Thread.sleep(600000);
-		pageManager.getFlightSearchPage().search();
+		pageManager.getFlightSearchPage().statusSearch();
 	}
 
 	@Then("the current flight status is displayed")
