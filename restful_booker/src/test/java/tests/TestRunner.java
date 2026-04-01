@@ -13,7 +13,8 @@ public class TestRunner {
                 CreateBookingTest.class,
                 GetBookingTest.class,
                 UpdateBookingTest.class,
-                DeleteBookingTest.class
+                DeleteBookingTest.class,
+                PingTest.class
         });
 
         testng.setDefaultSuiteName("API Suite");
