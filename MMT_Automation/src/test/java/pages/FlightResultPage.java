@@ -39,9 +39,7 @@ public class FlightResultPage {
 
 	// -----FOR SPEACIFIC FILTER CONTAINER---------------
 	private By getFilterContainer(String filterName) {
-		return By.xpath(
-				"//div[contains(@class,'filtersOuter')][.//p[@data-test='component-title' and normalize-space()='"
-						+ filterName + "']]");
+		return By.xpath("//p[text()='" + filterName + "']/ancestor::div[@class='filtersOuter']");
 	}
 
 	// ---------FOR GETTING WEBELEMENT OF SPEACIFIC FILTER'S SPEACIFIC
@@ -50,8 +48,8 @@ public class FlightResultPage {
 		WebElement container = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(getFilterContainer(filterName)));
 
-		return container.findElement(
-				By.xpath(".//p[@class='checkboxTitle' and normalize-space()='" + option + "']/ancestor::label"));
+		return container.findElement(By.xpath(
+				".//label[.//p[contains(@class,'checkboxTitle') and contains(normalize-space(.),'" + option + "')]]"));
 	}
 
 //	-------------CONSTRUCTOR--------------- 
@@ -95,15 +93,18 @@ public class FlightResultPage {
 // --------------GENERAL FUNCTIONS FOR ALL FILTERS----------- 	
 
 	public Boolean isFlightAvailabeAfterFilter() {
-		return !wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()='Too many filters applied!']")))
-				.isDisplayed();
+		try {
+			return !driver.findElement(By.xpath("//p[text()='Too many filters applied!']")).isDisplayed();
+
+		} catch (Exception e) {
+			return true;
+		}
 	}
 
 	public List<String> getFilterOptions(String filterName) {
 		WebElement container = driver.findElement(getFilterContainer(filterName));
 
-		List<WebElement> options = container.findElements(By.xpath(".//p[@class='checkboxTitle']"));
+		List<WebElement> options = container.findElements(By.xpath("//p[@class='checkboxTitle']"));
 
 		return options.stream().map(e -> e.getText().trim()).collect(Collectors.toList());
 	}
@@ -114,18 +115,18 @@ public class FlightResultPage {
 
 	public void selectAOption(String filterName, String filterOption) {
 		WebElement label = getFilterOptionLabel(filterName, filterOption);
-
 		WebElement checkbox = label.findElement(By.xpath(".//input"));
+//				
 
 		if (!checkbox.isSelected()) {
-			label.click();
+			checkbox.click();
 		}
 	}
 
 	public Boolean isOptionSelected(String filterName, String option) {
 		WebElement label = getFilterOptionLabel(filterName, option);
 
-		WebElement checkbox = label.findElement(By.xpath(".//input"));
+		WebElement checkbox = label.findElement(By.xpath("//input"));
 
 		return checkbox.isSelected();
 	}
@@ -133,7 +134,7 @@ public class FlightResultPage {
 	public void deselectOption(String filterName, String option) {
 		WebElement label = getFilterOptionLabel(filterName, option);
 
-		WebElement checkbox = label.findElement(By.xpath(".//input"));
+		WebElement checkbox = label.findElement(By.xpath("//input"));
 
 		if (checkbox.isSelected()) {
 			label.click();
@@ -228,10 +229,10 @@ public class FlightResultPage {
 	public void selectCheapestFareType() {
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[text()='BOOK NOW'])[1]"))).click();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
+
 	}
 //	------------------FLIGHTS CARD----------------------
 
@@ -364,7 +365,7 @@ public class FlightResultPage {
 
 	public String toCityForwardTripOfRoundTrip() {
 		String route = driver.findElement(By.xpath("(//div[@class='topSectionPaneView appendBottom10'])[1]")).getText();
-		return route.substring(route.indexOf("→") + 1);
+		return route.substring(route.indexOf("→") + 2, route.indexOf(" ", route.indexOf("→") + 2)).trim();
 	}
 
 	public String fromCityReturnTripOfRoundTrip() {
@@ -376,7 +377,7 @@ public class FlightResultPage {
 	public String toCityReturnTripOfRoundTrip() {
 		String route = driver.findElement(By.xpath("(//div[@class='topSectionPaneView appendBottom10'])[2]")).getText();
 
-		return route.substring(route.indexOf("→") + 1);
+		return route.substring(route.indexOf("→") + 2, route.indexOf(" ", route.indexOf("→") + 2)).trim();
 	}
 
 	public void bookRoundTrip() {

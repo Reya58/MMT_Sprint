@@ -10,7 +10,7 @@ import utils.DriverFactory;
 @CucumberOptions(
 	    features = "src/test/resources/features/flightResev.feature",
 	    glue = {"stepDefinations"},
-	    tags= "@TC_01",
+	    tags= "@TC_09",
     	plugin = {
 		    "pretty",
 		    "html:reports/flight-module/cucumber-report.html",

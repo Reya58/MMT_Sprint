@@ -62,15 +62,24 @@ public class FlightTravellerDetailsPage {
 	// ----------------- FLIGHT INFO METHODS -----------------
 
 	public List<String> getAirlines() {
-		List<WebElement> headers = wait
-				.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("flightItenaryHdr")));
-		List<String> airlines = new ArrayList<>();
-		for (WebElement header : headers) {
-			String text = header.getText().trim();
-			String airline = text.substring(0, text.lastIndexOf(" "));
-			airlines.add(airline);
+		try {
+			List<WebElement> headers = wait
+					.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("flightItenaryHdr")));
+
+			List<String> airlines = new ArrayList<>();
+			for (WebElement header : headers) {
+				String text = header.getText().trim();
+
+				// Extract first line (airline name)
+				String airline = text.split("\\n")[0].trim();
+
+				airlines.add(airline);
+			}
+			return airlines;
+
+		} catch(Exception e) {
+		    throw new RuntimeException("Failed to fetch airline names", e);
 		}
-		return airlines;
 	}
 
 	public List<String> getTravelClasses() {
@@ -210,12 +219,14 @@ public class FlightTravellerDetailsPage {
 		try {
 			dismissAllPopups();
 
-			scrollTo(By.id("SEATS_N_MEALS"));
-
-			waitForOverlayToDisappear();
-
 			By mealBtnLocator = By.xpath("(//button[contains(@class,'fltMealAddBtn')])[1]");
-			WebElement mealBtn = wait.until(ExpectedConditions.presenceOfElementLocated(mealBtnLocator));
+
+			WebElement mealBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(mealBtnLocator));
+
+			// Scroll directly to element (important)
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", mealBtn);
+
+			wait.until(ExpectedConditions.elementToBeClickable(mealBtn));
 
 			mealBtn.click();
 
@@ -258,6 +269,7 @@ public class FlightTravellerDetailsPage {
 	public void reviewTravelerDetails() {
 		try {
 			// This is a popup that appears AFTER clicking continue
+			Thread.sleep(2000);
 			waitForOverlayToDisappear();
 			driver.findElement(By.xpath("//div[@class='commonOverlay']//h3[text()='Review Details']"));
 
@@ -373,20 +385,12 @@ public class FlightTravellerDetailsPage {
 					.elementToBeClickable(By.xpath("//div[@class='baggageAddonWrapper']//span[@class='qtyActions']")))
 					.click();
 
-			waitForOverlayToDisappear();
-
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='DONE']"))).click();
-
-			wait.until(ExpectedConditions
-					.elementToBeClickable(By.xpath("//div[@class='baggageAddonWrapper']//span[@class='qtyActions']")))
-					.click();
-
-			waitForOverlayToDisappear();
+//			waitForOverlayToDisappear();
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='DONE']"))).click();
 
 		} catch (Exception e) {
-			System.out.println("Add Baggeg button not present");
+			System.out.println("Add Baggage button not present");
 		}
 	}
 
@@ -418,6 +422,22 @@ public class FlightTravellerDetailsPage {
 		} catch (Exception e) {
 //			System.out.println(e.getMessage());
 		}
+	}
 
+	public void dismissNoUpgradePopUp() {
+		// *[contains(@class, 'commonOverlay')]//span[@class='button buttonPrimary
+		// buttonBig fontSize14']
+
+		try {
+//			waitForOverlayToDisappear();
+
+			driver.findElement(By.xpath(commonOverlay));
+
+			wait.until(ExpectedConditions.elementToBeClickable(
+					By.xpath(commonOverlay + "//span[@class='button buttonPrimary buttonBig fontSize14']"))).click();
+
+		} catch (Exception e) {
+			System.out.println("Trip Protection Didn't appeared");
+		}
 	}
 }
