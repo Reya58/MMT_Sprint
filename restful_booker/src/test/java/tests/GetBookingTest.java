@@ -2,6 +2,9 @@ package tests;
 
 import base.BaseTest;
 import io.restassured.response.Response;
+import pojo.BookingDates;
+import pojo.BookingRequest;
+
 import static io.restassured.RestAssured.*;
 
 import org.testng.Assert;
@@ -9,10 +12,13 @@ import org.testng.annotations.Test;
 
 public class GetBookingTest extends BaseTest {
 	
+	BookingDates ob=new BookingDates("2023-01-01", "2024-01-01");
+	BookingRequest br=new BookingRequest("Susan", "Brown", 1000, true, ob, "Breakfast");
+	
 	@Test
 	public void validateGetAllBookings() {
 	    Response response = given()
-	            .baseUri("https://restful-booker.herokuapp.com")
+	           
 	        .when()
 	            .get("/booking")
 	        .then()
@@ -26,8 +32,8 @@ public class GetBookingTest extends BaseTest {
 	@Test
 	public void validateGetByFirstName() {
 	    Response response = given()
-	            .baseUri("https://restful-booker.herokuapp.com")
-	            .queryParam("firstname", "Susan")
+	            
+	            .queryParam("firstname", br.getFirstname())
 	        .when()
 	            .get("/booking")
 	        .then()
@@ -41,8 +47,8 @@ public class GetBookingTest extends BaseTest {
 	@Test
 	public void validateGetByLastName() {
 	    Response response = given()
-	            .baseUri("https://restful-booker.herokuapp.com")
-	            .queryParam("lastname", "Brown")
+	            
+	            .queryParam("lastname", br.getLastname())
 	        .when()
 	            .get("/booking")
 	        .then()
@@ -52,11 +58,13 @@ public class GetBookingTest extends BaseTest {
 	    Assert.assertNotNull(response.jsonPath().getList("bookingid"));
 	}
 	
+	
 	@Test
 	public void validateGetByCheckinDate() {
+		
 	    Response response = given()
-	            .baseUri("https://restful-booker.herokuapp.com")
-	            .queryParam("checkin", "2023-01-01")
+	            
+	            .queryParam("checkin", br.getBookingdates().getCheckin())
 	        .when()
 	            .get("/booking")
 	        .then()
@@ -69,8 +77,8 @@ public class GetBookingTest extends BaseTest {
 	@Test
 	public void validateGetByCheckoutDate() {
 	    Response response = given()
-	            .baseUri("https://restful-booker.herokuapp.com")
-	            .queryParam("checkout", "2023-01-01")
+	            
+	            .queryParam("checkout", br.getBookingdates().getCheckout())
 	        .when()
 	            .get("/booking")
 	        .then()
@@ -82,14 +90,14 @@ public class GetBookingTest extends BaseTest {
 	
 	@Test
     public void getBookingByIdAndValidate() {
-        // 1. Setup Base URI and Path Parameter
-        int bookingId = 1;
+        
+		int bookingId=5;
 
         // 2. Execute GET Request and store response
         Response response = given()
                 
             .when()
-                .get("/booking/1")
+                .get("/booking/5")
             .then()
                 .extract().response();
 
