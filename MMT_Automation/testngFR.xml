@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="MMT Suite" parallel="tests" thread-count="1">
+
+    
+
+    <test name="Firefox Test">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="runner.FlightRunnerIo"/>
+        </classes>
+    </test>
+
+</suite>

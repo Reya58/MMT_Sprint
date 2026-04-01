@@ -7,10 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.en.*;
-import pages.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pages.HomeStays;
+import pages.HomeStaysBookingPage;
+import pages.HomeStaysFilter;
+import pages.HomeStaysPropertyPage;
 import utils.DriverFactory;
 
 public class HomestaysSteps {
@@ -24,32 +27,14 @@ public class HomestaysSteps {
     String oldPrice;
 
     // =========================================================
-    // SETUP
-    // =========================================================
-
-    @Before
-    public void setup() {
-
-        DriverFactory.initDriver();
-        driver = DriverFactory.getDriver();
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        driver.manage().window().maximize();
-        driver.get("https://www.makemytrip.com/homestays/");
-    }
-
-    @After
-    public void tearDown() {
-        DriverFactory.quitDriver();
-    }
-
-    // =========================================================
     // BACKGROUND STEPS
     // =========================================================
 
     @Given("the user is on the MakeMyTrip homepage")
     public void open_homepage() throws InterruptedException {
-
+    	driver = DriverFactory.getDriver();
+    	driver.get("https://www.makemytrip.com/homestays/");
+    	
         new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(d -> ((JavascriptExecutor) d)
                         .executeScript("return document.readyState")

@@ -1,14 +1,10 @@
 package stepDefinations;
 
-import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import io.cucumber.java.Before;
-import io.cucumber.java.After;
-import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,31 +19,16 @@ public class HolidayPackageSteps {
     static List<String[]> testData = HolidayPackagesUtils.getTestData("Sheet1");
     private static ThreadLocal<Integer> rowNumber = new ThreadLocal<>();
 
-    @Before
-    public void setUp() {
-        DriverFactory.initDriver();
-
-        driver = DriverFactory.getDriver();
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
+    @Given("the user is on the MakeMyTrip Holiday Packges homepage")
+    public void the_user_is_on_the_make_my_trip_holiday_packges_homepage() {
+    	driver = DriverFactory.getDriver();
+        driver.get("https://www.makemytrip.com/holidays-india/");
+        hpp = new HolidayPackagePage(driver);
         
         if (rowNumber.get() == null) {
             int randomRow = (int)(Math.random() * (testData.size()-1));
             rowNumber.set(randomRow);
         }
-    }
-
-    @After
-    public void tearDown(Scenario scenario) {
-        System.out.println("Finished Scenario: " + scenario.getName());
-        DriverFactory.quitDriver();
-    }
-
-    @Given("the user is on the MakeMyTrip Holiday Packges homepage")
-    public void the_user_is_on_the_make_my_trip_holiday_packges_homepage() {
-        driver.get("https://www.makemytrip.com/holidays-india/");
-        hpp = new HolidayPackagePage(driver);
     }
 
     @When("the user selects from city {string}, to city {string}, valid departure date and room and guest details")

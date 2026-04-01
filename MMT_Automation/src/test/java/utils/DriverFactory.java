@@ -25,6 +25,7 @@ public class DriverFactory {
 			driver.set(new FirefoxDriver());
 
 		} else if (browser.equalsIgnoreCase("edge")) {
+			System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
 			driver.set(new EdgeDriver());
 
 		} else {

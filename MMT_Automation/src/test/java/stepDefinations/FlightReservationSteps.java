@@ -1,12 +1,10 @@
 package stepDefinations;
 
 import java.util.List;
+
 import org.junit.Assert;
 
-import base.BaseClass;
 import base.PageManager;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,19 +13,13 @@ import pages.FlightSearchPage;
 import pages.FlightTravellerDetailsPage;
 import utils.DriverFactory;
 
-public class FlightReservationSteps extends BaseClass {
+public class FlightReservationSteps {
 	private PageManager pageManager;
 
-	@Before
-	public void setUp() {
-		DriverFactory.initDriver();
-		pageManager = new PageManager(DriverFactory.getDriver());
-		DriverFactory.getDriver().get("https://www.makemytrip.com/flights/");
-	}
-
-//
 	@Given("the user is on the flight search page")
 	public void the_user_is_on_the_flight_search_page() {
+		pageManager = new PageManager(DriverFactory.getDriver());
+		DriverFactory.getDriver().get("https://www.makemytrip.com/flights/");
 		pageManager.getFlightSearchPage().handleInterruptions();
 	}
 
@@ -350,7 +342,7 @@ public class FlightReservationSteps extends BaseClass {
 	@When("submits the request")
 	public void submits_the_request() throws InterruptedException {
 //		Thread.sleep(600000);
-		pageManager.getFlightSearchPage().search();
+		pageManager.getFlightSearchPage().statusSearch();
 	}
 
 	@Then("the current flight status is displayed")
@@ -403,11 +395,6 @@ public class FlightReservationSteps extends BaseClass {
 				pageManager.getFlightSearchPage().flightStatusFetched());
 		String actualAirport  =  pageManager.getFlightSearchPage().getAirportFlightStatusByAirport();
 		Assert.assertTrue("Status for different Airport is Displayed",actualAirport.contains(airport));
-	}
-
-	@After
-	public void tearDown() {
-		DriverFactory.quitDriver();
 	}
 
 }

@@ -8,19 +8,12 @@ import java.util.Map;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
-import io.cucumber.java.en.*;
-
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pages.HotelListingsPage;
 import pages.HotelSearchPage;
 import utils.DriverFactory;
@@ -76,26 +69,11 @@ public class HotelSteps {
 //        System.out.println("Finished Scenario: " + scenario.getName());
 //        Hotels_DriverFactory.quitDriver();
 //    }
-	@Before
-    public void setUp() {
-        DriverFactory.initDriver();
-
-        driver = DriverFactory.getDriver();
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        driver.manage().window().maximize();
-    }
-
-    @After
-    public void tearDown(Scenario scenario) {
-        System.out.println("Finished Scenario: " + scenario.getName());
-        DriverFactory.quitDriver();
-    }
-	
-    @Given("the user is on the MakeMyTrip Hotels homepage")
+	@Given("the user is on the MakeMyTrip Hotels homepage")
     public void open_homepage() throws InterruptedException {
 //        driver = new FirefoxDriver();
 //        driver.manage().window().maximize();
+    	driver = DriverFactory.getDriver();
         driver.get("https://www.makemytrip.com/?cc=in&redirectedBy=gl");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
