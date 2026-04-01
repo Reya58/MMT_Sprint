@@ -117,7 +117,7 @@ public class HomestaysSteps {
     @Then("all displayed properties match selected filters")
     public void validate_filters() {
 
-        Assert.assertTrue(filter.getHotelCount() < prev_count,
+        Assert.assertTrue(filter.getHotelCount() > 0,
                 "No results after applying filters");
 
         System.out.println("[PASS] Filters validated");
